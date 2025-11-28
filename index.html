@@ -198,6 +198,12 @@
       opacity: 0.85;
     }
 
+    @media (min-width: 1024px) {
+      .logo-img { height: 56px; }
+      .logo-text-main { font-size: 1.45rem; }
+      .nav-links a { font-size: 0.96rem; }
+    }
+
     nav {
       display: flex;
       align-items: center;
@@ -217,6 +223,10 @@
       font-size: 0.93rem;
       font-weight: 600;
       padding-bottom: 0.25rem;
+    }
+
+    html[data-theme="dark"] .nav-links a {
+      color: rgba(226, 232, 240, 0.94);
     }
 
     .nav-links a::after {
@@ -250,6 +260,10 @@
       backdrop-filter: blur(10px);
       background: linear-gradient(135deg, rgba(0, 196, 255, 0.22), rgba(0, 59, 115, 0.6));
       box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    html[data-theme="dark"] .nav-cta {
+      border-color: rgba(148, 197, 255, 0.7);
     }
 
     .nav-cta i { font-size: 0.9rem; }
@@ -316,16 +330,17 @@
       position: relative;
       display: flex;
       align-items: center;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(0, 196, 255, 0.18), transparent 60%),
+        radial-gradient(circle at 100% 80%, rgba(0, 59, 115, 0.22), transparent 60%),
+        linear-gradient(180deg, #e6f7ff 0%, #f5f8ff 55%, #f5f8ff 100%);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    html[data-theme="dark"] .hero {
       background:
-        radial-gradient(circle at 10% 20%, rgba(0, 196, 255, 0.22), transparent 60%),
-        radial-gradient(circle at 90% 80%, rgba(0, 59, 115, 0.28), transparent 60%);
-      pointer-events: none;
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.3), transparent 60%),
+        radial-gradient(circle at 100% 80%, rgba(15, 23, 42, 0.9), transparent 60%),
+        linear-gradient(180deg, #020617 0%, #020617 50%, #020617 100%);
     }
 
     .hero-inner {
@@ -719,8 +734,9 @@
     }
 
     html[data-theme="dark"] .why-section {
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.8), transparent 55%),
-                  #020617;
+      background:
+        radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.8), transparent 55%),
+        #020617;
     }
 
     .why-intro {
@@ -916,14 +932,16 @@
       margin-top: 0.12rem;
     }
 
-    /* QUOTE SECTION (NEW) */
+    /* QUOTE SECTION */
 
     .quote-section {
       background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--bg-alt));
     }
 
     html[data-theme="dark"] .quote-section {
-      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.9), transparent 60%), #020617;
+      background:
+        radial-gradient(circle at 0 0, rgba(15,23,42,0.9), transparent 60%),
+        #020617;
     }
 
     .quote-grid {
@@ -970,14 +988,16 @@
       color: #e5e7eb;
     }
 
-    /* MAP SECTION (NEW) */
+    /* MAP SECTION */
 
     .map-section {
       background: linear-gradient(180deg, var(--bg), var(--bg-alt));
     }
 
     html[data-theme="dark"] .map-section {
-      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%), #020617;
+      background:
+        radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%),
+        #020617;
     }
 
     .map-grid {
@@ -1154,7 +1174,9 @@
     }
 
     html[data-theme="dark"] .contact-section {
-      background: radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%), #020617;
+      background:
+        radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%),
+        #020617;
     }
 
     .contact-grid {
@@ -1409,29 +1431,45 @@
       opacity: 0.9;
     }
 
-    /* SCROLL REVEAL / WAVE REVEAL */
+    /* SCROLL REVEAL (progressive enhancement-safe) */
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
+    .reveal,
+    .wave-reveal {
+      opacity: 1;
+      transform: none;
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .wave-reveal {
+    html.js .reveal {
       opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-      clip-path: path("M0,224L80,218.7C160,213,320,203,480,176C640,149,800,107,960,90.7C1120,75,1280,85,1360,90.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z");
+      transform: translateY(26px);
     }
 
+    html.js .wave-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .reveal.visible,
     .wave-reveal.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Reduced motion: respect user preferences */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal,
+      .wave-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
   </style>
 </head>
@@ -1477,7 +1515,7 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero wave-reveal" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-content">
           <div class="hero-badge-row">
@@ -1847,7 +1885,7 @@
       </div>
     </section>
 
-    <!-- QUOTE TOOL (NEW) -->
+    <!-- QUOTE TOOL -->
     <section id="quote" class="quote-section reveal" aria-labelledby="quote-title">
       <div class="container">
         <h2 class="section-title" id="quote-title">Quick Quote Estimator</h2>
@@ -1916,7 +1954,7 @@
       </div>
     </section>
 
-    <!-- SERVICE AREA MAP (NEW) -->
+    <!-- SERVICE AREA MAP -->
     <section id="map" class="map-section reveal" aria-labelledby="map-title">
       <div class="container">
         <h2 class="section-title" id="map-title">Service Area — West Michigan Lakes</h2>
@@ -2170,6 +2208,9 @@
 
   <!-- JS: NAV, THEME, SCROLL, FAQ, QUOTE, MAP, CONTACT -->
   <script>
+    // mark JS-enabled for progressive reveal
+    document.documentElement.classList.add("js");
+
     // YEAR
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -2260,7 +2301,6 @@
     // FAQ ACCORDION
     document.querySelectorAll(".faq-item").forEach(item => {
       const button = item.querySelector(".faq-question");
-      const answer = item.querySelector(".faq-answer");
 
       button.addEventListener("click", () => {
         const isOpen = item.classList.contains("open");
@@ -2371,7 +2411,7 @@
       pin.addEventListener("click", () => setActiveCounty(pin.dataset.county));
     });
 
-    // CONTACT FORM – FRONTEND HANDLER (expects /contact.php or API backend)
+    // CONTACT FORM – FRONTEND HANDLER
     const contactForm = document.getElementById("contact-form");
     const contactStatus = document.getElementById("contact-status");
 
@@ -2404,5 +2444,4 @@
   </script>
 </body>
 </html>
-
 
