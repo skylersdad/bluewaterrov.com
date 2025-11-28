@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueWater ROV Services | Year-Round Underwater Inspections in West Michigan</title>
-    <meta name="description" content="Professional ROV underwater inspections using Chasing M2 Pro Max for docks, seawalls, marinas, HOAs, and real estate due diligence in Allegan, Ottawa, Muskegon, and Oceana Counties. Safe, affordable, and available year-round, including under ice.">
+    <title>BlueWater ROV Services | Safe, Year-Round Underwater Inspections in West Michigan</title>
+    <meta name="description" content="Professional ROV-based visual inspections using Chasing M2 Pro Max for docks, seawalls, marinas, HOAs, and real estate due diligence in Allegan, Ottawa, Muskegon, and Oceana Counties. Informational services only; not certified engineering assessments. Safe, affordable, and available year-round, including under ice.">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -27,7 +27,7 @@
         }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
         a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; height: auto; }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
 
         /* Header & Navigation */
         header {
@@ -37,7 +37,9 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: background 0.3s;
         }
+        header.scrolled { background: rgba(0,59,115,0.95); }
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
@@ -80,7 +82,7 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(rgba(0,59,115,0.85), rgba(0,59,115,0.9)), url('https://images.unsplash.com/photo-1506956191951-7a88da4435e5?q=80&w=1920') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,59,115,0.85), rgba(0,59,115,0.9)), url('https://images.squarespace-cdn.com/content/v1/56833a8d57eb8d0dbae7fd43/1631160587828-2X1ZITEDLRXFZRT1SK37/Chasing+M2+ROV+underwater+drone.jpg?format=1000w') no-repeat center center/cover;
             height: 100vh;
             min-height: 680px;
             display: flex;
@@ -134,7 +136,7 @@
         /* Main Content */
         main { margin-top: 80px; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 90px 0; }
+        section { padding: 90px 0; transition: opacity 0.5s; }
         .text-center { text-align: center; }
         h2 {
             font-size: 2.5rem;
@@ -163,13 +165,14 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
         }
-        .service-card:hover { transform: translateY(-10px); }
-        .service-card i {
-            font-size: 3rem;
-            color: var(--secondary);
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             margin-bottom: 20px;
         }
         .service-card h3 { color: var(--primary); margin-bottom: 15px; }
@@ -193,7 +196,9 @@
             padding: 20px;
             border-radius: 8px;
             text-align: center;
+            transition: transform 0.3s;
         }
+        .value-item:hover { transform: scale(1.05); }
         .value-item i { color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px; }
 
         /* Pricing Table */
@@ -244,8 +249,38 @@
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
+            transition: transform 0.3s;
         }
+        .package-card:hover { transform: translateY(-5px); }
         .package-card h3 { color: var(--primary); }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .gallery img {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.05); }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--light);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .faq-answer { display: none; }
+        .faq-item.active .faq-answer { display: block; }
 
         /* Contact */
         .contact-info {
@@ -260,7 +295,9 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
         }
+        .contact-item:hover { transform: translateY(-5px); }
         .contact-item i {
             font-size: 2.5rem;
             color: var(--secondary);
@@ -286,6 +323,7 @@
             font-family: 'Montserrat', sans-serif;
         }
         .footer-logo span { color: var(--accent); }
+        .disclaimer { font-size: 0.85rem; opacity: 0.8; margin-top: 20px; }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -294,6 +332,18 @@
             .header-inner { flex-direction: column; height: auto; padding: 15px 0; }
             nav ul { gap: 20px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
         }
+
+        /* JavaScript for interactivity */
+        <script>
+            window.addEventListener('scroll', () => {
+                document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+            });
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        </script>
     </style>
 </head>
 <body>
@@ -306,6 +356,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#real-estate">Real Estate</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -314,10 +366,10 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Safe, Year-Round Underwater Inspections</h1>
-            <p>Using the Chasing M2 Pro Max ROV, we deliver 4K video, sonar mapping, and professional reports for Michigan's waterfronts—available even under ice. Protect your docks, seawalls, and assets without the risks and costs of divers.</p>
+            <h1>Safe, Year-Round Visual Underwater Inspections</h1>
+            <p>Using the Chasing M2 Pro Max ROV, we provide high-resolution 4K video and sonar imagery for informational purposes to help assess Michigan's waterfront conditions—available even under ice. Our services offer visibility without the risks and costs associated with divers. Note: These are non-certified visual inspections only.</p>
             <div>
-                <a href="#contact" class="btn btn-primary">Schedule Inspection</a>
+                <a href="#contact" class="btn btn-primary">Schedule a Visual Inspection</a>
                 <a href="#services" class="btn btn-outline">Explore Services</a>
             </div>
         </div>
@@ -326,40 +378,40 @@
     <main>
         <section id="services">
             <div class="container">
-                <h2 class="text-center">Our Services</h2>
+                <h2 class="text-center">Our Visual Inspection Services</h2>
                 <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--gray);">
-                    Serving Allegan, Ottawa, Muskegon, and Oceana Counties with safer, more affordable inspections than traditional divers. Year-round operations, including under-ice capabilities.
+                    Providing safer, more affordable visual assessments than traditional divers in Allegan, Ottawa, Muskegon, and Oceana Counties. Year-round operations, including under-ice capabilities. All services are for informational purposes only and do not constitute engineering or structural certifications.
                 </p>
                 <div class="services-grid">
                     <div class="service-card">
-                        <i class="fas fa-anchor"></i>
-                        <h3>Dock & Boat Lift Inspections</h3>
-                        <p>4K video scans of cables, pulleys, cradles, anchors, and structural integrity. Basic to full assessments.</p>
+                        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10236129117629666" alt="Underwater dock inspection view">
+                        <h3>Dock & Boat Lift Visual Inspections</h3>
+                        <p>High-resolution video scans of cables, pulleys, cradles, anchors, and visible structural elements for informational review.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Seawall & Erosion Assessments</h3>
-                        <p>Vertical passes identifying cracks, undermining, toe scour, and ice damage for shoreline protection.</p>
+                        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=323369303786502" alt="Seawall underwater view">
+                        <h3>Seawall & Erosion Visual Assessments</h3>
+                        <p>Vertical passes to identify visible cracks, undermining, toe scour, and ice damage indicators for shoreline awareness.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-swimmer"></i>
-                        <h3>HOA Swim-Area Safety Scans</h3>
-                        <p>Grid-pattern sweeps for hazards like rocks, debris, and drop-offs, with depth mapping.</p>
+                        <img src="https://www.marinadockage.com/wp-content/uploads/2020/06/Inspection3-300x225.jpg" alt="Marina slip underwater inspection">
+                        <h3>HOA Swim-Area Safety Visual Scans</h3>
+                        <p>Grid-pattern sweeps to highlight potential hazards like rocks, debris, and drop-offs, with depth mapping for informational safety checks.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-dock"></i>
-                        <h3>Marina Slip-by-Slip Surveys</h3>
-                        <p>Piling checks, anchor reviews, and hazard mapping for full facility compliance and safety.</p>
+                        <img src="https://www.geiconsultants.com/wp-content/uploads/2022/09/Diver-Pile2.jpg" alt="Marina piling inspection">
+                        <h3>Marina Slip-by-Slip Visual Surveys</h3>
+                        <p>Visual checks of pilings, anchors, and hazards for facility overview and informational compliance support.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-snowflake"></i>
-                        <h3>Under-Ice Winter Inspections</h3>
-                        <p>Safe operations through heated mats and protocols to document ice pressure damage.</p>
+                        <img src="https://nautiluslive.org/sites/default/files/styles/responsive_image_sm/public/images/2022-04/MLP_0960_edited.jpg?itok=hTRA_Q1o" alt="Under ice ROV operation">
+                        <h3>Under-Ice Winter Visual Inspections</h3>
+                        <p>Safe operations to document visible ice pressure effects and conditions under ice for winter awareness.</p>
                     </div>
                     <div class="service-card">
-                        <i class="fas fa-search-dollar"></i>
-                        <h3>Insurance & Storm Damage Documentation</h3>
-                        <p>Time-stamped evidence for claims, with condition scoring and annotated reports.</p>
+                        <img src="https://www.whoi.edu/wp-content/uploads/2023/05/NUI2_358333.jpg" alt="Storm damage underwater view">
+                        <h3>Insurance & Storm Damage Visual Documentation</h3>
+                        <p>Time-stamped video and imagery for claim support, with condition notes for informational purposes.</p>
                     </div>
                 </div>
             </div>
@@ -371,35 +423,35 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
-                            Family-owned and based in Holland, Michigan, BlueWater ROV Services uses the Chasing M2 Pro Max to provide professional underwater inspections that are safer, faster, and more documented than diver services.
+                            Family-owned and based in Holland, Michigan, BlueWater ROV Services utilizes the Chasing M2 Pro Max to offer professional visual underwater inspections that are safer, faster, and more documented than traditional diver methods.
                         </p>
-                        <p><strong>Mission:</strong> To deliver clear, actionable underwater information that helps clients prevent damage, reduce liability, and protect their investments.</p>
-                        <p><strong>Vision:</strong> To become West Michigan’s leading provider of underwater inspection services with a multi-ROV fleet serving waterfront communities.</p>
+                        <p><strong>Mission:</strong> To provide clear, actionable visual information that assists clients in understanding underwater conditions to help prevent potential issues, reduce liability concerns, and inform decisions about their investments.</p>
+                        <p><strong>Vision:</strong> To become West Michigan’s trusted provider of visual underwater inspection services with a multi-ROV fleet supporting waterfront communities.</p>
                         <div class="core-values">
                             <div class="value-item">
                                 <i class="fas fa-hard-hat"></i>
                                 <h4>Safety First</h4>
-                                <p>No one enters the water—risk is managed by technology.</p>
+                                <p>No human divers—risk is managed through advanced technology.</p>
                             </div>
                             <div class="value-item">
                                 <i class="fas fa-eye"></i>
                                 <h4>Clarity & Transparency</h4>
-                                <p>4K video, photos, and detailed reports every time.</p>
+                                <p>4K video, photos, and detailed reports for every inspection.</p>
                             </div>
                             <div class="value-item">
                                 <i class="fas fa-clock"></i>
                                 <h4>Year-Round Reliability</h4>
-                                <p>Available in all conditions, including under ice.</p>
+                                <p>Services available in all weather conditions, including under ice.</p>
                             </div>
                             <div class="value-item">
                                 <i class="fas fa-lightbulb"></i>
                                 <h4>Innovation</h4>
-                                <p>Advanced ROV tech for precise, efficient inspections.</p>
+                                <p>Utilizing cutting-edge ROV technology for precise visual assessments.</p>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <img src="https://images.unsplash.com/photo-1593118241263-14602f80b6e2?q=80&w=800" alt="Chasing M2 Pro Max ROV in action" style="border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); width: 100%;">
+                        <img src="http://wrekd.com/cdn/shop/files/ChasingM2ProMax.png?v=1754319390" alt="Chasing M2 Pro Max ROV equipment" style="border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); width: 100%;">
                     </div>
                 </div>
             </div>
@@ -409,7 +461,7 @@
             <div class="container">
                 <h2 class="text-center">Pricing & Packages</h2>
                 <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; color: var(--gray);">
-                    Flat-rate pricing with no hidden fees. Custom quotes for larger projects. Serving West Michigan lakeshore communities.
+                    Transparent flat-rate pricing with no hidden fees. Custom quotes available for larger projects. All pricing reflects visual inspection services for informational purposes only.
                 </p>
                 <div class="pricing-table">
                     <table>
@@ -419,6 +471,191 @@
                             <th>Price</th>
                         </tr>
                         <tr>
-                            <td><strong>Basic Dock & Lift Inspection</strong></td>
+                            <td><strong>Basic Dock & Lift Visual Inspection</strong></td>
                             <td>4K video of dock/lift, cables, pulleys, anchors (30-45 min)</td>
                             <td class="price">$225</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Standard Structural Visual Inspection</strong></td>
+                            <td>Full perimeter scan, under-deck, condition notes (45-60 min)</td>
+                            <td class="price">$275–$350</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storm & Ice Damage Visual Assessment</strong></td>
+                            <td>Post-event scans with media for informational review (30-60 min)</td>
+                            <td class="price">$350–$500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seawall Integrity Visual Inspection</strong></td>
+                            <td>Toe/mid/cap passes for visible issues (45-90 min)</td>
+                            <td class="price">$300–$500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HOA Swim-Area Safety Visual Scan</strong></td>
+                            <td>Grid sweep, hazard identification, depth mapping</td>
+                            <td class="price">$400–$1,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marina Slip-by-Slip Visual Survey</strong></td>
+                            <td>Per slip piling/anchor/debris visual check</td>
+                            <td class="price">$35–$75 per slip</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Annual Marina Contract</strong></td>
+                            <td>4 seasonal visual inspections + priority response</td>
+                            <td class="price">$10,000–$20,000/year</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HOA Seasonal Plan</strong></td>
+                            <td>3 visual inspections/year + hazard maps</td>
+                            <td class="price">$1,500–$4,500/year</td>
+                        </tr>
+                    </table>
+                </div>
+                <p class="text-center" style="margin-top: 30px; font-size: 1.1rem; color: var(--gray);">
+                    Residential Packages: Bronze ($300) | Silver ($500) | Gold ($800–$1,200)
+                </p>
+            </div>
+        </section>
+
+        <section id="real-estate" class="real-estate">
+            <div class="container">
+                <h2 class="text-center">Waterfront Real Estate Visual Due Diligence</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; color: var(--gray);">
+                    Gain visual insights into hidden underwater conditions before closing. Helpful for buyers, sellers, agents, and investors to inform decisions about potential risks in docks, seawalls, and shorelines. Services are for informational purposes only.
+                </p>
+                <div class="real-estate-grid">
+                    <div class="package-card">
+                        <h3>Visual Condition Report</h3>
+                        <p>Basic 4K scan and photo set for quick overview.</p>
+                        <p class="price">$350–$550</p>
+                    </div>
+                    <div class="package-card">
+                        <h3>Structural Risk Visual Assessment</h3>
+                        <p>Detailed report with visible condition notes and suggestions.</p>
+                        <p class="price">$550–$850</p>
+                    </div>
+                    <div class="package-card">
+                        <h3>Investor Acquisition Visual Scan</h3>
+                        <p>Comprehensive baseline visuals for commercial properties.</p>
+                        <p class="price">$850–$1,250</p>
+                    </div>
+                    <div class="package-card">
+                        <h3>Commercial Marina Visual Scan</h3>
+                        <p>Full facility visual survey for acquisitions.</p>
+                        <p class="price">$1,500–$5,000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" style="background: var(--light);">
+            <div class="container">
+                <h2 class="text-center">Inspection Gallery</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; color: var(--gray);">
+                    View examples of our visual underwater inspections (stock images for illustration).
+                </p>
+                <div class="gallery">
+                    <img src="http://wrekd.com/cdn/shop/files/ChasingM2ProMax.png?v=1754319390" alt="Chasing M2 Pro Max ROV in operation">
+                    <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=323369303786502" alt="Underwater dock view in Michigan lakeshore">
+                    <img src="https://nautiluslive.org/sites/default/files/styles/responsive_image_sm/public/images/2022-04/MLP_0960_edited.jpg?itok=hTRA_Q1o" alt="Under ice ROV inspection">
+                    <img src="https://www.marinadockage.com/wp-content/uploads/2020/06/Inspection3-300x225.jpg" alt="Marina slip underwater visual">
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2 class="text-center">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">What makes your services safer than divers?</div>
+                    <div class="faq-answer">Our ROV technology eliminates human risk by keeping operators on the surface, while providing high-quality visual data.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are your inspections certified?</div>
+                    <div class="faq-answer">No, our services provide visual inspections for informational purposes only and do not constitute certified engineering or structural assessments. We recommend consulting a licensed engineer for official certifications.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can you operate in winter?</div>
+                    <div class="faq-answer">Yes, we specialize in year-round services, including safe under-ice operations using specialized protocols.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What areas do you serve?</div>
+                    <div class="faq-answer">We primarily serve Allegan, Ottawa, Muskegon, and Oceana Counties in West Michigan, with potential expansion to adjacent areas.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="background: var(--light);">
+            <div class="container">
+                <h2 class="text-center">Contact Us</h2>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto 50px; font-size: 1.2rem;">
+                    Ready to gain visual insights into your waterfront? Contact our Holland, MI team today.
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@bluewaterrov.com">info@bluewaterrov.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>(555) 555-1234</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Hours</h3>
+                        <p>Monday – Friday<br>8:00 AM – 5:00 PM ET</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Service Area</h3>
+                        <p>Allegan, Ottawa,<br>Muskegon, Oceana Counties</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="mailto:info@bluewaterrov.com" class="btn btn-primary" style="font-size: 1.2rem; padding: 18px 50px;">Request a Quote Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">BlueWater <span>ROV</span> Services</div>
+                    <p>Professional visual underwater inspections using Chasing M2 Pro Max ROV. Safe, accurate, year-round service for West Michigan waterfronts.</p>
+                    <p class="disclaimer">Disclaimer: All services provide non-certified visual inspections for informational purposes only and do not constitute engineering, structural, or professional certifications. Consult licensed professionals for official assessments.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#real-estate">Real Estate</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Core Advantages</h4>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li>✔ Year-Round Operations</li>
+                        <li>✔ Under-Ice Visual Inspections</li>
+                        <li>✔ Safer Than Traditional Divers</li>
+                        <li>✔ 4K Video Documentation</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border: none; height: 1px; background: rgba(255,255,255,0.2); margin: 40px 0;">
+            <p style="text-align: center; opacity: 0.8; font-size: 0.9rem;">
+                © 2025 BlueWater ROV Services, LLC. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
