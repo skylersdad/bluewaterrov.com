@@ -6,7 +6,6 @@
 
   <title>BlueWater ROV Services | West Michigan Underwater Inspection Experts</title>
   <meta name="description" content="BlueWater ROV Services provides professional, ROV-based underwater inspections for docks, lifts, seawalls, marinas, HOAs, and insurers across West Michigan — including safe under-ice operations with 4K video and detailed reports." />
-  <meta name="theme-color" content="#004a88" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="BlueWater ROV Services – West Michigan Underwater Inspections" />
@@ -14,30 +13,6 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=2000" />
   <meta property="og:url" content="https://www.bluewaterrovservices.com" />
   <meta property="og:type" content="website" />
-
-  <!-- Structured Data: Local Business / Service -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BlueWater ROV Services",
-    "url": "https://www.bluewaterrovservices.com",
-    "description": "Professional, ROV-based underwater inspections and documentation for docks, lifts, seawalls, marinas, HOAs, contractors, and insurers across West Michigan.",
-    "telephone": "+1-616-566-5862",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Holland",
-      "addressRegion": "MI",
-      "addressCountry": "US"
-    },
-    "areaServed": [
-      "Allegan County, MI",
-      "Ottawa County, MI",
-      "Muskegon County, MI",
-      "Oceana County, MI"
-    ]
-  }
-  </script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -80,7 +55,6 @@
       --success: #4ade80;
     }
 
-    /* RESET & BASE */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
@@ -158,94 +132,6 @@
 
     html[data-theme="dark"] .section-subtitle {
       color: #a5b4fc;
-    }
-
-    /* UTILITIES */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      padding: 0.95rem 2.5rem;
-      border-radius: var(--radius-pill);
-      font-weight: 700;
-      font-size: 0.98rem;
-      border: 2px solid transparent;
-      cursor: pointer;
-      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.55);
-      transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        background 0.18s ease,
-        color 0.18s ease,
-        border-color 0.18s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--secondary));
-      color: var(--primary-dark);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #e6fbff, var(--accent));
-      box-shadow: 0 22px 45px rgba(0, 196, 255, 0.7);
-    }
-
-    .btn-outline {
-      background: rgba(15, 23, 42, 0.9);
-      color: #f9fafb;
-      border-color: rgba(255, 255, 255, 0.7);
-    }
-
-    .btn-outline:hover {
-      background: #f9fafb;
-      color: var(--primary);
-    }
-
-    .btn i { font-size: 0.9rem; }
-
-    .btn-full {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .btn-no-shadow {
-      box-shadow: none;
-    }
-
-    .mt-2 { margin-top: 0.5rem; }
-
-    .footer-email { color: #e5f3ff; }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    /* SKIP LINK */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0b1120;
-      color: #f9fafb;
-      padding: 0.6rem 1rem;
-      border-radius: 999px;
-      z-index: 1100;
-      transition: top 0.2s ease;
-    }
-
-    .skip-link:focus {
-      top: 0.75rem;
     }
 
     /* HEADER */
@@ -541,6 +427,46 @@
       .hero-ctas { justify-content: center; }
     }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.95rem 2.5rem;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.98rem;
+      border: 2px solid transparent;
+      cursor: pointer;
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.55);
+      transition: transform 0.18s ease, box-shadow 0.18s ease,
+                  background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #e6fbff, var(--accent));
+      box-shadow: 0 22px 45px rgba(0, 196, 255, 0.7);
+    }
+
+    .btn-outline {
+      background: rgba(15, 23, 42, 0.9);
+      color: #f9fafb;
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: #f9fafb;
+      color: var(--primary);
+    }
+
+    .btn i { font-size: 0.9rem; }
+
     .hero-contact-note {
       font-size: 0.92rem;
       color: #0f172a;
@@ -690,838 +616,21 @@
       color: var(--accent);
     }
 
-    /* SERVICES */
-    #services { position: relative; }
-
-    #services::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 0% 100%, rgba(0, 150, 214, 0.14), transparent 60%);
-      pointer-events: none;
-    }
-
-    .services-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.4rem;
-    }
-
-    .service-card {
-      background:
-        radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.1), transparent 55%),
-        var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
-
-    html[data-theme="dark"] .service-card {
-      border-color: rgba(148, 197, 255, 0.5);
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-strong);
-      border-color: rgba(0, 196, 255, 0.7);
-    }
-
-    .service-media {
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .service-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.03);
-      transition: transform 0.4s ease;
-    }
-
-    .service-card:hover .service-media img {
-      transform: scale(1.08);
-    }
-
-    .service-body {
-      padding: 1.9rem 1.9rem 2.1rem;
-    }
-
-    .service-body h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .service-body .tagline {
-      font-size: 0.92rem;
-      color: var(--gray);
-      margin-bottom: 1rem;
-    }
-
-    .service-body ul {
-      list-style: none;
-      margin: 0 0 1.2rem;
-      padding: 0;
-      font-size: 0.95rem;
-    }
-
-    .service-body ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .service-body ul li i {
-      color: var(--success);
-      margin-top: 0.1rem;
-      font-size: 0.85rem;
-    }
-
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .price-tag {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .price-note {
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-
-    /* WHY */
-    .why-section {
-      background: linear-gradient(180deg, var(--bg-alt), #f9fbff);
-    }
-
-    html[data-theme="dark"] .why-section {
-      background:
-        radial-gradient(circle at 0 0, rgba(15,23,42,0.85), transparent 55%),
-        #020617;
-    }
-
-    .why-intro {
-      max-width: 860px;
-      margin: 0 auto 2.5rem;
-      font-size: 0.98rem;
-      color: var(--gray);
-      text-align: center;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .why-card {
-      background:
-        radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.1), transparent 60%),
-        var(--white);
-      border-radius: var(--radius-lg);
-      padding: 2rem 1.7rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    html[data-theme="dark"] .why-card {
-      border-color: rgba(148, 197, 255, 0.5);
-    }
-
-    .why-card i {
-      font-size: 2rem;
-      color: var(--secondary);
-      margin-bottom: 0.8rem;
-    }
-
-    .why-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .why-card p {
-      font-size: 0.95rem;
-      color: var(--gray);
-    }
-
-    .compare-list,
-    .why-sublist {
-      margin-top: 0.9rem;
-      font-size: 0.9rem;
-      color: var(--gray);
-      padding-left: 1rem;
-    }
-
-    .compare-list li,
-    .why-sublist li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* GALLERY */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.4rem;
-    }
-
-    .gallery-item {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      transform: translateY(0);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-strong);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .gallery-caption {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 0.6rem 0.9rem;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
-      color: #f9fafb;
-      font-size: 0.85rem;
-    }
-
-    /* PACKAGES */
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .package-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 2.3rem 1.9rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      position: relative;
-      overflow: hidden;
-    }
-
-    html[data-theme="dark"] .package-card {
-      border-color: rgba(148, 197, 255, 0.5);
-    }
-
-    .package-card::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background: radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.16), transparent 60%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .package-card.featured {
-      border: 2px solid rgba(0, 196, 255, 0.8);
-      transform: translateY(-4px);
-    }
-
-    .package-badge {
-      position: relative;
-      display: inline-block;
-      padding: 0.25rem 0.9rem;
-      font-size: 0.8rem;
-      border-radius: var(--radius-pill);
-      background: linear-gradient(135deg, var(--accent), var(--secondary));
-      color: var(--primary-dark);
-      font-weight: 700;
-      margin-bottom: 0.9rem;
-    }
-
-    .package-card h3 {
-      position: relative;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .package-price {
-      position: relative;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin: 0.7rem 0 0.4rem;
-    }
-
-    .package-note {
-      position: relative;
-      font-size: 0.85rem;
-      color: var(--gray);
-      margin-bottom: 0.9rem;
-    }
-
-    .package-card ul {
-      position: relative;
-      list-style: none;
-      margin: 0 0 1.2rem;
-      padding: 0;
-      font-size: 0.92rem;
-    }
-
-    .package-card ul li {
-      display: flex;
-      gap: 0.4rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .package-card ul li i {
-      color: var(--success);
-      font-size: 0.85rem;
-      margin-top: 0.12rem;
-    }
-
-    /* QUOTE SECTION */
-    .quote-section {
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--bg-alt));
-    }
-
-    html[data-theme="dark"] .quote-section {
-      background:
-        radial-gradient(circle at 0 0, rgba(15,23,42,0.9), transparent 60%),
-        #020617;
-    }
-
-    .quote-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .quote-grid { grid-template-columns: 1fr; }
-    }
-
-    .quote-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 1.9rem 1.9rem 2.1rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    html[data-theme="dark"] .quote-card {
-      border-color: rgba(148, 197, 255, 0.5);
-    }
-
-    .quote-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .quote-result {
-      margin-top: 0.7rem;
-      padding: 0.9rem 1rem 1.1rem;
-      border-radius: 12px;
-      background: #e0f4ff;
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      font-size: 0.9rem;
-      color: #003049;
-    }
-
-    html[data-theme="dark"] .quote-result {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: rgba(148, 197, 255, 0.6);
-      color: #e5e7eb;
-    }
-
-    /* MAP SECTION */
-    .map-section {
-      background: linear-gradient(180deg, var(--bg), var(--bg-alt));
-    }
-
-    html[data-theme="dark"] .map-section {
-      background:
-        radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%),
-        #020617;
-    }
-
-    .map-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 2.5rem;
-      align-items: stretch;
-    }
-
-    @media (max-width: 900px) {
-      .map-grid { grid-template-columns: 1fr; }
-    }
-
-    .map-visual {
-      position: relative;
-      border-radius: var(--radius-lg);
-      background:
-        radial-gradient(circle at 30% 10%, rgba(0, 196, 255, 0.3), transparent 60%),
-        linear-gradient(145deg, #003b73, #007bbf);
-      box-shadow: var(--shadow-strong);
-      overflow: hidden;
-      min-height: 260px;
-    }
-
-    .map-lake-shape {
-      position: absolute;
-      inset: 10% 15%;
-      border-radius: 60% 40% 65% 35%;
-      background:
-        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.65), transparent 60%),
-        radial-gradient(circle at 80% 100%, rgba(255,255,255,0.35), transparent 60%),
-        #0f90cf;
-      opacity: 0.9;
-    }
-
-    .map-pin {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid var(--accent);
-      box-shadow: 0 0 0 4px rgba(0, 196, 255, 0.28);
-      transform: translate(-50%, -50%);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      cursor: pointer;
-    }
-
-    .map-pin.active {
-      transform: translate(-50%, -50%) scale(1.18);
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(255,255,255,0.45);
-    }
-
-    .map-pin-label {
-      position: absolute;
-      bottom: 10px;
-      right: 12px;
-      color: rgba(255,255,255,0.9);
-      font-size: 0.78rem;
-    }
-
-    .map-info-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 1.8rem 1.8rem 2.1rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 0.92rem;
-      color: var(--gray);
-    }
-
-    html[data-theme="dark"] .map-info-card {
-      border-color: rgba(148, 197, 255, 0.5);
-    }
-
-    .map-county-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .map-county-buttons button {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(248, 250, 252, 0.9);
-      padding: 0.3rem 0.9rem;
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-
-    .map-county-buttons button.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    html[data-theme="dark"] .map-county-buttons button {
-      background: rgba(15,23,42,0.9);
-      border-color: rgba(148, 197, 255, 0.6);
-      color: #e5e7eb;
-    }
-
-    /* FAQ */
-    .faq-list {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: var(--white);
-      border-radius: 14px;
-      margin-bottom: 1rem;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-    }
-
-    html[data-theme="dark"] .faq-item {
-      border-color: rgba(148, 197, 255, 0.6);
-    }
-
-    .faq-question {
-      width: 100%;
-      background: #f3f7ff;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 1.25rem;
-      font-size: 0.98rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    html[data-theme="dark"] .faq-question {
-      background: rgba(15,23,42,0.9);
-      color: #e5e7eb;
-    }
-
-    .faq-question span {
-      flex: 1;
-      margin-right: 0.75rem;
-    }
-
-    .faq-question i {
-      color: var(--secondary);
-      transition: transform 0.2s ease;
-    }
-
-    .faq-item.open .faq-question i {
-      transform: rotate(90deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.25rem;
-      font-size: 0.93rem;
-      color: var(--gray);
-      transition: max-height 0.25s ease, padding-bottom 0.25s ease;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 400px;
-      padding-bottom: 0.9rem;
-    }
-
-    /* CONTACT SECTION */
-    .contact-section {
-      background: linear-gradient(180deg, var(--bg), #f9fbff);
-    }
-
-    html[data-theme="dark"] .contact-section {
-      background:
-        radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%),
-        #020617;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
-      gap: 2.5rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-
-    .contact-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 2.3rem 2rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-    }
-
-    html[data-theme="dark"] .contact-card {
-      border-color: rgba(148, 197, 255, 0.6);
-    }
-
-    .contact-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .contact-details {
-      list-style: none;
-      margin-top: 0.9rem;
-      font-size: 0.95rem;
-    }
-
-    .contact-details li {
-      display: flex;
-      gap: 0.6rem;
-      margin-bottom: 0.5rem;
-      align-items: center;
-    }
-
-    .contact-details i {
-      color: var(--secondary);
-      width: 1rem;
-      text-align: center;
-    }
-
-    .contact-details a {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .contact-highlight {
-      margin-top: 1.2rem;
-      padding: 0.75rem 0.9rem;
-      border-radius: 12px;
-      background: #e0f4ff;
-      font-size: 0.88rem;
-      color: #003049;
-      border: 1px solid rgba(56, 189, 248, 0.5);
-    }
-
-    html[data-theme="dark"] .contact-highlight {
-      background: rgba(15,23,42,0.9);
-      color: #e5e7eb;
-      border-color: rgba(148, 197, 255, 0.6);
-    }
-
-    /* FORMS (contact + quote) */
-    form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem 1.2rem;
-    }
-
-    @media (max-width: 640px) {
-      form { grid-template-columns: 1fr; }
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      font-size: 0.9rem;
-    }
-
-    .form-group.full { grid-column: 1 / -1; }
-
-    label {
-      font-weight: 600;
-      color: #1f2933;
-    }
-
-    html[data-theme="dark"] label {
-      color: #e5e7eb;
-    }
-
-    input, textarea, select {
-      border-radius: 10px;
-      border: 1px solid #cbd5e1;
-      padding: 0.7rem 0.75rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      background: #f9fbff;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-
-    html[data-theme="dark"] input,
-    html[data-theme="dark"] textarea,
-    html[data-theme="dark"] select {
-      background: rgba(15,23,42,0.9);
-      border-color: rgba(148, 197, 255, 0.5);
-      color: #e5e7eb;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: var(--secondary);
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(0, 150, 214, 0.2);
-      background: #ffffff;
-    }
-
-    html[data-theme="dark"] input:focus,
-    html[data-theme="dark"] textarea:focus,
-    html[data-theme="dark"] select:focus {
-      background: #020617;
-    }
-
-    .form-helper {
-      font-size: 0.8rem;
-      color: var(--gray);
-    }
-
-    .form-actions {
-      grid-column: 1 / -1;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-      margin-top: 0.4rem;
-    }
-
-    .form-note {
-      font-size: 0.8rem;
-      color: var(--gray);
-      max-width: 320px;
-    }
-
-    .contact-status {
-      margin-top: 0.6rem;
-      font-size: 0.86rem;
-    }
-
-    .contact-status.success { color: #16a34a; }
-    .contact-status.error { color: #ef4444; }
-
-    /* FOOTER */
-    footer {
-      background:
-        radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.18), transparent 60%),
-        var(--primary-dark);
-      color: var(--white);
-      padding: 3.8rem 0 2.2rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
-      gap: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.9rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .footer-logo-img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .footer-brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .footer-brand-text-main {
-      font-size: 1.1rem;
-      font-weight: 800;
-    }
-
-    .footer-brand-text-sub {
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      opacity: 0.85;
-    }
-
-    .footer-text {
-      font-size: 0.9rem;
-      opacity: 0.85;
-      max-width: 380px;
-    }
-
-    .footer-heading {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      font-size: 0.9rem;
-    }
-
-    .footer-links li { margin-bottom: 0.3rem; }
-
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .footer-links a:hover { color: var(--accent); }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      padding-top: 1.1rem;
-      font-size: 0.8rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.75rem;
-      opacity: 0.9;
-    }
-
-    /* SCROLL REVEAL (progressive enhancement) */
-    .reveal,
-    .wave-reveal {
+    /* REVEAL (safe if JS fails) */
+    .reveal, .wave-reveal {
       opacity: 1;
       transform: none;
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-
     html.js .reveal {
       opacity: 0;
       transform: translateY(26px);
     }
-
     html.js .wave-reveal {
       opacity: 0;
       transform: translateY(30px);
     }
-
-    .reveal.visible,
-    .wave-reveal.visible {
+    .reveal.visible, .wave-reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -1530,21 +639,19 @@
       * {
         scroll-behavior: auto !important;
         animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
       }
-
-      .reveal,
-      .wave-reveal {
+      .reveal, .wave-reveal {
         opacity: 1 !important;
         transform: none !important;
       }
     }
+
+    /* The rest of the CSS (services, why, gallery, packages, quote, map, FAQ, contact, footer)
+       is defined in Part 2 below and should be pasted CONTIGUOUSLY after this block. */
   </style>
 </head>
 <body>
-  <a href="#top" class="skip-link">Skip to main content</a>
-
   <!-- HEADER -->
   <header id="site-header">
     <div class="container header-inner">
@@ -1569,32 +676,32 @@
         </ul>
 
         <a href="tel:+16165665862" class="nav-cta">
-          <i class="fa-solid fa-phone" aria-hidden="true"></i>
-          <span>(616) 566-5862</span>
+          <i class="fa-solid fa-phone"></i>
+          (616) 566-5862
         </a>
 
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon"></i>
         </button>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-bars"></i>
         </button>
       </nav>
     </div>
   </header>
 
-  <main id="top" role="main" tabindex="-1">
+  <main id="top">
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-content">
           <div class="hero-badge-row">
             <span class="pill-badge">
-              <i class="fa-solid fa-robot" aria-hidden="true"></i> ROV-First Underwater Inspections
+              <i class="fa-solid fa-robot"></i> ROV-First Underwater Inspections
             </span>
             <span class="pill-badge">
-              <i class="fa-solid fa-snowflake" aria-hidden="true"></i> Safe Under-Ice Capability
+              <i class="fa-solid fa-snowflake"></i> Safe Under-Ice Capability
             </span>
           </div>
 
@@ -1611,12 +718,12 @@
 
           <div class="hero-ctas">
             <a href="#contact" class="btn btn-primary">
-              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-              <span>Schedule Your Inspection</span>
+              <i class="fa-solid fa-calendar-check"></i>
+              Schedule Your Inspection
             </a>
             <a href="#quote" class="btn btn-outline">
-              <i class="fa-solid fa-calculator" aria-hidden="true"></i>
-              <span>Get a Quick Estimate</span>
+              <i class="fa-solid fa-calculator"></i>
+              Get a Quick Estimate
             </a>
           </div>
 
@@ -1633,19 +740,18 @@
               <div class="hero-card-header">
                 <span class="hero-card-title">Sample ROV Session</span>
                 <span class="hero-chip">
-                  <i class="fa-solid fa-circle-dot" aria-hidden="true"></i> 4K Capture
+                  <i class="fa-solid fa-circle-dot"></i> 4K Capture
                 </span>
               </div>
 
               <div class="hero-card-main">
                 <div class="hero-video-placeholder">
-                  <img src="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=1600"
-                       alt="Underwater ROV footage inspecting a lakeside dock structure" />
+                  <img src="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=1600" alt="Underwater ROV footage inspecting a lakeside dock structure" />
                 </div>
                 <ul class="hero-meta-list">
-                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> ROV runs a slow, methodical path around your dock, lift, or seawall.</li>
-                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> Any damage, scouring, or misalignment is captured in 4K video and still images.</li>
-                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> You receive a clear summary written for homeowners, boards, and insurers.</li>
+                  <li><i class="fa-solid fa-check"></i> ROV runs a slow, methodical path around your dock, lift, or seawall.</li>
+                  <li><i class="fa-solid fa-check"></i> Any damage, scouring, or misalignment is captured in 4K video and still images.</li>
+                  <li><i class="fa-solid fa-check"></i> You receive a clear summary written for homeowners, boards, and insurers.</li>
                 </ul>
               </div>
 
@@ -1656,8 +762,8 @@
             </div>
           </div>
 
-          <div class="trust-bar" aria-label="Key benefits">
-            <div class="trust-grid">
+          <div class="trust-bar">
+            <div class="trust-grid" aria-label="Key benefits">
               <div class="trust-item">
                 <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
                 <span>Zero diver risk — no one in the water</span>
@@ -1683,8 +789,234 @@
         </div>
       </div>
     </section>
-
     <!-- SERVICES -->
+    <style>
+      /* SERVICES */
+      #services { position: relative; }
+
+      #services::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 0% 100%, rgba(0, 150, 214, 0.14), transparent 60%);
+        pointer-events: none;
+      }
+
+      .services-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.4rem;
+      }
+
+      .service-card {
+        background:
+          radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.1), transparent 55%),
+          var(--white);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: var(--shadow-soft);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      }
+
+      html[data-theme="dark"] .service-card {
+        border-color: rgba(148, 197, 255, 0.5);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-strong);
+        border-color: rgba(0, 196, 255, 0.7);
+      }
+
+      .service-media {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .service-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.03);
+        transition: transform 0.4s ease;
+      }
+
+      .service-card:hover .service-media img {
+        transform: scale(1.08);
+      }
+
+      .service-body {
+        padding: 1.9rem 1.9rem 2.1rem;
+      }
+
+      .service-body h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .service-body .tagline {
+        font-size: 0.92rem;
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      .service-body ul {
+        list-style: none;
+        margin: 0 0 1.2rem;
+        padding: 0;
+        font-size: 0.95rem;
+      }
+
+      .service-body ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .service-body ul li i {
+        color: var(--success);
+        margin-top: 0.1rem;
+        font-size: 0.85rem;
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.95rem;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .price-tag {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .price-note {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      /* WHY */
+      .why-section {
+        background: linear-gradient(180deg, var(--bg-alt), #f9fbff);
+      }
+
+      html[data-theme="dark"] .why-section {
+        background:
+          radial-gradient(circle at 0 0, rgba(15,23,42,0.85), transparent 55%),
+          #020617;
+      }
+
+      .why-intro {
+        max-width: 860px;
+        margin: 0 auto 2.5rem;
+        font-size: 0.98rem;
+        color: var(--gray);
+        text-align: center;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .why-card {
+        background:
+          radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.1), transparent 60%),
+          var(--white);
+        border-radius: var(--radius-lg);
+        padding: 2rem 1.7rem;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(148, 163, 184, 0.4);
+      }
+
+      html[data-theme="dark"] .why-card {
+        border-color: rgba(148, 197, 255, 0.5);
+      }
+
+      .why-card i {
+        font-size: 2rem;
+        color: var(--secondary);
+        margin-bottom: 0.8rem;
+      }
+
+      .why-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .why-card p {
+        font-size: 0.95rem;
+        color: var(--gray);
+      }
+
+      .compare-list,
+      .why-sublist {
+        margin-top: 0.9rem;
+        font-size: 0.9rem;
+        color: var(--gray);
+        padding-left: 1rem;
+      }
+
+      .compare-list li,
+      .why-sublist li {
+        margin-bottom: 0.4rem;
+      }
+
+      /* GALLERY */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1.4rem;
+      }
+
+      .gallery-item {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        transform: translateY(0);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-strong);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 0.6rem 0.9rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+        color: #f9fafb;
+        font-size: 0.85rem;
+      }
+    </style>
+
     <section id="services" class="reveal" aria-labelledby="services-title">
       <div class="container">
         <h2 class="section-title" id="services-title">Core ROV Inspection Services</h2>
@@ -1697,9 +1029,7 @@
           <!-- Residential -->
           <article class="service-card">
             <div class="service-media">
-              <img loading="lazy"
-                   src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800"
-                   alt="ROV inspecting a lakeside dock and boat lift" />
+              <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800" alt="ROV inspecting a lakeside dock and boat lift" />
             </div>
             <div class="service-body">
               <h3>Residential Dock &amp; Lift Inspections</h3>
@@ -1707,20 +1037,18 @@
                 For lakefront homeowners who want to catch issues early, avoid surprises, and make smart repair decisions.
               </p>
               <ul>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Pre-season inspections to verify cribbing, posts, cables, and cradles before you launch for the year.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mid-season “peace of mind” scans after storms, high-water events, or boat impacts.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> End-of-season inspections to document condition going into winter and before ice movement.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Focused review of pulleys, bunks, anchor points, underwater wiring, and bottom conditions around your structures.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Optional lost-item search and pinpointing (anchors, props, tools, phones, sunglasses, etc.).</li>
+                <li><i class="fa-solid fa-check"></i> Pre-season inspections to verify cribbing, posts, cables, and cradles before you launch for the year.</li>
+                <li><i class="fa-solid fa-check"></i> Mid-season “peace of mind” scans after storms, high-water events, or boat impacts.</li>
+                <li><i class="fa-solid fa-check"></i> End-of-season inspections to document condition going into winter and before ice movement.</li>
+                <li><i class="fa-solid fa-check"></i> Focused review of pulleys, bunks, anchor points, underwater wiring, and bottom conditions around your structures.</li>
+                <li><i class="fa-solid fa-check"></i> Optional lost-item search and pinpointing (anchors, props, tools, phones, sunglasses, etc.).</li>
               </ul>
               <div class="price-row">
                 <div>
                   <div class="price-tag">From $225</div>
                   <div class="price-note">Most single-dock visits completed in 30–60 minutes on-site.</div>
                 </div>
-                <a href="#contact" class="btn btn-outline btn-no-shadow">
-                  Request Residential Quote
-                </a>
+                <a href="#contact" class="btn btn-outline" style="box-shadow:none;">Request Residential Quote</a>
               </div>
             </div>
           </article>
@@ -1728,9 +1056,7 @@
           <!-- Seawall/HOA -->
           <article class="service-card">
             <div class="service-media">
-              <img loading="lazy"
-                   src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1800"
-                   alt="Underwater view of a concrete seawall and shoreline" />
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1800" alt="Underwater view of a concrete seawall and shoreline" />
             </div>
             <div class="service-body">
               <h3>Seawall, Shoreline &amp; HOA Safety</h3>
@@ -1738,20 +1064,18 @@
                 Give your board, property manager, or engineer the underwater visibility they need to plan and budget with confidence.
               </p>
               <ul>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Seawall integrity scans to identify toe scour, undermining, voids, cracking, bowing, and panel separation.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Shoreline erosion monitoring with repeatable ROV paths so year-over-year changes are easy to compare.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> HOA swim-area and beach hazard surveys with depth checks, obstructions, and debris mapping.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Reporting formatted for HOA packets and reserve studies, with photos you can show at meetings.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Optional annual “baseline” video library to track how your wall and shoreline respond to changing lake levels.</li>
+                <li><i class="fa-solid fa-check"></i> Seawall integrity scans to identify toe scour, undermining, voids, cracking, bowing, and panel separation.</li>
+                <li><i class="fa-solid fa-check"></i> Shoreline erosion monitoring with repeatable ROV paths so year-over-year changes are easy to compare.</li>
+                <li><i class="fa-solid fa-check"></i> HOA swim-area and beach hazard surveys with depth checks, obstructions, and debris mapping.</li>
+                <li><i class="fa-solid fa-check"></i> Reporting formatted for HOA packets and reserve studies, with photos you can show at meetings.</li>
+                <li><i class="fa-solid fa-check"></i> Optional annual “baseline” video library to track how your wall and shoreline respond to changing lake levels.</li>
               </ul>
               <div class="price-row">
                 <div>
                   <div class="price-tag">From $300</div>
                   <div class="price-note">HOA swim-area packages typically range from $400–$1,000 depending on size and complexity.</div>
                 </div>
-                <a href="#contact" class="btn btn-outline btn-no-shadow">
-                  Plan HOA / Seawall Scan
-                </a>
+                <a href="#contact" class="btn btn-outline" style="box-shadow:none;">Plan HOA / Seawall Scan</a>
               </div>
             </div>
           </article>
@@ -1759,9 +1083,7 @@
           <!-- Commercial / Insurance -->
           <article class="service-card">
             <div class="service-media">
-              <img loading="lazy"
-                   src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1800"
-                   alt="Aerial view of marina slips and docks" />
+              <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1800" alt="Aerial view of marina slips and docks" />
             </div>
             <div class="service-body">
               <h3>Marina, Contractor &amp; Insurance Documentation</h3>
@@ -1769,20 +1091,18 @@
                 ROV inspections built for operations, scope development, and claim files — not just pretty footage.
               </p>
               <ul>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Slip-by-slip marina inspections to document piles, cribs, utilities, and bottom conditions.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Pre-bid and pre-construction scans that reduce unknowns and help contractors write accurate proposals.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Progress and post-construction documentation that matches your scope of work and as-built requirements.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Insurance claim support with date-stamped video, photos, and severity scoring aligned to adjuster needs.</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Repeatable templates so every visit looks familiar to your staff, board, or underwriting team.</li>
+                <li><i class="fa-solid fa-check"></i> Slip-by-slip marina inspections to document piles, cribs, utilities, and bottom conditions.</li>
+                <li><i class="fa-solid fa-check"></i> Pre-bid and pre-construction scans that reduce unknowns and help contractors write accurate proposals.</li>
+                <li><i class="fa-solid fa-check"></i> Progress and post-construction documentation that matches your scope of work and as-built requirements.</li>
+                <li><i class="fa-solid fa-check"></i> Insurance claim support with date-stamped video, photos, and severity scoring aligned to adjuster needs.</li>
+                <li><i class="fa-solid fa-check"></i> Repeatable templates so every visit looks familiar to your staff, board, or underwriting team.</li>
               </ul>
               <div class="price-row">
                 <div>
                   <div class="price-tag">Custom Pricing</div>
                   <div class="price-note">Per-slip, per-project, and annual contract options available.</div>
                 </div>
-                <a href="#contact" class="btn btn-outline btn-no-shadow">
-                  Start a Commercial Project
-                </a>
+                <a href="#contact" class="btn btn-outline" style="box-shadow:none;">Start a Commercial Project</a>
               </div>
             </div>
           </article>
@@ -1890,371 +1210,987 @@
 
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1800"
-                 alt="ROV view of dock pilings underwater" />
+            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1800" alt="ROV view of dock pilings underwater" />
             <figcaption class="gallery-caption">Dock pilings, brackets &amp; cribbing inspections</figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1800"
-                 alt="Concrete seawall face" />
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1800" alt="Concrete seawall face" />
             <figcaption class="gallery-caption">Seawall cracking, undermining &amp; toe scour</figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1534448311378-1e193fb2570e?q=80&w=1800"
-                 alt="Marina docks and slips" />
+            <img src="https://images.unsplash.com/photo-1534448311378-1e193fb2570e?q=80&w=1800" alt="Marina docks and slips" />
             <figcaption class="gallery-caption">Marina slip infrastructure &amp; debris surveys</figcaption>
           </figure>
 
           <figure class="gallery-item">
-            <img loading="lazy"
-                 src="https://images.unsplash.com/photo-1520694478166-daaaaec95b69?q=80&w=1800"
-                 alt="Snow-covered lake with hole cut through ice" />
+            <img src="https://images.unsplash.com/photo-1520694478166-daaaaec95b69?q=80&w=1800" alt="Snow-covered lake with hole cut through ice" />
             <figcaption class="gallery-caption">Under-ice access and winter inspection conditions</figcaption>
           </figure>
         </div>
       </div>
     </section>
+  <style>
+    /* PACKAGES */
 
-    <!-- PACKAGES -->
-    <section id="packages" class="reveal" aria-labelledby="packages-title">
-      <div class="container">
-        <h2 class="section-title" id="packages-title">Packages &amp; Seasonal Plans</h2>
-        <p class="section-subtitle">
-          From one-time inspection snapshots to recurring seasonal plans and commercial programs, we can match the level
-          of documentation to your risk, waterfront complexity, and budget.
-        </p>
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
 
-        <div class="packages-grid">
-          <article class="package-card featured">
-            <span class="package-badge">Waterfront Due Diligence</span>
-            <h3>Buyer’s Waterfront Condition Package</h3>
-            <div class="package-price">$495</div>
-            <p class="package-note">
-              For buyers, agents, and investors who want underwater clarity before closing on a lakefront property.
-              Know what you’re buying below the surface, not just above the waterline.
-            </p>
-            <ul>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Focused on high-cost risks: dock, lift, seawall, cribbing, and bottom conditions near structures.</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 4K footage, key photos, and a buyer-friendly summary you can attach to inspection and appraisal reports.</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Helpful for negotiation, contingency decisions, and planning first-year repairs and upgrades.</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary btn-full">
-              Book Buyer Inspection
-            </a>
-          </article>
+    .package-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.3rem 1.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
 
-          <article class="package-card">
-            <h3>Residential Seasonal Plans</h3>
-            <div class="package-price">$300–$1,200</div>
-            <p class="package-note">
-              Designed for homeowners who want a documented story of their structure’s health through every season,
-              not just a single snapshot.
-            </p>
-            <ul>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i><strong>Bronze – $300:</strong> Spring &amp; Fall inspections with photo set and summary report.</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i><strong>Silver – $500:</strong> Three seasonal inspections with video clips and priority scheduling after storms.</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i><strong>Gold – $800–$1,200:</strong> Four seasonal inspections plus one emergency storm/ice scan and insurance-ready documentation.</li>
-            </ul>
-            <a href="#contact" class="btn btn-outline btn-full btn-no-shadow">
-              Ask About Seasonal Plans
-            </a>
-          </article>
+    html[data-theme="dark"] .package-card {
+      border-color: rgba(148, 197, 255, 0.5);
+    }
 
-          <article class="package-card">
-            <h3>Marina, HOA &amp; Insurance Programs</h3>
-            <div class="package-price">Custom Contract</div>
-            <p class="package-note">
-              Built for organizations that need repeatable, defensible documentation of underwater assets across
-              multiple sites or seasons.
-            </p>
-            <ul>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Annual or seasonal marina contracts with defined inspection windows and deliverables.</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> HOA safety programs with annual swim-area scans, hazard maps, and follow-up recommendations.</li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Insurance partners: standardized inspection templates and claims-ready media packages.</li>
-            </ul>
-            <a href="#contact" class="btn btn-outline btn-full btn-no-shadow">
-              Schedule Program Discovery Call
-            </a>
-          </article>
-        </div>
+    .package-card::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.16), transparent 60%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .package-card.featured {
+      border: 2px solid rgba(0, 196, 255, 0.8);
+      transform: translateY(-4px);
+    }
+
+    .package-badge {
+      position: relative;
+      display: inline-block;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.8rem;
+      border-radius: var(--radius-pill);
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+    }
+
+    .package-card h3 {
+      position: relative;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-price {
+      position: relative;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0.7rem 0 0.4rem;
+    }
+
+    .package-note {
+      position: relative;
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 0.9rem;
+    }
+
+    .package-card ul {
+      position: relative;
+      list-style: none;
+      margin: 0 0 1.2rem;
+      padding: 0;
+      font-size: 0.92rem;
+    }
+
+    .package-card ul li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .package-card ul li i {
+      color: var(--success);
+      font-size: 0.85rem;
+      margin-top: 0.12rem;
+    }
+
+    /* QUOTE SECTION */
+
+    .quote-section {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--bg-alt));
+    }
+
+    html[data-theme="dark"] .quote-section {
+      background:
+        radial-gradient(circle at 0 0, rgba(15,23,42,0.9), transparent 60%),
+        #020617;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .quote-grid { grid-template-columns: 1fr; }
+    }
+
+    .quote-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.9rem 1.9rem 2.1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    html[data-theme="dark"] .quote-card {
+      border-color: rgba(148, 197, 255, 0.5);
+    }
+
+    .quote-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .quote-result {
+      margin-top: 0.7rem;
+      padding: 0.9rem 1rem 1.1rem;
+      border-radius: 12px;
+      background: #e0f4ff;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      font-size: 0.9rem;
+      color: #003049;
+    }
+
+    html[data-theme="dark"] .quote-result {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 197, 255, 0.6);
+      color: #e5e7eb;
+    }
+
+    /* MAP SECTION */
+
+    .map-section {
+      background: linear-gradient(180deg, var(--bg), var(--bg-alt));
+    }
+
+    html[data-theme="dark"] .map-section {
+      background:
+        radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%),
+        #020617;
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .map-grid { grid-template-columns: 1fr; }
+    }
+
+    .map-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at 30% 10%, rgba(0, 196, 255, 0.3), transparent 60%),
+                  linear-gradient(145deg, #003b73, #007bbf);
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .map-lake-shape {
+      position: absolute;
+      inset: 10% 15%;
+      border-radius: 60% 40% 65% 35%;
+      background: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.65), transparent 60%),
+                  radial-gradient(circle at 80% 100%, rgba(255,255,255,0.35), transparent 60%),
+                  #0f90cf;
+      opacity: 0.9;
+    }
+
+    .map-pin {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px rgba(0, 196, 255, 0.28);
+      transform: translate(-50%, -50%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .map-pin.active {
+      transform: translate(-50%, -50%) scale(1.18);
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.45);
+    }
+
+    .map-pin-label {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.78rem;
+    }
+
+    .map-info-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem 1.8rem 2.1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.92rem;
+      color: var(--gray);
+    }
+
+    html[data-theme="dark"] .map-info-card {
+      border-color: rgba(148, 197, 255, 0.5);
+    }
+
+    .map-county-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .map-county-buttons button {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(248, 250, 252, 0.9);
+      padding: 0.3rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .map-county-buttons button.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    html[data-theme="dark"] .map-county-buttons button {
+      background: rgba(15,23,42,0.9);
+      border-color: rgba(148, 197, 255, 0.6);
+      color: #e5e7eb;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    html[data-theme="dark"] .faq-item {
+      border-color: rgba(148, 197, 255, 0.6);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: #f3f7ff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    html[data-theme="dark"] .faq-question {
+      background: rgba(15,23,42,0.9);
+      color: #e5e7eb;
+    }
+
+    .faq-question span {
+      flex: 1;
+      margin-right: 0.75rem;
+    }
+
+    .faq-question i {
+      color: var(--secondary);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.open .faq-question i {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.25rem;
+      font-size: 0.93rem;
+      color: var(--gray);
+      transition: max-height 0.25s ease, padding-bottom 0.25s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-bottom: 0.9rem;
+    }
+
+    /* CONTACT + FOOTER + SCROLL REVEAL WILL BE IN PART 4 */
+  </style>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="reveal" aria-labelledby="packages-title">
+    <div class="container">
+      <h2 class="section-title" id="packages-title">Packages &amp; Seasonal Plans</h2>
+      <p class="section-subtitle">
+        From one-time inspection snapshots to recurring seasonal plans and commercial programs, we can match the level
+        of documentation to your risk, waterfront complexity, and budget.
+      </p>
+
+      <div class="packages-grid">
+        <article class="package-card featured">
+          <span class="package-badge">Waterfront Due Diligence</span>
+          <h3>Buyer’s Waterfront Condition Package</h3>
+          <div class="package-price">$495</div>
+          <p class="package-note">
+            For buyers, agents, and investors who want underwater clarity before closing on a lakefront property.
+            Know what you’re buying below the surface, not just above the waterline.
+          </p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Focused on high-cost risks: dock, lift, seawall, cribbing, and bottom conditions near structures.</li>
+            <li><i class="fa-solid fa-check"></i> 4K footage, key photos, and a buyer-friendly summary you can attach to inspection and appraisal reports.</li>
+            <li><i class="fa-solid fa-check"></i> Helpful for negotiation, contingency decisions, and planning first-year repairs and upgrades.</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Book Buyer Inspection
+          </a>
+        </article>
+
+        <article class="package-card">
+          <h3>Residential Seasonal Plans</h3>
+          <div class="package-price">$300–$1,200</div>
+          <p class="package-note">
+            Designed for homeowners who want a documented story of their structure’s health through every season,
+            not just a single snapshot.
+          </p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i><strong>Bronze – $300:</strong> Spring &amp; Fall inspections with photo set and summary report.</li>
+            <li><i class="fa-solid fa-check"></i><strong>Silver – $500:</strong> Three seasonal inspections with video clips and priority scheduling after storms.</li>
+            <li><i class="fa-solid fa-check"></i><strong>Gold – $800–$1,200:</strong> Four seasonal inspections plus one emergency storm/ice scan and insurance-ready documentation.</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-shadow:none;">
+            Ask About Seasonal Plans
+          </a>
+        </article>
+
+        <article class="package-card">
+          <h3>Marina, HOA &amp; Insurance Programs</h3>
+          <div class="package-price">Custom Contract</div>
+          <p class="package-note">
+            Built for organizations that need repeatable, defensible documentation of underwater assets across
+            multiple sites or seasons.
+          </p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Annual or seasonal marina contracts with defined inspection windows and deliverables.</li>
+            <li><i class="fa-solid fa-check"></i> HOA safety programs with annual swim-area scans, hazard maps, and follow-up recommendations.</li>
+            <li><i class="fa-solid fa-check"></i> Insurance partners: standardized inspection templates and claims-ready media packages.</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-shadow:none;">
+            Schedule Program Discovery Call
+          </a>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- QUOTE TOOL -->
-    <section id="quote" class="quote-section reveal" aria-labelledby="quote-title">
-      <div class="container">
-        <h2 class="section-title" id="quote-title">Quick Quote Estimator</h2>
-        <p class="section-subtitle">
-          Use this tool to get a planning range for your visit. Final pricing is always confirmed in a written quote
-          based on your structures, access, and lake conditions.
-        </p>
+  <!-- QUOTE TOOL -->
+  <section id="quote" class="quote-section reveal" aria-labelledby="quote-title">
+    <div class="container">
+      <h2 class="section-title" id="quote-title">Quick Quote Estimator</h2>
+      <p class="section-subtitle">
+        Use this tool to get a planning range for your visit. Final pricing is always confirmed in a written quote
+        based on your structures, access, and lake conditions.
+      </p>
 
-        <div class="quote-grid">
-          <article class="quote-card">
-            <h3>Estimate Your Visit</h3>
-            <form id="quote-form">
-              <div class="form-group">
-                <label for="property-type">Property Type*</label>
-                <select id="property-type" required>
-                  <option value="">Select...</option>
-                  <option value="residential">Residential / Single Dock</option>
-                  <option value="hoa">HOA / Seawall / Community</option>
-                  <option value="marina">Marina / Commercial</option>
-                </select>
-              </div>
+      <div class="quote-grid">
+        <article class="quote-card">
+          <h3>Estimate Your Visit</h3>
+          <form id="quote-form">
+            <div class="form-group">
+              <label for="property-type">Property Type*</label>
+              <select id="property-type" required>
+                <option value="">Select...</option>
+                <option value="residential">Residential / Single Dock</option>
+                <option value="hoa">HOA / Seawall / Community</option>
+                <option value="marina">Marina / Commercial</option>
+              </select>
+            </div>
 
-              <div class="form-group">
-                <label for="dock-count">Docks / Lifts to Check</label>
-                <input id="dock-count" type="number" min="0" value="1" />
-              </div>
+            <div class="form-group">
+              <label for="dock-count">Docks / Lifts to Check</label>
+              <input id="dock-count" type="number" min="0" value="1" />
+            </div>
 
-              <div class="form-group">
-                <label for="seawall-length">Seawall Length (ft)</label>
-                <input id="seawall-length" type="number" min="0" placeholder="0 if none" />
-              </div>
+            <div class="form-group">
+              <label for="seawall-length">Seawall Length (ft)</label>
+              <input id="seawall-length" type="number" min="0" placeholder="0 if none" />
+            </div>
 
-              <div class="form-group">
-                <label for="distance">Approx. Drive Time from Holland (min)</label>
-                <input id="distance" type="number" min="0" placeholder="e.g., 45" />
-              </div>
+            <div class="form-group">
+              <label for="distance">Approx. Drive Time from Holland (min)</label>
+              <input id="distance" type="number" min="0" placeholder="e.g., 45" />
+            </div>
 
-              <div class="form-group full" style="margin-top:0.5rem;">
-                <label>Options</label>
-                <label style="font-weight:400;">
-                  <input type="checkbox" id="under-ice" /> Under-ice or cold-season inspection
-                </label><br />
-                <label style="font-weight:400;">
-                  <input type="checkbox" id="rush" /> Rush / urgent scheduling
-                </label>
-              </div>
+            <div class="form-group full" style="margin-top:0.5rem;">
+              <label>Options</label>
+              <label style="font-weight:400;">
+                <input type="checkbox" id="under-ice" /> Under-ice or cold-season inspection
+              </label><br />
+              <label style="font-weight:400;">
+                <input type="checkbox" id="rush" /> Rush / urgent scheduling
+              </label>
+            </div>
 
-              <div class="form-group full" style="margin-top:0.75rem;">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fa-solid fa-calculator" aria-hidden="true"></i> Calculate Estimate
-                </button>
-              </div>
-            </form>
-          </article>
+            <div class="form-group full" style="margin-top:0.75rem;">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-calculator"></i> Calculate Estimate
+              </button>
+            </div>
+          </form>
+        </article>
 
-          <article class="quote-card">
-            <h3>Estimated Range</h3>
-            <div id="quote-result" class="quote-result">
-              <p>Fill in the fields and click <strong>Calculate Estimate</strong> to see a likely range for your inspection.</p>
-              <p style="margin-top:0.4rem;font-size:0.86rem;">
-                This tool is a planning guide, not a formal quote. We’ll always confirm scope and pricing in writing
-                before anything is scheduled.
+        <article class="quote-card">
+          <h3>Estimated Range</h3>
+          <div id="quote-result" class="quote-result">
+            <p>Fill in the fields and click <strong>Calculate Estimate</strong> to see a likely range for your inspection.</p>
+            <p style="margin-top:0.4rem;font-size:0.86rem;">
+              This tool is a planning guide, not a formal quote. We’ll always confirm scope and pricing in writing
+              before anything is scheduled.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA MAP -->
+  <section id="map" class="map-section reveal" aria-labelledby="map-title">
+    <div class="container">
+      <h2 class="section-title" id="map-title">Service Area — West Michigan Lakes</h2>
+      <p class="section-subtitle">
+        Focused on the West Michigan lakeshore and nearby inland lakes. Click a county to see typical lakes
+        and scenarios we support there.
+      </p>
+
+      <div class="map-grid">
+        <div class="map-visual" aria-hidden="true">
+          <div class="map-lake-shape"></div>
+          <button class="map-pin active" data-county="Ottawa" style="top:42%;left:40%;" aria-label="Ottawa County"></button>
+          <button class="map-pin" data-county="Allegan" style="top:60%;left:45%;" aria-label="Allegan County"></button>
+          <button class="map-pin" data-county="Muskegon" style="top:25%;left:45%;" aria-label="Muskegon County"></button>
+          <button class="map-pin" data-county="Oceana" style="top:15%;left:52%;" aria-label="Oceana County"></button>
+          <span class="map-pin-label">Conceptual coverage map • Not to scale</span>
+        </div>
+
+        <aside class="map-info-card">
+          <h3>Where We Typically Work</h3>
+          <div class="map-county-buttons">
+            <button type="button" data-county="Ottawa" class="active">Ottawa</button>
+            <button type="button" data-county="Allegan">Allegan</button>
+            <button type="button" data-county="Muskegon">Muskegon</button>
+            <button type="button" data-county="Oceana">Oceana</button>
+          </div>
+          <div id="map-details">
+            <p><strong>Ottawa County:</strong> Lake Macatawa, Pigeon Lake, Grand River frontage, and private inland lakes.
+            Ideal for dock &amp; lift scans, under-ice inspections, HOA swim areas, and buyer due diligence packages.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="reveal" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">
+        A few of the questions we hear most often from homeowners, marinas, HOAs, contractors, and adjusters.
+      </p>
+
+      <div class="faq-list">
+        <article class="faq-item">
+          <button class="faq-question" type="button" id="faq1-question" aria-expanded="false" aria-controls="faq1-answer">
+            <span>Do you really operate in winter and under ice?</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer" id="faq1-answer" role="region" aria-labelledby="faq1-question">
+            Yes. Winter and under-ice work is one of our core specialties. We follow a strict under-ice SOP:
+            confirm thickness, create a clean launch hole, use dedicated mats, maintain a vertical tether, and
+            abort immediately if ice shifts. The result is safe, documented inspections during the season when
+            structures see the most stress.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" id="faq2-question" aria-expanded="false" aria-controls="faq2-answer">
+            <span>Is this a structural engineering report?</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer" id="faq2-answer" role="region" aria-labelledby="faq2-question">
+            No. BlueWater provides visual-only, ROV-based documentation. We record what we can see with 4K
+            video and photos and provide a clear summary of observed conditions at the time of inspection.
+            We do not provide structural engineering opinions and always recommend consulting qualified
+            engineers or contractors for design and repair decisions.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" id="faq3-question" aria-expanded="false" aria-controls="faq3-answer">
+            <span>How far will you travel, and what areas do you cover?</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer" id="faq3-answer" role="region" aria-labelledby="faq3-question">
+            Our core service area includes Allegan, Ottawa, Muskegon, and Oceana Counties along the West
+            Michigan lakeshore and nearby inland lakes. We typically operate within about 90 minutes of
+            Holland/Grand Rapids. For larger marina, HOA, or insurance projects, we can travel further by
+            arrangement.
+          </div>
+        </article>
+
+        <article class="faq-item">
+          <button class="faq-question" type="button" id="faq4-question" aria-expanded="false" aria-controls="faq4-answer">
+            <span>How quickly will I receive my video, photos, and report?</span>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="faq-answer" id="faq4-answer" role="region" aria-labelledby="faq4-question">
+            Most residential and real estate inspections include a same-day or next-day summary, with full
+            media and report delivered within 48–72 hours. Commercial, marina, and multi-site work may take
+            slightly longer depending on scope, but we always set clear expectations up front.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <style>
+    /* CONTACT SECTION */
+
+    .contact-section {
+      background: linear-gradient(180deg, var(--bg), #f9fbff);
+    }
+
+    html[data-theme="dark"] .contact-section {
+      background:
+        radial-gradient(circle at 0 0, rgba(15,23,42,0.8), transparent 55%),
+        #020617;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.3rem 2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    html[data-theme="dark"] .contact-card {
+      border-color: rgba(148, 197, 255, 0.6);
+    }
+
+    .contact-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-details {
+      list-style: none;
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-details li {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+      align-items: center;
+    }
+
+    .contact-details i {
+      color: var(--secondary);
+      width: 1rem;
+      text-align: center;
+    }
+
+    .contact-details a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .contact-highlight {
+      margin-top: 1.2rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 12px;
+      background: #e0f4ff;
+      font-size: 0.88rem;
+      color: #003049;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+    }
+
+    html[data-theme="dark"] .contact-highlight {
+      background: rgba(15,23,42,0.9);
+      color: #e5e7eb;
+      border-color: rgba(148, 197, 255, 0.6);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.2rem;
+    }
+
+    @media (max-width: 640px) {
+      form { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      font-weight: 600;
+      color: #1f2933;
+    }
+
+    html[data-theme="dark"] label {
+      color: #e5e7eb;
+    }
+
+    input,textarea,select {
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      padding: 0.7rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #f9fbff;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    html[data-theme="dark"] input,
+    html[data-theme="dark"] textarea,
+    html[data-theme="dark"] select {
+      background: rgba(15,23,42,0.9);
+      border-color: rgba(148, 197, 255, 0.5);
+      color: #e5e7eb;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input:focus,textarea:focus,select:focus {
+      border-color: var(--secondary);
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 150, 214, 0.2);
+      background: #ffffff;
+    }
+
+    html[data-theme="dark"] input:focus,
+    html[data-theme="dark"] textarea:focus,
+    html[data-theme="dark"] select:focus {
+      background: #020617;
+    }
+
+    .form-helper {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--gray);
+      max-width: 320px;
+    }
+
+    .contact-status {
+      margin-top: 0.6rem;
+      font-size: 0.86rem;
+    }
+
+    .contact-status.success { color: #16a34a; }
+    .contact-status.error { color: #ef4444; }
+
+    /* FOOTER */
+
+    footer {
+      background:
+        radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.18), transparent 60%),
+        var(--primary-dark);
+      color: var(--white);
+      padding: 3.8rem 0 2.2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-logo-img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .footer-brand-text-main {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .footer-brand-text-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      opacity: 0.85;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      max-width: 380px;
+    }
+
+    .footer-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-links li { margin-bottom: 0.3rem; }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 1.1rem;
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      opacity: 0.9;
+    }
+
+    /* FINAL SCROLL REVEAL + REDUCED MOTION */
+
+    html.js .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+
+    html.js .wave-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .reveal.visible,
+    .wave-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal,
+      .wave-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section reveal" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 class="section-title" id="contact-title">Schedule Your Inspection</h2>
+      <p class="section-subtitle">
+        Tell us about your waterfront, timing, and goals. We’ll confirm availability, scope, and pricing before
+        anything is scheduled — no surprises.
+      </p>
+
+      <div class="contact-grid">
+        <aside class="contact-card" aria-label="Contact details">
+          <h3>Talk directly to the inspector</h3>
+          <p>
+            You’re not calling a generic service line. You’ll speak with the owner-operator who will be on
+            site with the ROV, from first call through final report.
+          </p>
+
+          <ul class="contact-details">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+16165665862">(616) 566-5862</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:jmonetza@bluewaterrovservices.com">jmonetza@bluewaterrovservices.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              Based in Holland, MI • Serving the West Michigan lakeshore and inland lakes
+            </li>
+          </ul>
+
+          <div class="contact-highlight">
+            <strong>Safety &amp; clarity first.</strong> We may reschedule for severe weather or poor
+            visibility, but we’ll always communicate clearly and prioritize both safety and usable footage.
+          </div>
+        </aside>
+
+        <section class="contact-card" aria-label="Inspection request form">
+          <form id="contact-form" action="/contact.php" method="post" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name*</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email*</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              <span class="form-helper">Best number to reach you if we have questions.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Type*</label>
+              <select id="service" name="service" required>
+                <option value="">Select an option</option>
+                <option value="dock">Dock &amp; Boat Lift Inspection</option>
+                <option value="structural">Standard Structural Inspection</option>
+                <option value="storm">Storm / Ice Damage Assessment</option>
+                <option value="lost">Lost Item Location &amp; Recovery</option>
+                <option value="seawall">Seawall / Shoreline Inspection</option>
+                <option value="hoa">HOA Swim-Area Safety Scan</option>
+                <option value="marina">Marina or HOA Contract</option>
+                <option value="buyer">Buyer Due Diligence Package</option>
+                <option value="insurance">Insurance Claim Documentation</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="location">Lake / Address*</label>
+              <input id="location" name="location" type="text" required />
+              <span class="form-helper">Example: “North Shore, Lake Macatawa” or street address.</span>
+            </div>
+
+            <div class="form-group full">
+              <label for="message">Briefly describe what you’d like inspected*</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Inspection Request
+              </button>
+              <p class="form-note">
+                We typically respond within one business day. Your information is used only to respond to
+                your request and schedule services.
               </p>
             </div>
-          </article>
-        </div>
+            <div id="contact-status" class="contact-status" aria-live="polite"></div>
+          </form>
+        </section>
       </div>
-    </section>
-
-    <!-- SERVICE AREA MAP -->
-    <section id="map" class="map-section reveal" aria-labelledby="map-title">
-      <div class="container">
-        <h2 class="section-title" id="map-title">Service Area — West Michigan Lakes</h2>
-        <p class="section-subtitle">
-          Focused on the West Michigan lakeshore and nearby inland lakes. Click a county to see typical lakes
-          and scenarios we support there.
-        </p>
-
-        <div class="map-grid">
-          <div class="map-visual" aria-hidden="true">
-            <div class="map-lake-shape"></div>
-            <button class="map-pin active" data-county="Ottawa" style="top:42%;left:40%;" aria-label="Ottawa County"></button>
-            <button class="map-pin" data-county="Allegan" style="top:60%;left:45%;" aria-label="Allegan County"></button>
-            <button class="map-pin" data-county="Muskegon" style="top:25%;left:45%;" aria-label="Muskegon County"></button>
-            <button class="map-pin" data-county="Oceana" style="top:15%;left:52%;" aria-label="Oceana County"></button>
-            <span class="map-pin-label">Conceptual coverage map • Not to scale</span>
-          </div>
-
-          <aside class="map-info-card">
-            <h3>Where We Typically Work</h3>
-            <div class="map-county-buttons">
-              <button type="button" data-county="Ottawa" class="active">Ottawa</button>
-              <button type="button" data-county="Allegan">Allegan</button>
-              <button type="button" data-county="Muskegon">Muskegon</button>
-              <button type="button" data-county="Oceana">Oceana</button>
-            </div>
-            <div id="map-details">
-              <p><strong>Ottawa County:</strong> Lake Macatawa, Pigeon Lake, Grand River frontage, and private inland lakes.
-              Ideal for dock &amp; lift scans, under-ice inspections, HOA swim areas, and buyer due diligence packages.</p>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="reveal" aria-labelledby="faq-title">
-      <div class="container">
-        <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">
-          A few of the questions we hear most often from homeowners, marinas, HOAs, contractors, and adjusters.
-        </p>
-
-        <div class="faq-list">
-          <article class="faq-item">
-            <button class="faq-question" type="button" id="faq1-question" aria-expanded="false" aria-controls="faq1-answer">
-              <span>Do you really operate in winter and under ice?</span>
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq1-answer" role="region" aria-labelledby="faq1-question">
-              Yes. Winter and under-ice work is one of our core specialties. We follow a strict under-ice SOP:
-              confirm thickness, create a clean launch hole, use dedicated mats, maintain a vertical tether, and
-              abort immediately if ice shifts. The result is safe, documented inspections during the season when
-              structures see the most stress.
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" id="faq2-question" aria-expanded="false" aria-controls="faq2-answer">
-              <span>Is this a structural engineering report?</span>
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq2-answer" role="region" aria-labelledby="faq2-question">
-              No. BlueWater provides visual-only, ROV-based documentation. We record what we can see with 4K
-              video and photos and provide a clear summary of observed conditions at the time of inspection.
-              We do not provide structural engineering opinions and always recommend consulting qualified
-              engineers or contractors for design and repair decisions.
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" id="faq3-question" aria-expanded="false" aria-controls="faq3-answer">
-              <span>How far will you travel, and what areas do you cover?</span>
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq3-answer" role="region" aria-labelledby="faq3-question">
-              Our core service area includes Allegan, Ottawa, Muskegon, and Oceana Counties along the West
-              Michigan lakeshore and nearby inland lakes. We typically operate within about 90 minutes of
-              Holland/Grand Rapids. For larger marina, HOA, or insurance projects, we can travel further by
-              arrangement.
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-question" type="button" id="faq4-question" aria-expanded="false" aria-controls="faq4-answer">
-              <span>How quickly will I receive my video, photos, and report?</span>
-              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </button>
-            <div class="faq-answer" id="faq4-answer" role="region" aria-labelledby="faq4-question">
-              Most residential and real estate inspections include a same-day or next-day summary, with full
-              media and report delivered within 48–72 hours. Commercial, marina, and multi-site work may take
-              slightly longer depending on scope, but we always set clear expectations up front.
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section reveal" aria-labelledby="contact-title">
-      <div class="container">
-        <h2 class="section-title" id="contact-title">Schedule Your Inspection</h2>
-        <p class="section-subtitle">
-          Tell us about your waterfront, timing, and goals. We’ll confirm availability, scope, and pricing before
-          anything is scheduled — no surprises.
-        </p>
-
-        <div class="contact-grid">
-          <aside class="contact-card" aria-label="Contact details">
-            <h3>Talk directly to the inspector</h3>
-            <p>
-              You’re not calling a generic service line. You’ll speak with the owner-operator who will be on
-              site with the ROV, from first call through final report.
-            </p>
-
-            <ul class="contact-details">
-              <li>
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <a href="tel:+16165665862">(616) 566-5862</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <a href="mailto:jmonetza@bluewaterrovservices.com">jmonetza@bluewaterrovservices.com</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                Based in Holland, MI • Serving the West Michigan lakeshore and inland lakes
-              </li>
-            </ul>
-
-            <div class="contact-highlight">
-              <strong>Safety &amp; clarity first.</strong> We may reschedule for severe weather or poor
-              visibility, but we’ll always communicate clearly and prioritize both safety and usable footage.
-            </div>
-          </aside>
-
-          <section class="contact-card" aria-label="Inspection request form">
-            <form id="contact-form" action="/contact.php" method="post" novalidate>
-              <div class="form-group">
-                <label for="name">Full Name*</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email*</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" />
-                <span class="form-helper">Best number to reach you if we have questions.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="service">Service Type*</label>
-                <select id="service" name="service" required>
-                  <option value="">Select an option</option>
-                  <option value="dock">Dock &amp; Boat Lift Inspection</option>
-                  <option value="structural">Standard Structural Inspection</option>
-                  <option value="storm">Storm / Ice Damage Assessment</option>
-                  <option value="lost">Lost Item Location &amp; Recovery</option>
-                  <option value="seawall">Seawall / Shoreline Inspection</option>
-                  <option value="hoa">HOA Swim-Area Safety Scan</option>
-                  <option value="marina">Marina or HOA Contract</option>
-                  <option value="buyer">Buyer Due Diligence Package</option>
-                  <option value="insurance">Insurance Claim Documentation</option>
-                  <option value="other">Other / Not Sure</option>
-                </select>
-              </div>
-
-              <div class="form-group full">
-                <label for="location">Lake / Address*</label>
-                <input id="location" name="location" type="text" required />
-                <span class="form-helper">Example: “North Shore, Lake Macatawa” or street address.</span>
-              </div>
-
-              <div class="form-group full">
-                <label for="message">Briefly describe what you’d like inspected*</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                  <span>Send Inspection Request</span>
-                </button>
-                <p class="form-note">
-                  We typically respond within one business day. Your information is used only to respond to
-                  your request and schedule services.
-                </p>
-              </div>
-              <div id="contact-status" class="contact-status" aria-live="polite"></div>
-            </form>
-          </section>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -2272,9 +2208,9 @@
             Professional, ROV-based underwater inspections and documentation for docks, lifts, seawalls, marinas,
             HOAs, contractors, and insurers across West Michigan — including safe under-ice operations and seasonal plans.
           </p>
-          <p class="footer-text mt-2">
+          <p class="footer-text" style="margin-top:0.5rem;">
             Contact: <strong>(616) 566-5862</strong> •
-            <a href="mailto:jmonetza@bluewaterrovservices.com" class="footer-email">jmonetza@bluewaterrovservices.com</a>
+            <a href="mailto:jmonetza@bluewaterrovservices.com" style="color:#e5f3ff;">jmonetza@bluewaterrovservices.com</a>
           </p>
         </div>
 
@@ -2310,7 +2246,7 @@
 
   <!-- JS: NAV, THEME, SCROLL, FAQ, QUOTE, MAP, CONTACT -->
   <script>
-    // Mark JS-enabled for progressive reveal
+    // mark JS-enabled for progressive reveal
     document.documentElement.classList.add("js");
 
     // YEAR
@@ -2328,9 +2264,9 @@
     }
     const updateThemeIcon = () => {
       if (rootEl.getAttribute("data-theme") === "dark") {
-        themeToggle.innerHTML = '<i class="fa-solid fa-sun" aria-hidden="true"></i><span class="sr-only">Use light mode</span>';
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
       } else {
-        themeToggle.innerHTML = '<i class="fa-solid fa-moon" aria-hidden="true"></i><span class="sr-only">Use dark mode</span>';
+        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
       }
     };
     updateThemeIcon();
@@ -2354,13 +2290,14 @@
       });
 
       navLinks.forEach(link => {
-        const isActive = currentSectionId && link.getAttribute("href") === "#" + currentSectionId;
-        link.classList.toggle("is-active", isActive);
-        link.setAttribute("aria-current", isActive ? "page" : "false");
+        link.classList.toggle(
+          "is-active",
+          currentSectionId && link.getAttribute("href") === "#" + currentSectionId
+        );
       });
     });
 
-    // SMOOTH SCROLL for on-page links
+    // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", e => {
         const href = anchor.getAttribute("href");
@@ -2385,8 +2322,8 @@
       const isOpen = navList.classList.toggle("mobile-open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
       navToggle.innerHTML = isOpen
-        ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-        : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
     });
 
     navLinks.forEach(link => {
@@ -2394,7 +2331,7 @@
         if (navList.classList.contains("mobile-open")) {
           navList.classList.remove("mobile-open");
           navToggle.setAttribute("aria-expanded", "false");
-          navToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+          navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         }
       });
     });
@@ -2512,7 +2449,7 @@
       pin.addEventListener("click", () => setActiveCounty(pin.dataset.county));
     });
 
-    // CONTACT FORM – FRONTEND HANDLER
+    // CONTACT FORM – FRONTEND HANDLER (works with PHP backend at /contact.php)
     const contactForm = document.getElementById("contact-form");
     const contactStatus = document.getElementById("contact-status");
 
@@ -2545,4 +2482,5 @@
   </script>
 </body>
 </html>
+
 
