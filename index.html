@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlueWater ROV Services | West Michigan's Premier Underwater Inspection Experts</title>
-    <meta name="description" content="Professional, year-round underwater visual inspections using the Chasing M2 Pro Max ROV. Serving docks, seawalls, marinas, HOAs, insurance claims & real estate due diligence across West Michigan. Fully insured • Under-ice capable • 4K documentation.">
+    <title>BlueWater ROV Services | West Michigan Underwater Inspections – Year-Round, No Divers</title>
+    <meta name="description" content="West Michigan’s only year-round underwater inspection service using the Chasing M2 Pro Max ROV. 4K video, sonar, and professional reports — even under ice. Serving docks, seawalls, marinas, HOAs & real estate due diligence.">
+
+    <!-- Open Graph / Social -->
     <meta property="og:title" content="BlueWater ROV Services – West Michigan Underwater Inspections">
     <meta property="og:description" content="The safest, most advanced way to see what’s really happening beneath your dock or seawall — even under ice.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=2000">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=2000&fit=crop">
     <meta property="og:url" content="https://www.bluewaterrov.com">
     <meta property="og:type" content="website">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous"/>
 
     <style>
         :root {
-            --primary: #003B73;     /* Bluewater Deep */
+            --primary: #003B73;
             --primary-dark: #002550;
-            --secondary: #0096D6;   /* Aqua Current */
+            --secondary: #0096D6;
             --accent: #00C4FF;
             --light: #f8fbff;
             --white: #ffffff;
             --gray: #555f7c;
             --light-gray: #e8f1f9;
             --success: #28a745;
-            --warning: #ffc107;
         }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Inter',sans-serif; line-height:1.75; color:#333; background:var(--white); overflow-x:hidden; }
-        h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:800; color:var(--primary); }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; line-height:1.75; color:#333; background:var(--white); }
+        h1,h2,h3,h4,h5,h6 { font-family:'Montserrat',sans-serif; font-weight:800; color:var(--primary); }
         a { text-decoration:none; color:inherit; }
-        img { max-width:100%; display:block; }
+        img { max-width:100%; display:block; border-radius:12px; }
         .container { max-width:1380px; margin:0 auto; padding:0 30px; }
 
         /* Header */
@@ -46,232 +47,118 @@
             display:flex; justify-content:space-between; align-items:center;
             height:100px; padding:0 40px;
         }
-        .logo {
-            font-size:2.4rem; font-weight:900; color:white;
-            letter-spacing:-0.5px;
-        }
+        .logo { font-size:2.5rem; font-weight:900; color:white; letter-spacing:-1px; }
         .logo span { color:var(--accent); }
-        nav ul {
-            display:flex; gap:44px; list-style:none;
-        }
+        nav ul { display:flex; gap:48px; list-style:none; }
         nav a {
-            color:white; font-weight:600; font-size:1.05rem;
-            position:relative; padding:10px 0;
+            color:white; font-weight:600; font-size:1.05rem; position:relative; padding:10px 0;
+            transition:all 0.3s;
         }
         nav a::after {
-            content:''; position:absolute; bottom:0; left:50%;
-            width:0; height:3px; background:var(--accent);
-            transition:all 0.35s; transform:translateX(-50%);
+            content:''; position:absolute; bottom:0; left:50%; width:0; height:3px;
+            background:var(--accent); transition:width 0.35s; transform:translateX(-50%);
         }
         nav a:hover::after, nav a.active::after { width:100%; }
 
         /* Hero */
         .hero {
-            height:100vh; min-height:780px;
-            background:linear-gradient(135deg, rgba(0,59,115,0.92) 0%, rgba(0,40,85,0.95) 100%),
-                        url('https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=2800') center/cover no-repeat;
-            display:flex; align-items:center; text-align:center; color:white;
-            position:relative;
+            height:100vh; min-height:780px; background:linear-gradient(135deg, rgba(0,59,115,0.94), rgba(0,40,85,0.96)),
+            url('https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=2800') center/cover no-repeat;
+            display:flex; align-items:center; text-align:center; color:white; position:relative;
         }
         .hero::before {
             content:''; position:absolute; inset:0;
             background:radial-gradient(circle at 30% 70%, rgba(0,150,214,0.25), transparent 60%);
         }
         .hero-content { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:0 20px; }
-        .hero h1 {
-            font-size:4.8rem; line-height:1.1; margin-bottom:1.2rem;
-            text-shadow:0 6px 20px rgba(0,0,0,0.6);
-        }
-        .hero .subtitle {
-            font-size:1.55rem; max-width:900px; margin:0 auto 2.8rem;
-            opacity:0.95; font-weight:300;
-        }
+        .hero h1 { font-size:4.9rem; line-height:1.1; margin-bottom:1.2rem; text-shadow:0 6px 20px rgba(0,0,0,0.6); }
+        .hero .subtitle { font-size:1.58rem; max-width:920px; margin:0 auto 3rem; opacity:0.95; font-weight:300; }
         .btn {
-            display:inline-block; padding:18px 48px; border-radius:50px;
-            font-weight:700; font-size:1.2rem; transition:all 0.4s;
-            margin:0 14px; box-shadow:0 10px 30px rgba(0,0,0,0.25);
+            display:inline-block; padding:18px 52px; border-radius:50px; font-weight:700; font-size:1.22rem;
+            transition:all 0.4s; margin:0 16px; box-shadow:0 12px 35px rgba(0,0,0,0.3);
         }
-        .btn-primary {
-            background:var(--accent); color:var(--primary-dark);
-        }
-        .btn-primary:hover {
-            transform:translateY(-6px); background:white;
-            box-shadow:0 20px 40px rgba(0,196,255,0.5);
-        }
-        .btn-outline {
-            border:3px solid white; color:white; background:transparent;
-        }
-        .btn-outline:hover {
-            background:white; color:var(--primary);
-        }
+        .btn-primary { background:var(--accent); color:var(--primary-dark); }
+        .btn-primary:hover { transform:translateY(-7px); background:white; box-shadow:0 22px 45px rgba(0,196,255,0.5); }
+        .btn-outline { border:3px solid white; background:transparent; }
+        .btn-outline:hover { background:white; color:var(--primary); }
 
         /* Trust Bar */
         .trust-bar {
-            background:rgba(255,255,255,0.18); backdrop-filter:blur(15px);
-            padding:28px 0; margin-top:60px; border-radius:16px;
-            border:1px solid rgba(255,255,255,0.15);
+            background:rgba(255,255,255,0.18); backdrop-filter:blur(15px); padding:32px 0; margin-top:70px;
+            border-radius:18px; border:1px solid rgba(255,255,255,0.2);
         }
-        .trust-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:30px; text-align:center; color:white;
-        }
-        .trust-item i { font-size:3rem; margin-bottom:12px; color:var(--accent); }
+        .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:35px; text-align:center; color:white; }
+        .trust-item i { font-size:3.2rem; margin-bottom:14px; color:var(--accent); }
 
-        /* Section Styling */
-        section { padding:130px 0; }
-        .section-title {
-            text-align:center; font-size:3.6rem; margin-bottom:24px;
-        }
-        .section-subtitle {
-            text-align:center; max-width:900px; margin:0 auto 70px;
-            font-size:1.35rem; color:var(--gray); line-height:1.7;
-        }
-        h2::after {
-            content:''; width:110px; height:6px; background:var(--accent);
-            display:block; margin:30px auto 0; border-radius:4px;
-        }
+        /* Sections */
+        section { padding:140px 0; }
+        .section-title { text-align:center; font-size:3.8rem; margin-bottom:26px; }
+        .section-subtitle { text-align:center; max-width:960px; margin:0 auto 80px; font-size:1.38rem; color:var(--gray); line-height:1.7; }
+        h2::after { content:''; width:120px; height:6px; background:var(--accent); display:block; margin:34px auto 0; border-radius:4px; }
 
-        /* Services Grid */
-        .services-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-            gap:40px;
-        }
+        /* Services */
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:45px; }
         .service-card {
-            background:white; border-radius:20px; overflow:hidden;
-            box-shadow:0 15px 45px rgba(0,0,0,0.1); transition:all 0.5s;
+            background:white; border-radius:22px; overflow:hidden; box-shadow:0 18px 50px rgba(0,0,0,0.12);
+            transition:all 0.5s;
         }
-        .service-card:hover {
-            transform:translateY(-20px); box-shadow:0 30px 70px rgba(0,0,0,0.18);
-        }
-        .service-img {
-            height:280px; object-fit:cover; transition:transform 0.6s;
-        }
-        .service-card:hover .service-img { transform:scale(1.08); }
-        .service-body {
-            padding:38px;
-        }
-        .service-body h3 {
-            font-size:1.9rem; margin-bottom:16px;
-        }
-        .service-body ul {
-            margin:20px 0; padding-left:22px; color:#444;
-        }
-        .service-body ul li {
-            margin-bottom:10px; position:relative;
-        }
-        .service-body ul li::before {
-            content:'Check'; color:var(--success); font-weight:bold; margin-right:8px;
-        }
-        .price-tag {
-            font-size:2.2rem; color:var(--primary); font-weight:900;
-            margin-top:20px;
-        }
+        .service-card:hover { transform:translateY(-22px); box-shadow:0 35px 80px rgba(0,0,0,0.2); }
+        .service-img { height:300px; object-fit:cover; transition:transform 0.7s; }
+        .service-card:hover .service-img { transform:scale(1.1); }
+        .service-body { padding:42px; }
+        .service-body h3 { font-size:2rem; margin-bottom:18px; }
+        .service-body ul { margin:22px 0; padding-left:26px; color:#444; }
+        .service-body ul li { margin-bottom:12px; position:relative; }
+        .service-body ul li::before { content:'✓'; color:var(--success); font-weight:bold; position:absolute; left:-26px; }
+        .price-tag { font-size:2.4rem; color:var(--primary); font-weight:900; margin-top:24px; }
 
-        /* Why Choose Section */
-        .why-section {
-            background:linear-gradient(135deg, var(--light) 0%, #e5f3ff 100%);
-        }
-        .why-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:45px;
-        }
-        .why-card {
-            background:white; padding:45px 30px; border-radius:20px;
-            text-align:center; box-shadow:0 12px 40px rgba(0,0,0,0.09);
-        }
-        .why-card i {
-            font-size:4.5rem; color:var(--secondary); margin-bottom:24px;
-        }
-        .why-card h3 { font-size:1.8rem; margin-bottom:16px; }
+        /* Why Choose */
+        .why-section { background:linear-gradient(135deg, var(--light) 0%, #e5f3ff 100%); }
+        .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:50px; }
+        .why-card { background:white; padding:50px 35px; border-radius:22px; text-align:center; box-shadow:0 15px 45px rgba(0,0,0,0.1); }
+        .why-card i { font-size:5rem; color:var(--secondary); margin-bottom:28px; }
+        .why-card h3 { font-size:1.9rem; margin-bottom:18px; }
 
         /* Gallery */
-        .gallery-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-            gap:28px;
-        }
-        .gallery-item {
-            border-radius:18px; overflow:hidden; box-shadow:0 12px 35px rgba(0,0,0,0.15);
-            transition:transform 0.5s;
-        }
-        .gallery-item:hover { transform:scale(1.05); }
+        .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:32px; }
+        .gallery-item { border-radius:20px; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,0.18); transition:transform 0.5s; }
+        .gallery-item:hover { transform:scale(1.06); }
 
-        /* Real Estate Section */
-        .real-estate-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-            gap:40px;
-        }
+        /* Real Estate */
+        .real-estate-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:45px; }
         .package-card {
-            background:white; border-radius:20px; padding:45px 35px;
-            text-align:center; box-shadow:0 15px 50px rgba(0,0,0,0.12);
-            transition:all 0.4s;
+            background:white; border-radius:22px; padding:50px 40px; text-align:center;
+            box-shadow:0 18px 55px rgba(0,0,0,0.12); transition:all 0.4s;
         }
-        .package-card:hover { transform:translateY(-12px); }
-        .package-card h3 {
-            font-size:2rem; margin-bottom:20px; color:var(--primary);
-        }
-        .package-price {
-            font-size:2.8rem; font-weight:900; color:var(--primary);
-            margin:20px 0;
-        }
-        .popular-badge {
-            background:var(--accent); color:var(--primary-dark);
-            padding:8px 24px; border-radius:50px; font-weight:700;
-            display:inline-block; margin-bottom:20px;
-        }
+        .package-card:hover { transform:translateY(-15px); }
+        .popular-badge { background:var(--accent); color:var(--primary-dark); padding:10px 28px; border-radius:50px; font-weight:700; font-size:0.95rem; }
+        .package-price { font-size:3rem; font-weight:900; color:var(--primary); margin:20px 0; }
 
         /* FAQ */
-        .faq-item {
-            background:white; border-radius:16px; margin-bottom:24px;
-            box-shadow:0 8px 30px rgba(0,0,0,0.08); overflow:hidden;
-        }
+        .faq-item { background:white; border-radius:18px; margin-bottom:28px; box-shadow:0 10px 35px rgba(0,0,0,0.09); overflow:hidden; }
         .faq-question {
-            padding:32px; font-size:1.35rem; font-weight:700;
-            cursor:pointer; display:flex; justify-content:space-between;
-            align-items:center; background:var(--light);
+            padding:36px; font-size:1.4rem; font-weight:700; cursor:pointer; background:var(--light);
+            display:flex; justify-content:space-between; align-items:center;
         }
-        .faq-question::after { content:'Plus'; font-size:2rem; color:var(--secondary); }
-        .faq-item.active .faq-question::after { content:'Minus'; }
-        .faq-answer {
-            padding:0 32px; max-height:0; overflow:hidden;
-            transition:all 0.5s ease;
-        }
-        .faq-item.active .faq-answer { padding:32px; max-height:800px; }
+        .faq-question::after { content:'+'; font-size:2.4rem; color:var(--secondary); font-weight:300; }
+        .faq-item.active .faq-question::after { content:'−'; }
+        .faq-answer { padding:0 36px; max-height:0; overflow:hidden; transition:all 0.5s ease; }
+        .faq-item.active .faq-answer { padding:36px; max-height:1000px; }
 
         /* Contact */
-        .contact-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:40px; margin-top:60px;
-        }
-        .contact-card {
-            background:white; padding:50px 35px; border-radius:20px;
-            text-align:center; box-shadow:0 15px 45px rgba(0,0,0,0.1);
-        }
-        .contact-card i { font-size:3.8rem; color:var(--secondary); margin-bottom:24px; }
+        .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:45px; margin-top:70px; }
+        .contact-card { background:white; padding:55px 40px; border-radius:22px; text-align:center; box-shadow:0 18px 50px rgba(0,0,0,0.1); }
+        .contact-card i { font-size:4.2rem; color:var(--secondary); margin-bottom:28px; }
 
         /* Footer */
-        footer {
-            background:var(--primary-dark); color:white; padding:120px 0 50px;
-        }
-        .footer-grid {
-            display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:60px; margin-bottom:80px;
-        }
-        .footer-logo { font-size:2.6rem; font-weight:900; margin-bottom:24px; }
+        footer { background:var(--primary-dark); color:white; padding:140px 0 60px; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:70px; margin-bottom:90px; }
+        .footer-logo { font-size:2.8rem; font-weight:900; margin-bottom:28px; }
         .footer-logo span { color:var(--accent); }
-        .disclaimer {
-            font-size:0.9rem; opacity:0.8; line-height:1.7;
-            border-top:1px solid rgba(255,255,255,0.2); padding-top:40px;
-        }
+        .disclaimer { font-size:0.92rem; opacity:0.82; line-height:1.8; border-top:1px solid rgba(255,255,255,0.2); padding-top:50px; }
 
-        /* Responsive */
-        @media (max-width:992px) {
-            .hero h1 { font-size:3.8rem; }
-            .hero .subtitle { font-size:1.35rem; }
-        }
-        @media (max-width:768px) {
-            .header-inner { padding:0 20px; height:80px; }
-            .hero h1 { font-size:3rem; }
-        }
+        @media (max-width:992px) { .hero h1 { font-size:3.8rem; } .hero .subtitle { font-size:1.35rem; } }
+        @media (max-width:768px) { .header-inner { padding:0 20px; height:80px; } nav ul { gap:20px; } .hero h1 { font-size:3rem; } }
     </style>
 </head>
 <body>
@@ -299,7 +186,7 @@
             <h1>See What Others Can’t</h1>
             <p class="subtitle">West Michigan’s only year-round underwater inspection service using the Chasing M2 Pro Max ROV — delivering crystal-clear 4K video and professional reports, even under solid ice. No divers. No risk. Just answers.</p>
             <div>
-                <a href="#contact" class="btn btn-primary">Schedule Your Inspection</a>
+                <a href="#contact" class="btn btn-primary">Schedule Inspection</a>
                 <a href="#services" class="btn btn-outline">Explore Services</a>
             </div>
 
@@ -307,8 +194,8 @@
                 <div class="trust-grid">
                     <div class="trust-item"><i class="fas fa-shield-alt"></i><br>Fully Insured & Bonded</div>
                     <div class="trust-item"><i class="fas fa-snowflake"></i><br>Under-Ice Specialists</div>
-                    <div class="trust-item"><i class="fas fa-video"></i><br>4K + Sonar Documentation</div>
-                    <div class="trust-item"><i class="fas fa-clock"></i><br>Available 365 Days</div>
+                    <div class="trust-item"><i class="fas fa-video"></i><br>4K + Sonar Reports</div>
+                    <div class="trust-item"><i class="fas fa-clock"></i><br>365-Day Availability</div>
                     <div class="trust-item"><i class="fas fa-star"></i><br>5.0 Client Rating</div>
                 </div>
             </div>
@@ -321,9 +208,243 @@
         <section id="services">
             <div class="container">
                 <h2 class="section-title">Our Professional Inspection Services</h2>
-                <p class="section-subtitle">Every inspection includes 4K video, high-resolution photos, GPS-tagged findings, depth measurements, and a detailed written report delivered within 48 hours.</p>
-
+                <p class="section-subtitle">Every inspection includes 4K video, high-resolution photos, GPS-tagged findings, depth measurements, and a detailed written report delivered within 48 hours. For informational purposes only — not certified engineering assessments.</p>
 
                 <div class="services-grid">
                     <div class="service-card">
-                        <img src
+                        <img src="https://i.ibb.co/0jZJ7kL/dock-inspection.jpg" alt="Dock & Boat Lift" class="service-img">
+                        <div class="service-body">
+                            <h3>Dock & Boat Lift Inspections</h3>
+                            <p>Complete visual survey of cables, pulleys, cradles, anchors, pilings, and all underwater components.</p>
+                            <ul>
+                                <li>Full 360° coverage of entire structure</li>
+                                <li>Cable wear & pulley condition analysis</li>
+                                <li>Anchor chain and block inspection</li>
+                                <li>Post-storm emergency assessments</li>
+                            </ul>
+                            <div class="price-tag">From $225</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://i.ibb.co/4p7Y7gY/seawall.jpg" alt="Seawall" class="service-img">
+                        <div class="service-body">
+                            <h3>Seawall & Erosion Assessments</h3>
+                            <p>Full-length vertical passes identifying visible cracks, toe scour, undermining, and ice damage indicators.</p>
+                            <ul>
+                                <li>Toe, mid-wall, and cap inspection</li>
+                                <li>Filter fabric exposure checks</li>
+                                <li>Backfill loss documentation</li>
+                                <li>Recommendations for next steps</li>
+                            </ul>
+                            <div class="price-tag">$300 – $550</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://i.ibb.co/3hS8YkD/swim-area.jpg" alt="Swim Area" class="service-img">
+                        <div class="service-body">
+                            <h3>HOA Swim-Area Safety Scans</h3>
+                            <p>Grid-pattern hazard mapping with depth contours and marked debris locations.</p>
+                            <ul>
+                                <li>Full bottom sweep & hazard flagging</li>
+                                <li>Depth mapping for diving boards</li>
+                                <li>Annual safety compliance packages</li>
+                            </ul>
+                            <div class="price-tag">$450 – $1,200</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://i.ibb.co/5YhJ7kL/marina.jpg" alt="Marina" class="service-img">
+                        <div class="service-body">
+                            <h3>Marina Slip-by-Slip Surveys</h3>
+                            <p>Detailed visual review of every piling, anchor chain, and underwater hazard.</p>
+                            <ul>
+                                <li>Per-slip video documentation</li>
+                                <li>Piling rot & marine growth assessment</li>
+                                <li>Seasonal or annual contracts available</li>
+                            </ul>
+                            <div class="price-tag">$35 – $75 per slip</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://i.ibb.co/9hZ7kLm/under-ice.jpg" alt="Under Ice" class="service-img">
+                        <div class="service-body">
+                            <h3>Under-Ice Winter Inspections</h3>
+                            <p>Only regional provider offering safe, documented inspections beneath solid ice.</p>
+                            <ul>
+                                <li>Ice pressure damage documentation</li>
+                                <li>Pre-spring planning scans</li>
+                                <li>Safe heated-hole protocols</li>
+                            </ul>
+                            <div class="price-tag">$450+</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://i.ibb.co/4p7Y7gY/storm-damage.jpg" alt="Storm Damage" class="service-img">
+                        <div class="service-body">
+                            <h3>Storm & Insurance Documentation</h3>
+                            <p>Time-stamped, geolocated evidence packages accepted by all major insurers.</p>
+                            <ul>
+                                <li>24–48 hour emergency response</li>
+                                <li>Before/after comparison reports</li>
+                                <li>Direct insurer communication</li>
+                            </ul>
+                            <div class="price-tag">$350 – $650</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why" class="why-section">
+            <div class="container">
+                <h2 class="section-title">Why ROV Beats Traditional Divers</h2>
+                <p class="section-subtitle">The modern, safer, and superior standard for underwater visibility.</p>
+                <div class="why-grid">
+                    <div class="why-card"><i class="fas fa-user-shield"></i><h3>Zero Human Risk</h3><p>Operator stays safely on shore — no dive accidents, no liability exposure</p></div>
+                    <div class="why-card"><i class="fas fa-calendar-check"></i><h3>Truly Year-Round</h3><p>Only provider operating safely under solid ice</p></div>
+                    <div class="why-card"><i class="fas fa-dollar-sign"></i><h3>40–70% Less Cost</h3><p>No dive teams, boats, or decompression delays</p></div>
+                    <div class="why-card"><i class="fas fa-video"></i><h3>Superior Documentation</h3><p>Every inch recorded in 4K — insurers love it</p></div>
+                    <div class="why-card"><i class="fas fa-bolt"></i><h3>Faster Response</h3><p>Same-day scheduling possible</p></div>
+                    <div class="why-card"><i class="fas fa-file-contract"></i><h3>Professional Reports</h3><p>Clear, annotated, and ready for claims or engineers</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+            <div class="container">
+                <h2 class="section-title">Inspection Gallery</h2>
+                <p class="section-subtitle">Real examples of the clarity and detail we deliver to every client</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://i.ibb.co/0jZJ7kL/dock-inspection.jpg" alt="Dock detail"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/4p7Y7gY/seawall.jpg" alt="Seawall toe scour"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/9hZ7kLm/under-ice.jpg" alt="Under-ice operation"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/5YhJ7kL/marina.jpg" alt="Marina piling"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/3hS8YkD/swim-area.jpg" alt="Swim area hazard"></div>
+                    <div class="gallery-item"><img src="https://i.ibb.co/4p7Y7gY/storm-damage.jpg" alt="Storm damage"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Estate Due Diligence -->
+        <section id="real-estate" style="background:var(--light);">
+            <div class="container">
+                <h2 class="section-title">Waterfront Real Estate Due Diligence</h2>
+                <p class="section-subtitle">Eliminate the #1 hidden risk in waterfront purchases — invisible underwater damage that can cost tens of thousands.</p>
+                <div class="real-estate-grid">
+                    <div class="package-card">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Buyer’s Visual Inspection</h3>
+                        <p>Full dock & seawall scan with annotated report</p>
+                        <div class="package-price">$550 – $850</div>
+                    </div>
+                    <div class="package-card">
+                        <h3>Seller’s Pre-Listing Scan</h3>
+                        <p>Document current condition before marketing</p>
+                        <div class="package-price">$450 – $750</div>
+                    </div>
+                    <div class="package-card">
+                        <h3>Commercial & Marina Acquisition</h3>
+                        <p>Complete facility baseline for investors</p>
+                        <div class="package-price">$1,500 – $6,000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Are your inspections certified engineering reports?</div>
+                    <div class="faq-answer">No. We provide detailed visual inspections for informational purposes only. They do not replace certified structural engineering assessments. We recommend consulting a licensed engineer for official certifications.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can you really operate under solid ice?</div>
+                    <div class="faq-answer">Yes — we are the only provider in West Michigan with proven, safe under-ice protocols using heated mats and specialized deployment techniques.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How quickly can you respond after a storm?</div>
+                    <div class="faq-answer">Same-day or next-day emergency response is available throughout our service area.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" style="background:var(--light);">
+            <div class="container">
+                <h2 class="section-title">Get Your Inspection Scheduled</h2>
+                <p class="section-subtitle">Serving Allegan, Ottawa, Muskegon, and Oceana Counties<br>Based in Holland, Michigan</p>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@bluewaterrov.com">info@bluewaterrov.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call or Text</h3>
+                        <p>(616) 555-ROV1<br>Available 7 days a week</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Service Area</h3>
+                        <p>West Michigan Lakeshore<br>Allegan • Ottawa • Muskegon • Oceana</p>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:60px;">
+                    <a href="mailto:info@bluewaterrov.com" class="btn btn-primary" style="font-size:1.4rem; padding:22px 60px;">Request Quote Today</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">BlueWater <span>ROV</span> Services</div>
+                    <p>Professional visual underwater inspections using the Chasing M2 Pro Max ROV. Safe, year-round service for West Michigan waterfront property owners, HOAs, marinas, and real estate professionals.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom:20px; color:var(--accent);">Quick Links</h4>
+                    <ul style="list-style:none; line-height:2.2;">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why">Why Choose Us</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#real-estate">Real Estate</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom:20px; color:var(--accent);">Service Areas</h4>
+                    <p>Allegan County<br>Ottawa County<br>Muskegon County<br>Oceana County<br>West Michigan Lakeshore</p>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>© 2025 BlueWater ROV Services, LLC. All rights reserved.<br>
+                Disclaimer: All services provide non-certified visual inspections for informational purposes only and do not constitute engineering, structural, or professional certifications. Consult licensed professionals for official assessments. Fully insured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 80);
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
