@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueWater ROV Services | Year-Round Underwater Inspections in West Michigan</title>
+    <meta name="description" content="Professional ROV underwater inspections using Chasing M2 Pro Max for docks, seawalls, marinas, HOAs, and real estate due diligence in Allegan, Ottawa, Muskegon, and Oceana Counties. Safe, affordable, and available year-round, including under ice.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003B73; /* Bluewater Deep */
+            --primary-dark: #002954;
+            --secondary: #0096D6; /* Aqua Current */
+            --accent: #00C4FF;
+            --light: #f8f9fa;
+            --dark: #0e2a47;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: #fff;
+        }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; }
+
+        /* Header & Navigation */
+        header {
+            background: var(--primary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .logo span { color: var(--accent); }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+        nav a {
+            color: white;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,59,115,0.85), rgba(0,59,115,0.9)), url('https://images.unsplash.com/photo-1506956191951-7a88da4435e5?q=80&w=1920') no-repeat center center/cover;
+            height: 100vh;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        .hero .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,196,255,0.3);
+        }
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        main { margin-top: 80px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 90px 0; }
+        .text-center { text-align: center; }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text { font-size: 1.1rem; }
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .value-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .value-item i { color: var(--secondary); font-size: 1.5rem; margin-bottom: 10px; }
+
+        /* Pricing Table */
+        .pricing-table {
+            overflow-x: auto;
+            margin: 40px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        td {
+            padding: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) { background: #f8fbff; }
+        .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Real Estate Section */
+        .real-estate {
+            background: var(--light);
+        }
+        .real-estate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .package-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .package-card h3 { color: var(--primary); }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .contact-item i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .footer-logo span { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .header-inner { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { gap: 20px; margin-top: 10px; flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">BlueWater <span>ROV</span> Services</div>
+            <nav>
+                <ul>
+                    <li><a href="#services" class="active">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#real-estate">Real Estate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Safe, Year-Round Underwater Inspections</h1>
+            <p>Using the Chasing M2 Pro Max ROV, we deliver 4K video, sonar mapping, and professional reports for Michigan's waterfronts—available even under ice. Protect your docks, seawalls, and assets without the risks and costs of divers.</p>
+            <div>
+                <a href="#contact" class="btn btn-primary">Schedule Inspection</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="services">
+            <div class="container">
+                <h2 class="text-center">Our Services</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--gray);">
+                    Serving Allegan, Ottawa, Muskegon, and Oceana Counties with safer, more affordable inspections than traditional divers. Year-round operations, including under-ice capabilities.
+                </p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-anchor"></i>
+                        <h3>Dock & Boat Lift Inspections</h3>
+                        <p>4K video scans of cables, pulleys, cradles, anchors, and structural integrity. Basic to full assessments.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Seawall & Erosion Assessments</h3>
+                        <p>Vertical passes identifying cracks, undermining, toe scour, and ice damage for shoreline protection.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-swimmer"></i>
+                        <h3>HOA Swim-Area Safety Scans</h3>
+                        <p>Grid-pattern sweeps for hazards like rocks, debris, and drop-offs, with depth mapping.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-dock"></i>
+                        <h3>Marina Slip-by-Slip Surveys</h3>
+                        <p>Piling checks, anchor reviews, and hazard mapping for full facility compliance and safety.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-snowflake"></i>
+                        <h3>Under-Ice Winter Inspections</h3>
+                        <p>Safe operations through heated mats and protocols to document ice pressure damage.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-search-dollar"></i>
+                        <h3>Insurance & Storm Damage Documentation</h3>
+                        <p>Time-stamped evidence for claims, with condition scoring and annotated reports.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="background: var(--light);">
+            <div class="container">
+                <h2 class="text-center">About BlueWater ROV Services</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
+                            Family-owned and based in Holland, Michigan, BlueWater ROV Services uses the Chasing M2 Pro Max to provide professional underwater inspections that are safer, faster, and more documented than diver services.
+                        </p>
+                        <p><strong>Mission:</strong> To deliver clear, actionable underwater information that helps clients prevent damage, reduce liability, and protect their investments.</p>
+                        <p><strong>Vision:</strong> To become West Michigan’s leading provider of underwater inspection services with a multi-ROV fleet serving waterfront communities.</p>
+                        <div class="core-values">
+                            <div class="value-item">
+                                <i class="fas fa-hard-hat"></i>
+                                <h4>Safety First</h4>
+                                <p>No one enters the water—risk is managed by technology.</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-eye"></i>
+                                <h4>Clarity & Transparency</h4>
+                                <p>4K video, photos, and detailed reports every time.</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-clock"></i>
+                                <h4>Year-Round Reliability</h4>
+                                <p>Available in all conditions, including under ice.</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Innovation</h4>
+                                <p>Advanced ROV tech for precise, efficient inspections.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1593118241263-14602f80b6e2?q=80&w=800" alt="Chasing M2 Pro Max ROV in action" style="border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <h2 class="text-center">Pricing & Packages</h2>
+                <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; color: var(--gray);">
+                    Flat-rate pricing with no hidden fees. Custom quotes for larger projects. Serving West Michigan lakeshore communities.
+                </p>
+                <div class="pricing-table">
+                    <table>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Basic Dock & Lift Inspection</strong></td>
+                            <td>4K video of dock/lift, cables, pulleys, anchors (30-45 min)</td>
+                            <td class="price">$225</td>
