@@ -1,1391 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BlueWater ROV Services | Professional Underwater ROV Inspections</title>
-  <meta name="description" content="BlueWater ROV Services provides commercial-grade underwater ROV inspections for docks, lifts, seawalls, marinas, HOAs, contractors, insurers, and real estate due diligence across West Michigan — including safe winter and under-ice operations." />
+<title>BlueWater ROV Services | Marine ROV Inspections in West Michigan</title>
+<meta name="description"
+content="BlueWater ROV Services provides professional underwater ROV inspections for docks, lifts, seawalls, marinas and HOAs. 4K video, photo documentation, and clear visual-only reports for safer, smarter waterfront decisions." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="BlueWater ROV Services – Professional Underwater ROV Inspections" />
-  <meta property="og:description" content="4K ROV inspections, seawall scans, marina surveys, HOA safety checks, insurance documentation, and buyer due-diligence — serving West Michigan year-round." />
-  <meta property="og:type" content="website" />
+<!-- OpenGraph -->
+<meta property="og:title" content="BlueWater ROV Services – Professional Marine ROV Inspections" />
+<meta property="og:description" content="Underwater drone inspections with 4K video, photo documentation, and safe under-ice capability. Serving the West Michigan lakeshore." />
+<meta property="og:type" content="website" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* ----------------------------------------------------
-      GLOBAL BRAND SYSTEM (COLORS, TYPE, SPACING, LOGO)
-      ---------------------------------------------------- */
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    :root {
-      /* Brand Color System */
-      --blue-900: #001f3a;
-      --blue-800: #00325c;
-      --blue-700: #004a88; /* primary */
-      --blue-600: #0060ad;
-      --blue-500: #007bbf; /* secondary */
-      --blue-300: #4cc7ff;
-      --blue-200: #a9e6ff;
-      --blue-100: #e6f7ff;
+<style>
+/* =========================================================
+   ROOT DESIGN SYSTEM — MARINE / COASTAL LIGHT THEME
+========================================================= */
+:root {
+  --marine-blue: #005a99;
+  --marine-blue-dark: #003f6d;
+  --marine-light: #e8f4ff;
+  --marine-light-2: #f4f9ff;
+  --accent-aqua: #00c7ff;
+  --accent-blue: #0084d1;
+  --text-dark: #0f1b2d;
+  --text-mid: #4f5e73;
+  --white: #fff;
 
-      --accent: #00c4ff;
-      --accent-soft: rgba(0,196,255,0.18);
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
 
-      /* Surface Colors */
-      --white: #ffffff;
-      --gray-900: #0f172a;
-      --gray-700: #334155;
-      --gray-600: #475569;
-      --gray-500: #64748b;
-      --gray-300: #cbd5e1;
-      --gray-200: #e2e8f0;
-      --gray-100: #f1f5f9;
-      --bg: #f6f9ff;
+  --shadow-soft: 0 10px 35px rgba(0,0,0,0.08);
+  --shadow-medium: 0 15px 45px rgba(0,70,140,0.15);
 
-      /* Shadows */
-      --shadow-soft: 0 18px 45px rgba(5, 25, 56, 0.16);
-      --shadow-strong: 0 28px 70px rgba(5, 25, 56, 0.25);
+  --space-1: 0.75rem;
+  --space-2: 1.25rem;
+  --space-3: 2rem;
+  --space-4: 3rem;
+  --space-5: 4rem;
 
-      /* Radii */
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 22px;
-      --radius-xl: 30px;
-      --radius-pill: 999px;
+  /* LOGO VARIABLE — replace with your Base64 string */
+  --logo-img: url("data:image/png;base64,{{BASE64_LOGO_HERE}}");
+}
 
-      /* Typography scale */
-      --font-sans: "Inter", sans-serif;
-      --font-display: "Montserrat", sans-serif;
+/* =========================================================
+   GLOBAL RESETS
+========================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-      /* Spacing system (8px baseline) */
-      --space-1: 0.5rem;
-      --space-2: 1rem;
-      --space-3: 1.5rem;
-      --space-4: 2rem;
-      --space-5: 3rem;
-      --space-6: 4rem;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  background: var(--marine-light-2);
+  line-height: 1.65;
+}
 
-      /* Logo — Base64 embedded once, reused everywhere */
-      --logo: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAADpCAIAAADj8cg0AAEAAElEQVR42pS9d8...AkISShhHJYSau82tXGL9w70131+6M6zswH7ye/B+Lu3b49nabr1KlzkJkBGACZ");
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+section { padding: var(--space-5) 0; }
 
-      /* Layout constants */
-      --header-height: 82px;
-    }
+/* Utility */
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
 
-    /* ----------------------------------------------------
-      CSS RESET + BASE ELEMENTS
-      ---------------------------------------------------- */
+/* =========================================================
+   HEADER — Light Marine + CTA Button
+========================================================= */
+header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: var(--white);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  z-index: 900;
+  transition: 0.3s ease;
+}
 
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+header.scrolled {
+  background: #fefefe;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+.header-inner {
+  height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg);
-      color: var(--gray-900);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
+.logo-img {
+  height: 58px;
+  width: auto;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+/* NAVIGATION */
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
 
-    section {
-      padding: var(--space-6) 0;
-      scroll-margin-top: calc(var(--header-height) + 30px);
-    }
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding-bottom: 0.3rem;
+  position: relative;
+}
 
-    h1, h2, h3 {
-      font-family: var(--font-display);
-    }
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: var(--marine-blue);
+  border-radius: var(--radius-pill);
+}
 
-    h1 {
-      font-size: clamp(2.4rem, 4vw, 3.6rem);
-      font-weight: 800;
-      color: var(--blue-700);
-      line-height: 1.1;
-    }
+/* CTA BUTTON IN NAV */
+.nav-cta {
+  background: var(--marine-blue);
+  padding: 0.7rem 1.5rem;
+  color: var(--white);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  transition: 0.2s ease;
+  border: 2px solid var(--marine-blue);
+}
 
-    h2 {
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 800;
-      text-align: center;
-      color: var(--blue-700);
-      margin-bottom: var(--space-2);
-    }
+.nav-cta:hover {
+  background: var(--white);
+  color: var(--marine-blue);
+  border-color: var(--marine-blue);
+}
 
-    .section-subtitle {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto var(--space-4);
-      color: var(--gray-600);
-      font-size: 1.05rem;
-    }
+/* Mobile nav */
+.nav-toggle { display: none; }
 
-    .container {
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0 var(--space-2);
-    }
+/* =========================================================
+   HERO — Modern Marine Layout w/ Waves
+========================================================= */
+.hero {
+  padding-top: 150px;
+  padding-bottom: 120px;
+  background: linear-gradient(180deg, #e7f4ff, #f9fcff);
+  position: relative;
+}
 
-    /* ----------------------------------------------------
-      REUSABLE BRAND COMPONENTS
-      ---------------------------------------------------- */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' fill='%23e8f4ff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,192L48,192C96,192,192,192,288,170.7C384,149,480,107,576,106.7C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      padding: 0.9rem 2.2rem;
-      border-radius: var(--radius-pill);
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: 0.18s ease;
-      text-align: center;
-      white-space: nowrap;
-    }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--blue-500));
-      color: var(--blue-900);
-      box-shadow: var(--shadow-soft);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-strong);
-      background: linear-gradient(135deg, var(--blue-100), var(--accent));
-    }
+.hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: var(--space-2);
+  color: var(--marine-blue-dark);
+}
 
-    .btn-outline {
-      background: var(--white);
-      color: var(--blue-700);
-      border-color: var(--blue-300);
-    }
-    .btn-outline:hover {
-      background: var(--blue-700);
-      color: var(--white);
-    }
+.hero p {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  max-width: 580px;
+  margin-bottom: var(--space-3);
+}
 
-    /* Logo class for sections that use logo as graphic element */
-    .logo-bg {
-      background-image: var(--logo);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-  </style>
+.hero-cta-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: var(--marine-blue);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid var(--marine-blue);
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--white);
+  color: var(--marine-blue);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--marine-blue);
+  border: 2px solid var(--marine-blue);
+  padding: 1rem 2rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+}
+
+.hero-card {
+  background: var(--white);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+.section-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: var(--space-1);
+  color: var(--marine-blue-dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  margin: auto;
+  max-width: 720px;
+  color: var(--text-mid);
+  margin-bottom: var(--space-4);
+}
+
+/* =========================================================
+   SERVICES — Marine Cards
+========================================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: var(--space-4);
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.service-img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.service-body {
+  padding: var(--space-3);
+}
+
+.service-body h3 {
+  font-family: "Montserrat";
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   WHY US — Marine Advantage Grid
+========================================================= */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.why-card {
+  background: var(--white);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: 0.2s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.why-card i {
+  font-size: 2rem;
+  color: var(--marine-blue);
+  margin-bottom: var(--space-1);
+}
+
+/* =========================================================
+   FAQ — Clean Accordion
+========================================================= */
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: #f1f8ff;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem;
+  transition: 0.25s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-bottom: 1rem;
+}
+
+/* =========================================================
+   CONTACT — Simple + Maritime
+========================================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-4);
+}
+
+.contact-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-3);
+}
+
+/* =========================================================
+   FOOTER — Clean Marine Footer
+========================================================= */
+footer {
+  background: var(--marine-blue-dark);
+  color: var(--white);
+  padding: var(--space-4) 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.footer-logo-img {
+  height: 55px;
+  width: auto;
+}
+
+/* =========================================================
+   SCROLL REVEAL ANIMATIONS
+========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
-<body>
 
-<!-- ======================================================
-     HEADER
-====================================================== -->
+<body>
 <header id="site-header">
   <div class="container header-inner">
+    <div class="header-logo">
+      <img src="data:image/png;base64,{{BASE64_LOGO_HERE}}" class="logo-img" alt="BlueWater ROV Services logo">
+    </div>
 
-    <!-- Logo uses <img> tag per Option 3 -->
-    <a href="#top" class="header-logo">
-      <img 
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAADpCAIAAADj8cg0AAEAAElEQVR42pS9d8...AkISShhHJYSau82tXGL9w70131+6M6zswH7ye/B+Lu3b49nabr1KlzkJkBGACZ" 
-        alt="BlueWater ROV Services logo" 
-        class="header-logo-img"
-      />
-      <span class="header-logo-text">
-        <span class="header-logo-main">BLUEWATER</span>
-        <span class="header-logo-sub">ROV SERVICES</span>
-      </span>
-    </a>
-
-    <!-- Navigation -->
-    <nav class="header-nav" aria-label="Primary Navigation">
+    <nav>
       <ul class="nav-links" id="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#why">Why Us</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#packages">Packages</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
 
-      <!-- Mobile Toggle -->
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle Navigation">
-        ☰
-      </button>
+      <a href="#contact" class="nav-cta">Schedule Inspection</a>
     </nav>
-
   </div>
 </header>
 
-
-<style>
-  /* HEADER STYLES (clean, modern, sticky) */
-  #site-header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: var(--header-height);
-    background: rgba(0,31,69,0.92);
-    backdrop-filter: blur(14px);
-    z-index: 1000;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  #site-header.scrolled {
-    background: rgba(0,18,42,0.98);
-    box-shadow: 0 12px 34px rgba(0,0,0,0.55);
-  }
-
-  .header-inner {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: white;
-  }
-
-  .header-logo-img {
-    height: 48px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  .header-logo-main {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.25rem;
-    letter-spacing: -0.5px;
-    color: var(--white);
-  }
-
-  .header-logo-sub {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    color: var(--blue-200);
-  }
-
-  .header-nav {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1.8rem;
-  }
-
-  .nav-links a {
-    color: var(--white);
-    font-weight: 600;
-    font-size: 0.95rem;
-    position: relative;
-    padding-bottom: 3px;
-  }
-
-  .nav-links a:hover::after,
-  .nav-links a.active::after {
-    width: 100%;
-  }
-
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    height: 2px;
-    width: 0;
-    background: var(--accent);
-    border-radius: 999px;
-    transform: translateX(-50%);
-    transition: 0.2s ease;
-  }
-
-  .nav-cta {
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-pill);
-    border: 1px solid rgba(255,255,255,0.5);
-    background: rgba(255,255,255,0.15);
-  }
-
-  .nav-toggle {
-    display: none;
-    color: var(--white);
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  @media(max-width: 900px){
-    .nav-links { display: none; }
-    .nav-toggle { display: inline-flex; }
-  }
-</style>
-
-
-
-<!-- ======================================================
-     HERO SECTION
-====================================================== -->
-<section id="hero" class="hero-section">
-  <div class="container hero-grid">
-
-    <!-- LEFT COLUMN CONTENT -->
-    <div class="hero-content">
-
-      <div class="hero-badges">
-        <span class="hero-badge"><i class="fa-solid fa-robot"></i> ROV-First Inspections</span>
-        <span class="hero-badge"><i class="fa-solid fa-snowflake"></i> Safe Under-Ice Operation</span>
-      </div>
-
-      <h1>See What’s Really Happening Underwater</h1>
-
-      <p class="hero-subtitle">
-        BlueWater ROV Services delivers precise, visual-only underwater inspections using commercial-grade ROV
-        systems — providing 4K documentation, clear reporting, and year-round availability across West Michigan.
+<!-- =========================================================
+     HERO
+========================================================= -->
+<section class="hero">
+  <div class="container hero-grid reveal">
+    <div>
+      <h1>See What’s Beneath the Surface — Clearly, Safely, Professionally</h1>
+      <p>
+        BlueWater ROV Services delivers commercial-grade underwater inspections
+        for docks, lifts, seawalls, marinas, HOAs, and contractors — complete
+        with 4K video, key photos, and documented findings.
       </p>
 
-      <p class="hero-meta">
-        Based in Holland, MI • Serving Allegan, Ottawa, Muskegon &amp; Oceana Counties
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Schedule Your Inspection</a>
-        <a href="tel:+16165665862" class="btn btn-outline">(616) 566-5862</a>
-      </div>
-
-    </div>
-
-    <!-- RIGHT COLUMN — DEMO MEDIA CARD -->
-    <div class="hero-media">
-      <div class="hero-card">
-        <div class="hero-card-header">
-          <span class="hero-card-title">Sample ROV Feed</span>
-          <span class="hero-chip"><i class="fa-solid fa-circle-dot"></i> 4K Capture</span>
-        </div>
-
-        <div class="hero-card-body">
-          <img 
-            src="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=1800" 
-            alt="Underwater ROV footage example" 
-            class="hero-video"
-          />
-
-          <ul class="hero-points">
-            <li><i class="fa-solid fa-check"></i> Dock, lift, and structure maneuvering</li>
-            <li><i class="fa-solid fa-check"></i> Lighting tuned for Michigan lake clarity</li>
-            <li><i class="fa-solid fa-check"></i> Clips & stills saved for report</li>
-          </ul>
-        </div>
-
-        <div class="hero-card-footer">
-          <span>Typical visit: 30–60 minutes</span>
-          <span>Owner-operated • Fully insured</span>
-        </div>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Inspection</a>
+        <a href="tel:+16165665862" class="btn-outline"><i class="fa-solid fa-phone"></i> (616) 566-5862</a>
       </div>
     </div>
 
-  </div>
-</section>
-
-<style>
-  /* HERO styles */
-  .hero-section {
-    padding-top: calc(var(--header-height) + var(--space-4));
-    background: radial-gradient(circle at 0% 0%, var(--accent-soft), transparent 60%),
-                radial-gradient(circle at 100% 100%, rgba(0,59,115,0.25), transparent 60%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: var(--space-4);
-    align-items: center;
-  }
-
-  @media(max-width: 900px){
-    .hero-grid { grid-template-columns: 1fr; text-align: center; }
-  }
-
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: var(--space-2);
-  }
-
-  .hero-badge {
-    background: rgba(7,18,39,0.8);
-    border: 1px solid rgba(148,197,255,0.7);
-    border-radius: var(--radius-pill);
-    padding: 0.4rem 0.9rem;
-    color: var(--white);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    margin: var(--space-2) 0;
-    max-width: 600px;
-    color: var(--gray-700);
-  }
-
-  .hero-meta {
-    color: var(--gray-600);
-    margin-bottom: var(--space-3);
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-media { display: flex; justify-content: center; }
-
-  .hero-card {
-    background: rgba(7,18,39,0.92);
-    border-radius: var(--radius-lg);
-    padding: var(--space-3);
-    color: var(--white);
-    box-shadow: var(--shadow-strong);
-    max-width: 480px;
-    width: 100%;
-  }
-
-  .hero-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-2);
-  }
-
-  .hero-card-title {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 700;
-    color: var(--blue-200);
-  }
-
-  .hero-chip {
-    padding: 0.25rem 0.7rem;
-    border-radius: var(--radius-pill);
-    background: rgba(255,255,255,0.1);
-    border: 1px solid var(--blue-300);
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-
-  .hero-video {
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-2);
-    border: 1px solid rgba(148,197,255,0.4);
-  }
-
-  .hero-points li {
-    color: var(--blue-200);
-    margin-bottom: 0.35rem;
-    display: flex;
-    gap: 0.4rem;
-    font-size: 0.92rem;
-  }
-
-  .hero-card-footer {
-    margin-top: var(--space-2);
-    font-size: 0.8rem;
-    display: flex;
-    justify-content: space-between;
-    color: var(--blue-200);
-    opacity: 0.9;
-  }
-</style>
-
-
-
-<!-- ======================================================
-     TRUST BAR (icons)
-====================================================== -->
-<section class="trust-bar">
-  <div class="container trust-grid">
-
-    <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> Safety-First Operations</div>
-    <div class="trust-item"><i class="fa-solid fa-snowflake"></i> Winter & Under-Ice Capability</div>
-    <div class="trust-item"><i class="fa-solid fa-video"></i> 4K Video & Photo Documentation</div>
-    <div class="trust-item"><i class="fa-solid fa-file-circle-check"></i> Clear Findings Summary</div>
-    <div class="trust-item"><i class="fa-solid fa-location-dot"></i> West Michigan Focused</div>
-
-  </div>
-</section>
-
-<style>
-  .trust-bar {
-    background: rgba(0,18,42,0.95);
-    color: var(--blue-200);
-    padding: var(--space-2) 0;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.35);
-  }
-
-  .trust-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-    text-align: center;
-    font-size: 0.95rem;
-  }
-
-  .trust-item i {
-    display: block;
-    font-size: 1.6rem;
-    margin-bottom: 0.35rem;
-    color: var(--accent);
-  }
-</style>
-
-
-
-<!-- ======================================================
-     WHY BLUEWATER
-====================================================== -->
-<section id="why" class="why-section">
-  <div class="container">
-    <h2>Why Choose BlueWater ROV Services?</h2>
-    <p class="section-subtitle">
-      Purpose-built ROV inspections — not divers, not hobby drones. Just clean documentation,
-      safe operation, and actionable results.
-    </p>
-
-    <div class="why-grid">
-
-      <!-- ROV Platform -->
-      <article class="why-card">
-        <h3>Commercial-Grade ROV Platform</h3>
-        <p>
-          Our ROV system provides highly stable 4K video, powerful adjustable lighting, precision maneuvering
-          around tight lakefront structures, and a long tether allowing flexible access in challenging or murky water.
-        </p>
-        <ul>
-          <li>Stabilized video for low-visibility conditions</li>
-          <li>High-output lighting for dark or deep water</li>
-          <li>Ideal for docks, lifts, pilings, seawalls & debris surveys</li>
-        </ul>
-      </article>
-
-      <!-- Safety -->
-      <article class="why-card">
-        <h3>Safe, Year-Round Operation</h3>
-        <p>
-          No divers, no risk, no exposure. Winter and under-ice inspections are performed using a clean access hole,
-          controlled tethering, continuous monitoring, and an abort-ready safety protocol.
-        </p>
-        <ul>
-          <li>Under-ice capability with controlled launch procedure</li>
-          <li>No diver fatigue, entanglement, or cold-shock hazards</li>
-          <li>Ideal after storms or freeze-thaw cycles</li>
-        </ul>
-      </article>
-
-      <!-- Reporting -->
-      <article class="why-card">
-        <h3>Actionable Reporting</h3>
-        <p>
-          Every client receives organized video files, key still photos, and a plain-language findings
-          summary structured for homeowners, HOAs, contractors, adjusters, or real-estate agents.
-        </p>
-        <ul>
-          <li>Download link to 4K video + documentation</li>
-          <li>Clear recommendations: Monitor / Plan Repair / Act Now</li>
-          <li>Ready for board packets, bids & insurance files</li>
-        </ul>
-      </article>
-
-      <!-- Local & Owner Operated -->
-      <article class="why-card">
-        <h3>Local, Owner-Operated</h3>
-        <p>
-          BlueWater ROV Services is based in Holland, MI and focused on West Michigan lakes.
-          You communicate directly with the operator who performs your inspection, reviews the footage, 
-          and creates the final deliverables.
-        </p>
-        <ul>
-          <li>Fast response for storms or urgent concerns</li>
-          <li>Deep knowledge of local lakes & contractors</li>
-          <li>Clear expectations & transparent pricing</li>
-        </ul>
-      </article>
-
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&w=1600"
+      alt="Underwater ROV scanning structure">
     </div>
   </div>
 </section>
 
-<style>
-  .why-section {
-    background: linear-gradient(180deg, var(--bg), #f9fbff);
-  }
-
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: var(--space-3);
-  }
-
-  .why-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    padding: var(--space-3);
-    box-shadow: var(--shadow-soft);
-  }
-
-  .why-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    margin-bottom: var(--space-2);
-    color: var(--blue-700);
-  }
-
-  .why-card ul {
-    margin-top: var(--space-2);
-    padding-left: 1rem;
-    color: var(--gray-700);
-  }
-
-  .why-card ul li {
-    margin-bottom: 0.4rem;
-    font-size: 0.92rem;
-  }
-</style>
-<!-- ======================================================
+<!-- =========================================================
      SERVICES
-====================================================== -->
-<section id="services">
-  <div class="container">
-    <h2>Core ROV Inspection Services</h2>
-    <p class="section-subtitle">
-      Visual-only, commercial-grade underwater inspections for homeowners, HOAs, marinas, contractors, 
-      insurers, and real-estate professionals — with 4K documentation and clear reporting.
-    </p>
+========================================================= -->
+<section id="services" class="reveal">
+  <h2 class="section-title">Professional Marine ROV Services</h2>
+  <p class="section-subtitle">Clear, visual-only documentation with 4K footage, key photos, and organized reports.</p>
 
-    <div class="services-grid">
+  <div class="container services-grid">
+    <!-- SERVICE 1 -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800" class="service-img" alt="">
+      <div class="service-body">
+        <h3>Residential Dock & Lift Inspections</h3>
+        <p>Catch issues before they become expensive repairs. Ideal for seasonal checks or storm checks.</p>
+      </div>
+    </div>
 
-      <!-- Residential -->
-      <article class="service-card">
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=2000" 
-               alt="Residential dock and lift being inspected by ROV">
-        </div>
-        <div class="service-body">
-          <h3>Residential Dock & Lift Inspections</h3>
-          <p class="service-tagline">
-            Protect your dock, lift, and shoreline assets with clean, early-season or post-storm visual documentation.
-          </p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Spring, mid-season, and fall inspections</li>
-            <li><i class="fa-solid fa-check"></i> Cable, pulley, cradle & support evaluation</li>
-            <li><i class="fa-solid fa-check"></i> Post-storm impact checks</li>
-            <li><i class="fa-solid fa-check"></i> Optional lost-item recovery scans</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">From $225</span>
-            <a href="#contact" class="btn btn-outline">Request Quote</a>
-          </div>
-        </div>
-      </article>
+    <!-- SERVICE 2 -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1800" class="service-img" alt="">
+      <div class="service-body">
+        <h3>Seawall & Shoreline Documentation</h3>
+        <p>Identify toe scour, undermining, voids and erosion patterns with repeatable video paths.</p>
+      </div>
+    </div>
 
-      <!-- Seawall / HOA -->
-      <article class="service-card">
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000" 
-               alt="Seawall underwater examination">
-        </div>
-        <div class="service-body">
-          <h3>Seawall, Shoreline & HOA Safety Scans</h3>
-          <p class="service-tagline">
-            Identify undermining, erosion, voids, and swim-area hazards with repeatable, documented inspections.
-          </p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Toe scour, cracking & bulging detection</li>
-            <li><i class="fa-solid fa-check"></i> HOA swim-area hazard surveys</li>
-            <li><i class="fa-solid fa-check"></i> Erosion & depth mapping</li>
-            <li><i class="fa-solid fa-check"></i> Perfect for annual documentation</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">From $300</span>
-            <a href="#contact" class="btn btn-outline">Plan Inspection</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Commercial -->
-      <article class="service-card">
-        <div class="service-media">
-          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2000" 
-               alt="Commercial marina infrastructure">
-        </div>
-        <div class="service-body">
-          <h3>Marina, Contractor & Insurance Documentation</h3>
-          <p class="service-tagline">
-            Repeatable, structured ROV documentation for operations, bids, progress tracking, and insurance claims.
-          </p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Marina slip-by-slip inspections</li>
-            <li><i class="fa-solid fa-check"></i> Pre-bid and pre-construction scans</li>
-            <li><i class="fa-solid fa-check"></i> Progress & post-construction media</li>
-            <li><i class="fa-solid fa-check"></i> Claims-ready video & stills</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">Custom Pricing</span>
-            <a href="#contact" class="btn btn-outline">Start a Project</a>
-          </div>
-        </div>
-      </article>
-
+    <!-- SERVICE 3 -->
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1800" class="service-img" alt="">
+      <div class="service-body">
+        <h3>Marina & Contractor Support</h3>
+        <p>Slip-by-slip marina surveys, pre-construction scans, and insurance documentation.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<style>
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
-    gap: var(--space-3);
-  }
-  .service-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
-    transition: 0.25s ease;
-  }
-  .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-strong);
-  }
-  .service-media img {
-    height: 200px;
-    object-fit: cover;
-    width: 100%;
-  }
-  .service-body {
-    padding: var(--space-3);
-  }
-  .service-tagline {
-    font-size: 0.95rem;
-    color: var(--gray-600);
-    margin: 0.5rem 0 1rem;
-  }
-  .service-body ul {
-    padding-left: 1.2rem;
-    margin-bottom: var(--space-3);
-  }
-  .service-body ul li {
-    margin-bottom: 0.35rem;
-    color: var(--gray-700);
-    display: flex;
-    gap: 0.4rem;
-  }
-  .service-body ul li i {
-    color: var(--accent);
-    margin-top: 0.2rem;
-  }
-  .service-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .service-price {
-    font-weight: 800;
-    font-size: 1.3rem;
-    color: var(--blue-700);
-  }
-</style>
+<!-- =========================================================
+     WHY US
+========================================================= -->
+<section id="why" class="reveal">
+  <h2 class="section-title">Why BlueWater?</h2>
+  <p class="section-subtitle">Built specifically for West Michigan lakes. No divers, no risk — just safer, clearer, more useful underwater information.</p>
 
+  <div class="container why-grid">
+    <div class="why-card">
+      <i class="fa-solid fa-robot"></i>
+      <h3>Commercial-Grade ROV Platform</h3>
+      <p>High-output lighting, 4K recording, stabilizing thrusters, and precise control for tight areas.</p>
+    </div>
 
+    <div class="why-card">
+      <i class="fa-solid fa-snowflake"></i>
+      <h3>Safe Winter & Under-Ice Work</h3>
+      <p>Controlled access points, stability mats, vertical tether discipline and strict under-ice SOP.</p>
+    </div>
 
-<!-- ======================================================
-     GALLERY
-====================================================== -->
-<section id="gallery">
-  <div class="container">
-    <h2>Underwater View Gallery</h2>
-    <p class="section-subtitle">
-      Representative images showing the types of structures, conditions, and underwater environments we document.
-    </p>
+    <div class="why-card">
+      <i class="fa-solid fa-file-circle-check"></i>
+      <h3>Clear, Actionable Reporting</h3>
+      <p>No digging through raw footage — you get organized clips, key stills, and a readable summary.</p>
+    </div>
 
-    <div class="gallery-grid">
+    <div class="why-card">
+      <i class="fa-solid fa-handshake"></i>
+      <h3>Owner-Operated, Local & Reliable</h3>
+      <p>You work directly with the operator — no rotating crews, no confusion.</p>
+    </div>
+  </div>
+</section>
 
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2000" 
-             alt="Dock piling inspection">
-        <figcaption>Dock pilings & underwater brackets</figcaption>
-      </figure>
+<!-- =========================================================
+     PACKAGES
+========================================================= -->
+<section id="packages" class="reveal">
+  <h2 class="section-title">Seasonal & Project Packages</h2>
+  <p class="section-subtitle">Flexible options for homeowners, marinas, HOAs and insurance partners.</p>
 
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000" 
-             alt="Seawall examination">
-        <figcaption>Seawall voids & structural cracking</figcaption>
-      </figure>
+  <div class="container services-grid">
 
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1534448311378-1e193fb2570e?q=80&w=2000" 
-             alt="Marina underwater view">
-        <figcaption>Marina slip infrastructure & debris</figcaption>
-      </figure>
+    <div class="service-card">
+      <div class="service-body">
+        <h3>Buyer Waterfront Inspection</h3>
+        <p>Pre-purchase clarity with 4K video, structural review, and negotiation-ready documentation.</p>
+        <strong>$495</strong>
+      </div>
+    </div>
 
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1520694478166-daaaaec95b69?q=80&w=2000" 
-             alt="Under-ice ROV inspection">
-        <figcaption>Under-ice inspection environment</figcaption>
-      </figure>
+    <div class="service-card">
+      <div class="service-body">
+        <h3>Residential Seasonal Plan</h3>
+        <p>Spring, summer, fall, and optional storm checks with photo/video reference sets.</p>
+        <strong>$300–$1200</strong>
+      </div>
+    </div>
 
+    <div class="service-card">
+      <div class="service-body">
+        <h3>Marina / HOA Contracts</h3>
+        <p>Slip-by-slip inspections, shoreline surveys, hazard mapping, and annual documentation.</p>
+        <strong>Custom</strong>
+      </div>
     </div>
 
   </div>
 </section>
 
-<style>
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
-    gap: var(--space-3);
-  }
-  .gallery-item {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    position: relative;
-    background: var(--white);
-    transition: 0.25s ease;
-  }
-  .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
-  }
-  .gallery-item img {
-    height: 220px;
-    width: 100%;
-    object-fit: cover;
-  }
-  .gallery-item figcaption {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 0.6rem 1rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    color: var(--white);
-    font-size: 0.9rem;
-  }
-</style>
-
-
-
-<!-- ======================================================
-     PACKAGES & PLANS
-====================================================== -->
-<section id="packages">
-  <div class="container">
-    <h2>Packages & Seasonal Plans</h2>
-    <p class="section-subtitle">
-      Choose a single inspection, a seasonal plan, or a custom contract program built for marinas, HOAs, 
-      contractors, and insurers.
-    </p>
-
-    <div class="packages-grid">
-
-      <!-- Buyer Package -->
-      <article class="package-card featured">
-        <span class="package-badge">Most Popular</span>
-        <h3>Buyer’s Waterfront Condition Package</h3>
-        <div class="package-price">$495</div>
-        <p class="package-note">
-          Designed for real estate inspections and pre-closing due diligence. 
-          Identify high-cost underwater risks early.
-        </p>
-        <ul>
-          <li><i class="fa-solid fa-check"></i> 4K visual documentation of dock, lift & seawall</li>
-          <li><i class="fa-solid fa-check"></i> Key still photos & simple findings summary</li>
-          <li><i class="fa-solid fa-check"></i> Supports negotiation & repair planning</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;">Book Inspection</a>
-      </article>
-
-      <!-- Seasonal Plans -->
-      <article class="package-card">
-        <h3>Residential Seasonal Plans</h3>
-        <div class="package-price">$300–$1,200</div>
-        <p class="package-note">
-          Year-round visibility into your waterfront structures, with regular inspections & priority scheduling.
-        </p>
-        <ul>
-          <li><i class="fa-solid fa-check"></i><strong>Bronze — $300:</strong> Spring & Fall scans</li>
-          <li><i class="fa-solid fa-check"></i><strong>Silver — $500:</strong> 3 seasonal scans + video clips</li>
-          <li><i class="fa-solid fa-check"></i><strong>Gold — $800–$1,200:</strong> 4 seasonal scans + 1 emergency visit</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;">Ask About Plans</a>
-      </article>
-
-      <!-- Commercial -->
-      <article class="package-card">
-        <h3>Marina, HOA & Insurance Programs</h3>
-        <div class="package-price">Custom Contract</div>
-        <p class="package-note">
-          Built around your schedule, scope, and documentation needs.
-        </p>
-        <ul>
-          <li><i class="fa-solid fa-check"></i> Slip-by-slip marina documentation</li>
-          <li><i class="fa-solid fa-check"></i> HOA swim-area hazard mapping</li>
-          <li><i class="fa-solid fa-check"></i> Insurance-grade claim files</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline" style="width:100%;">Schedule Discovery Call</a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<style>
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: var(--space-3);
-  }
-  .package-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-200);
-    padding: var(--space-3);
-    box-shadow: var(--shadow-soft);
-    position: relative;
-  }
-  .featured {
-    border: 2px solid var(--accent);
-    transform: translateY(-4px);
-  }
-  .package-badge {
-    background: linear-gradient(135deg,var(--accent),var(--blue-500));
-    padding: 0.3rem 0.75rem;
-    border-radius: var(--radius-pill);
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--blue-900);
-    display: inline-block;
-    margin-bottom: 0.7rem;
-  }
-  .package-price {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: var(--blue-700);
-    margin: 0.5rem 0;
-  }
-  .package-note {
-    color: var(--gray-600);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-  .package-card ul {
-    margin-bottom: var(--space-3);
-    padding-left: 1.2rem;
-  }
-  .package-card ul li {
-    margin-bottom: 0.4rem;
-    color: var(--gray-700);
-    display: flex;
-    gap: 0.4rem;
-  }
-  .package-card ul li i {
-    color: var(--accent);
-    margin-top: 0.2rem;
-  }
-</style>
-
-
-
-<!-- ======================================================
+<!-- =========================================================
      FAQ
-====================================================== -->
-<section id="faq">
+========================================================= -->
+<section id="faq" class="reveal">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
   <div class="container">
-    <h2>Frequently Asked Questions</h2>
-    <p class="section-subtitle">Common questions from homeowners, marinas, HOAs, contractors, and insurers.</p>
-
-    <div class="faq-list">
-
-      <!-- Q1 -->
-      <article class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Do you operate under ice?</span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <div class="faq-answer">
-          Yes — safely. We follow a strict under-ice procedure:
-          verifying ice thickness, cutting a clean launch hole, 
-          using mats, maintaining tether discipline, and aborting 
-          immediately if conditions shift.
-        </div>
-      </article>
-
-      <!-- Q2 -->
-      <article class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Is this a structural engineering report?</span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <div class="faq-answer">
-          No. We provide visual-only documentation using a commercial-grade ROV. 
-          We do not offer engineering opinions and always recommend qualified 
-          professionals for design or repair work.
-        </div>
-      </article>
-
-      <!-- Q3 -->
-      <article class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What is your service area?</span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <div class="faq-answer">
-          We serve Allegan, Ottawa, Muskegon & Oceana Counties and can travel further 
-          for commercial, marina, or HOA projects.
-        </div>
-      </article>
-
-      <!-- Q4 -->
-      <article class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>How fast do I receive my report?</span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-        <div class="faq-answer">
-          Most residential jobs include same-day or next-day summaries, 
-          with full media delivered within 48–72 hours.
-        </div>
-      </article>
-
+    <div class="faq-item">
+      <button class="faq-question">Do you operate under ice?</button>
+      <div class="faq-answer">
+        <p>Yes — we specialize in cold-water and under-ice ROV operations using a strict safety protocol.</p>
+      </div>
     </div>
 
-  </div>
-</section>
+    <div class="faq-item">
+      <button class="faq-question">Is this a structural engineering report?</button>
+      <div class="faq-answer">
+        <p>No — this is visual-only documentation. Engineering evaluation should be done by licensed professionals.</p>
+      </div>
+    </div>
 
-<style>
-  .faq-list {
-    max-width: 820px;
-    margin: 0 auto;
-  }
-  .faq-item {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
-  }
-  .faq-question {
-    width: 100%;
-    background: var(--gray-100);
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1.25rem;
-    font-size: 0.95rem;
-    color: var(--gray-700);
-    transition: max-height 0.3s ease, padding 0.25s ease;
-  }
-  .faq-item.open .faq-answer {
-    max-height: 300px;
-    padding: 1rem 1.25rem;
-  }
-  .faq-item.open .faq-question i {
-    transform: rotate(90deg);
-  }
-</style>
-<!-- =============================== -->
-<!--        CONTACT SECTION          -->
-<!-- =============================== -->
-<section id="contact" class="contact-section" aria-labelledby="contact-title">
-  <div class="container">
-    <h2 class="section-title" id="contact-title">Schedule Your Inspection</h2>
-    <p class="section-subtitle">
-      Tell us about your waterfront, timing, and goals. We’ll confirm scope, availability, and pricing before anything is scheduled.
-    </p>
-
-    <div class="contact-grid">
-      <!-- CONTACT INFO CARD -->
-      <aside class="contact-card" aria-label="Contact details">
-        <h3>Talk Directly to the Owner-Operator</h3>
-        <p>
-          No answering service. No generic email queue. You’ll speak directly with the person who performs your inspection, reviews the footage, and writes your report.
-        </p>
-
-        <ul class="contact-details">
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+16165665862">(616) 566-5862</a>
-          </li>
-          <li>
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:jmonetza@bluewaterrovservices.com">jmonetza@bluewaterrovservices.com</a>
-          </li>
-          <li>
-            <i class="fa-solid fa-location-dot"></i>
-            Based in Holland, MI • Serving the West Michigan lakeshore and inland lakes
-          </li>
-        </ul>
-
-        <div class="contact-highlight">
-          <strong>Safety first.</strong> Severe weather, unstable ice, or poor clarity may require rescheduling. You’ll always be informed clearly and promptly.
-        </div>
-      </aside>
-
-      <!-- CONTACT FORM -->
-      <section class="contact-card" aria-label="Inspection request form">
-        <form action="#" method="post" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name*</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email*</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" />
-            <span class="form-helper">Helpful if we need clarification before your inspection.</span>
-          </div>
-
-          <div class="form-group">
-            <label for="service">Service Type*</label>
-            <select id="service" name="service" required>
-              <option value="">Select an option</option>
-              <option value="dock">Dock &amp; Lift Inspection</option>
-              <option value="storm">Storm / Ice Damage Assessment</option>
-              <option value="seawall">Seawall / Shoreline Scan</option>
-              <option value="hoa">HOA Swim Area Safety</option>
-              <option value="buyer">Buyer Due-Diligence Package</option>
-              <option value="insurance">Insurance Claim Documentation</option>
-              <option value="marina">Marina / Contractor Documentation</option>
-              <option value="lost">Lost Item Location</option>
-              <option value="other">Other / Not Sure</option>
-            </select>
-          </div>
-
-          <div class="form-group full">
-            <label for="location">Lake / Address*</label>
-            <input id="location" name="location" type="text" required />
-            <span class="form-helper">Examples: “Lake Macatawa — North Shore” or street address.</span>
-          </div>
-
-          <div class="form-group full">
-            <label for="message">Describe your situation*</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">
-              <i class="fa-solid fa-paper-plane"></i>
-              Send Inspection Request
-            </button>
-            <p class="form-note">
-              We typically respond within one business day. Your information is kept private and secure.
-            </p>
-          </div>
-        </form>
-      </section>
+    <div class="faq-item">
+      <button class="faq-question">What areas do you cover?</button>
+      <div class="faq-answer">
+        <p>Ottawa, Allegan, Muskegon, Oceana, and surrounding West Michigan regions.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- =============================== -->
-<!--             FOOTER              -->
-<!-- =============================== -->
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+<section id="contact" class="reveal">
+  <h2 class="section-title">Schedule Your Inspection</h2>
+  <p class="section-subtitle">We respond within one business day.</p>
+
+  <div class="container contact-grid">
+
+    <div class="contact-card">
+      <h3>Contact Info</h3>
+      <ul class="contact-details">
+        <li><i class="fa-solid fa-phone"></i> <a href="tel:+16165665862">(616) 566-5862</a></li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:jmonetza@bluewaterrovservices.com">jmonetza@bluewaterrovservices.com</a></li>
+        <li><i class="fa-solid fa-location-dot"></i> Holland, MI & West Michigan Lakeshore</li>
+      </ul>
+    </div>
+
+    <form class="contact-card">
+      <label>Name*</label>
+      <input required>
+
+      <label>Email*</label>
+      <input type="email" required>
+
+      <label>Lake / Address*</label>
+      <input required>
+
+      <label>Service Needed*</label>
+      <select required>
+        <option>Dock & Lift Inspection</option>
+        <option>Seawall Scan</option>
+        <option>Storm / Ice Check</option>
+        <option>Buyer Package</option>
+        <option>Marina / HOA</option>
+      </select>
+
+      <label>Message*</label>
+      <textarea required></textarea>
+
+      <button class="btn-primary" style="margin-top:1rem;">Send Request</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <!-- BRAND BLOCK -->
-      <div>
-        <div class="footer-brand">
-          <img src="data:image/png;base64,{{LOGO_BASE64}}" alt="BlueWater ROV Services logo" class="footer-logo-img" />
-          <div class="footer-brand-text">
-            <span class="footer-brand-text-main">BlueWater ROV Services</span>
-            <span class="footer-brand-text-sub">UNDERWATER INSPECTIONS</span>
-          </div>
-        </div>
-        <p class="footer-text">
-          Professional, ROV-based underwater inspections for docks, lifts, seawalls, marinas, HOAs, and insurers — including cold-water and under-ice capability.
-        </p>
+  <div class="container footer-grid">
 
-        <p class="footer-text" style="margin-top:0.5rem;">
-          <strong>(616) 566-5862</strong> •
-          <a href="mailto:jmonetza@bluewaterrovservices.com" style="color:#e5f3ff;">jmonetza@bluewaterrovservices.com</a>
-        </p>
-      </div>
-
-      <!-- QUICK LINKS -->
-      <div>
-        <div class="footer-heading">Quick Links</div>
-        <ul class="footer-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Schedule Inspection</a></li>
-        </ul>
-      </div>
-
-      <!-- SERVICE AREAS -->
-      <div>
-        <div class="footer-heading">Service Areas</div>
-        <ul class="footer-links">
-          <li>Ottawa County</li>
-          <li>Allegan County</li>
-          <li>Muskegon County</li>
-          <li>Oceana County</li>
-        </ul>
-      </div>
+    <div>
+      <img src="data:image/png;base64,{{BASE64_LOGO_HERE}}" class="footer-logo-img" alt="BlueWater ROV Logo">
+      <p style="margin-top:1rem;">Professional ROV inspections for docks, lifts, seawalls, marinas, HOAs, and waterfront buyers.</p>
     </div>
 
-    <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> BlueWater ROV Services, LLC. All rights reserved.</span>
-      <span>Visual-only ROV inspections. Not a structural engineering service.</span>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Schedule</a></li>
+      </ul>
     </div>
+
+    <div>
+      <h4>Service Areas</h4>
+      <ul class="footer-links">
+        <li>Ottawa County</li>
+        <li>Allegan County</li>
+        <li>Muskegon County</li>
+        <li>Oceana County</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:2rem;font-size:0.85rem;">
+    © <span id="year"></span> BlueWater ROV Services. All rights reserved.
   </div>
 </footer>
 
-<!-- =============================== -->
-<!--             JAVASCRIPT          -->
-<!-- =============================== -->
+<!-- =========================================================
+     JAVASCRIPT — Scroll Reveal / ScrollSpy / FAQ
+========================================================= -->
 <script>
-/* ===============================
-      Year Auto-Update
-================================= */
+// YEAR AUTO-UPDATE
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ===============================
-      Sticky Header Scroll Logic
-================================= */
+// STICKY HEADER
 const header = document.getElementById("site-header");
-const navLinks = document.querySelectorAll(".nav-links a");
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 20);
+});
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+// FAQ
+document.querySelectorAll(".faq-item").forEach(item => {
+  const q = item.querySelector(".faq-question");
+  q.addEventListener("click", () => {
+    item.classList.toggle("open");
+  });
+});
+
+// SCROLL SPY
+const links = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 30);
-
-  let currentSection = "";
-  document.querySelectorAll("main section[id]").forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= 90 && rect.bottom >= 90) currentSection = section.id;
-  });
-
-  navLinks.forEach(link => {
-    link.classList.toggle("is-active", link.getAttribute("href") === "#" + currentSection);
-  });
-});
-
-/* ===============================
-      Mobile Navigation Toggle
-================================= */
-const navToggle = document.getElementById("nav-toggle");
-const navList = document.getElementById("nav-links");
-
-navToggle.addEventListener("click", () => {
-  const open = navList.classList.toggle("mobile-open");
-  navToggle.setAttribute("aria-expanded", open.toString());
-  navToggle.innerHTML = open
-    ? '<i class="fa-solid fa-xmark"></i>'
-    : '<i class="fa-solid fa-bars"></i>';
-});
-
-navLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    if (navList.classList.contains("mobile-open")) {
-      navList.classList.remove("mobile-open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }
-  });
-});
-
-/* ===============================
-      Smooth Anchor Scrolling
-================================= */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", e => {
-    const href = anchor.getAttribute("href");
-    if (!href || href === "#" || !href.startsWith("#")) return;
-
-    const target = document.querySelector(href);
-    if (!target) return;
-
-    e.preventDefault();
-    const offset = header.offsetHeight + 10;
-    const elementPos = target.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: elementPos - offset, behavior: "smooth" });
-  });
-});
-
-/* ===============================
-      FAQ Accordion (ARIA Safe)
-================================= */
-document.querySelectorAll(".faq-item").forEach(item => {
-  const btn = item.querySelector(".faq-question");
-
-  btn.addEventListener("click", () => {
-    const open = item.classList.contains("open");
-
-    document.querySelectorAll(".faq-item").forEach(i => {
-      i.classList.remove("open");
-      i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
-    });
-
-    if (!open) {
-      item.classList.add("open");
-      btn.setAttribute("aria-expanded", "true");
+  const scrollPos = window.scrollY + 120;
+  document.querySelectorAll("section[id]").forEach(sec => {
+    if (scrollPos > sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+      links.forEach(l => l.classList.remove("active"));
+      document.querySelector(`a[href="#${sec.id}"]`)?.classList.add("active");
     }
   });
 });
 </script>
+
+</body>
+</html>
+
