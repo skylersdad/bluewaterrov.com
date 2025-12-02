@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BlueWater ROV Services protects Michigan’s waterfront assets with commercial‑grade ROV inspections. 4K video, clear reports and year‑round availability—including safe under‑ice operations—for docks, lifts, seawalls, marinas, HOAs, contractors and insurers." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="BlueWater ROV Services protects Michigan’s waterfront assets with commercial‑grade ROV inspections. 4K video, clear reports and year‑round availability—including safe under‑ice operations—for docks, lifts, seawalls, marinas, HOAs, contractors and insurers."/>
   <title>BlueWater ROV Services | West Michigan Underwater Inspection Experts</title>
 
   <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="BlueWater ROV Services – West Michigan Underwater Inspections" />
-  <meta property="og:description" content="Professional underwater ROV inspections with 4K documentation for docks, lifts, seawalls, marinas, HOAs, contractors and insurers in West Michigan — including under ice." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2000&auto=format&fit=crop" />
-  <meta property="og:url" content="https://www.bluewaterrovservices.com" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BlueWater ROV Services – West Michigan Underwater Inspections"/>
+  <meta property="og:description" content="Professional underwater ROV inspections with 4K documentation for docks, lifts, seawalls, marinas, HOAs, contractors and insurers in West Michigan — including under ice."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526481280695-3c687fd543c0?q=80&w=2000&auto=format&fit=crop"/>
+  <meta property="og:url" content="https://www.bluewaterrovservices.com"/>
+  <meta property="og:type" content="website"/>
 
   <!-- Fonts and icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-ytyEpSQi5Y4p0qVwq0oS5p+2J3bA1V7q9Mye8xZ7vbEJp0Oj9kM9rnuBIfV+y09+Q8P/bCrI4dhGHaQwMZazvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-ytyEpSQi5Y4p0qVwq0oS5p+2J3bA1V7q9Mye8xZ7vbEJp0Oj9kM9rnuBIfV+y09+Q8P/bCrI4dhGHaQwMZazvw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
   <style>
-    /* Root variables */
+    /* Theme colours */
     :root {
       --primary: #003b73;
       --primary-dark: #001634;
       --secondary: #0096d6;
-      --accent: #00c4ff;
+      --accent: #00bfff;
       --accent-soft: rgba(0, 196, 255, 0.18);
       --bg: #f3f7ff;
       --bg-alt: #e7f1ff;
-      --white: #f9fbff; /* use slightly tinted white for better readability */
+      --white: #eaf4ff; /* tinted white for readability */
       --gray: #55627a;
       --gray-light: #7f8ea3;
       --gray-soft: #d7e2f0;
@@ -48,7 +48,7 @@
       box-sizing: border-box;
     }
     html {
-      scroll-behavior: smooth;
+      scroll-behaviour: smooth;
     }
     body {
       font-family: "Inter", sans-serif;
@@ -69,7 +69,11 @@
       padding-inline: 1.5rem;
     }
     section { padding: 6rem 0; scroll-margin-top: calc(var(--header-height) + 24px); }
-    h1,h2,h3,h4 { font-family: "Montserrat", sans-serif; font-weight: 800; color: var(--primary); }
+    h1,h2,h3,h4 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      color: var(--primary);
+    }
     .section-title {
       text-align: center;
       font-size: clamp(2rem, 3vw, 3rem);
@@ -80,7 +84,7 @@
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -0.5rem;
+      bottom: -0.6rem;
       transform: translateX(-50%);
       width: 90px;
       height: 4px;
@@ -143,7 +147,12 @@
     .logo-img { height: 44px; width: auto; display: block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.55)); }
 
     nav { display: flex; align-items: center; gap: 1.8rem; }
-    .nav-links { list-style: none; display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
     .nav-links a {
       position: relative;
       font-size: 0.95rem;
@@ -180,7 +189,7 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.45);
       transition: border-color 0.18s ease;
     }
-    .nav-cta:hover { border-color: #ffffff; }
+    .nav-cta:hover { border-color: var(--white); }
     .nav-toggle {
       display: none;
       border: none;
@@ -194,7 +203,8 @@
       outline-offset: 2px;
     }
     @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
+      .nav-links,
+      .nav-cta { display: none; }
       .nav-toggle { display: inline-flex; }
       .nav-links.mobile-open {
         display: flex;
@@ -216,9 +226,16 @@
       }
     }
 
-    /* Animations for sections */
-    .animate { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .animate.in-view { opacity: 1; transform: none; }
+    /* Section animations */
+    .animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .animate.in-view {
+      opacity: 1;
+      transform: none;
+    }
 
     /* Hero section */
     .hero {
@@ -259,9 +276,13 @@
       max-width: 620px;
       font-size: 1.06rem;
       margin-bottom: 1.1rem;
-      color: #e3f2ff;
+      color: #d5eafc;
     }
-    .hero-meta { font-size: 0.96rem; margin-bottom: 2rem; color: #deebff; }
+    .hero-meta {
+      font-size: 0.96rem;
+      margin-bottom: 2rem;
+      color: #d0e4ff;
+    }
     .hero-meta strong { color: var(--accent); }
     .hero-ctas {
       display: flex;
@@ -291,7 +312,7 @@
     }
     .btn-primary:hover {
       transform: translateY(-4px) scale(1.02);
-      background: linear-gradient(135deg, #e6fbff, var(--accent));
+      background: linear-gradient(135deg, #eaf7ff, var(--accent));
       box-shadow: 0 24px 50px rgba(0,196,255,0.75);
     }
     .btn-outline {
@@ -304,7 +325,7 @@
       background: var(--white);
       color: var(--primary);
     }
-    .hero-contact-note { font-size: 0.93rem; color: #deebff; }
+    .hero-contact-note { font-size: 0.93rem; color: #d0e4ff; }
     .hero-contact-note a { color: var(--accent); font-weight: 600; }
 
     /* Hero cards */
@@ -368,9 +389,8 @@
       justify-content: space-between;
       gap: 0.5rem;
       font-size: 0.8rem;
-      color: #d0e4ff;
+      color: #c9defc;
     }
-
     .trust-bar {
       background: rgba(7,21,52,0.98);
       border-radius: 18px;
@@ -383,7 +403,7 @@
       grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
       gap: 1rem;
       font-size: 0.9rem;
-      color: var(--white);
+      color: #d7eaff;
     }
     .trust-item {
       text-align: center;
@@ -394,7 +414,7 @@
     }
     .trust-item i { font-size: 1.6rem; color: var(--accent); }
 
-    /* Services */
+    /* Services section */
     #services { position: relative; }
     #services::before {
       content: "";
@@ -457,7 +477,7 @@
     .price-tag { font-size: 1.42rem; font-weight: 800; color: var(--primary); }
     .price-note { font-size: 0.86rem; color: var(--gray-light); }
 
-    /* Packages */
+    /* Packages section */
     .packages-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
@@ -499,8 +519,17 @@
       margin-bottom: 0.85rem;
     }
     .package-card h3 { font-size: 1.25rem; }
-    .package-price { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 0.7rem 0 0.45rem; }
-    .package-note { font-size: 0.86rem; color: var(--gray); margin-bottom: 0.85rem; }
+    .package-price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0.7rem 0 0.45rem;
+    }
+    .package-note {
+      font-size: 0.86rem;
+      color: var(--gray);
+      margin-bottom: 0.85rem;
+    }
     .package-card ul { list-style: none; font-size: 0.92rem; color: var(--gray); margin-bottom: 1.2rem; }
     .package-card ul li { display: flex; gap: 0.4rem; margin-bottom: 0.4rem; }
     .package-card ul li i { color: var(--success); font-size: 0.86rem; margin-top: 0.16rem; }
@@ -563,7 +592,9 @@
     .capability-card ul { list-style: none; font-size: 0.88rem; color: var(--gray); }
     .capability-card ul li { display: flex; gap: 0.35rem; margin-bottom: 0.35rem; }
     .capability-card ul li i { margin-top: 0.08rem; font-size: 0.8rem; color: var(--secondary); }
-    @media (max-width: 640px) { .capabilities-panel { padding: 2rem 1.4rem 2.3rem; } }
+    @media (max-width: 640px) {
+      .capabilities-panel { padding: 2rem 1.4rem 2.3rem; }
+    }
 
     /* Why section */
     .why-section { background: linear-gradient(180deg, var(--bg-alt), var(--white)); }
@@ -699,7 +730,11 @@
       border: 1px solid rgba(148,163,184,0.45);
     }
     .contact-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
-    .contact-details { list-style: none; margin-top: 0.9rem; font-size: 0.95rem; }
+    .contact-details {
+      list-style: none;
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+    }
     .contact-details li {
       display: flex;
       gap: 0.6rem;
@@ -768,7 +803,11 @@
       gap: 0.75rem;
       margin-top: 0.4rem;
     }
-    .form-note { font-size: 0.8rem; color: var(--gray); max-width: 320px; }
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--gray);
+      max-width: 320px;
+    }
     .form-status {
       grid-column: 1 / -1;
       font-size: 0.86rem;
@@ -791,10 +830,18 @@
     }
     @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
-    .footer-logo { font-size: 1.6rem; font-weight: 900; margin-bottom: 0.6rem; }
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 0.6rem;
+    }
     .footer-logo span { color: var(--accent); }
     .footer-text { font-size: 0.9rem; opacity: 0.88; max-width: 380px; }
-    .footer-heading { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .footer-heading {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
     .footer-links { list-style: none; font-size: 0.9rem; }
     .footer-links li { margin-bottom: 0.3rem; }
     .footer-links a { color: rgba(255,255,255,0.86); }
@@ -832,7 +879,10 @@
       transition: opacity 0.3s ease;
       z-index: 999;
     }
-    .back-to-top.show { opacity: 1; pointer-events: auto; }
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
     /* Floating schedule CTA button */
     .floating-cta {
@@ -856,19 +906,22 @@
       transition: opacity 0.3s ease;
       z-index: 998;
     }
-    .floating-cta.show { opacity: 1; pointer-events: auto; }
+    .floating-cta.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
     .floating-cta i { font-size: 1rem; }
   </style>
 </head>
 <body>
-  <!-- Progress bar -->
+  <!-- Scroll progress bar -->
   <div id="scroll-progress" class="scroll-progress"></div>
 
   <!-- HEADER -->
   <header id="site-header">
     <div class="container header-inner">
       <a href="#top" class="logo">
-        <img src="bluewater-rov-logo.png" alt="BlueWater ROV logo" class="logo-img" />
+        <img src="bluewater-rov-logo.png" alt="BlueWater ROV logo" class="logo-img"/>
         <span>BlueWater <span>ROV</span></span>
       </a>
       <nav aria-label="Primary navigation">
@@ -939,7 +992,8 @@
             </div>
             <div class="hero-card-main">
               <div class="hero-video-placeholder">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1600&auto=format&fit=crop" alt="Underwater ROV inspecting dock and seawall structure" loading="lazy" />
+                <!-- relevant underwater image for hero card -->
+                <img src="https://images.unsplash.com/photo-1526481280695-3c687fd543c0?q=80&w=1600&auto=format&fit=crop" alt="Underwater ROV inspecting dock pilings and brackets" loading="lazy"/>
               </div>
               <ul class="hero-meta-list">
                 <li>
@@ -1000,7 +1054,7 @@
           <!-- Residential -->
           <article class="service-card">
             <div class="service-media">
-              <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800&auto=format&fit=crop" alt="ROV inspecting a lakeside dock and boat lift" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1800&auto=format&fit=crop" alt="ROV inspecting a lakeside dock and boat lift" loading="lazy"/>
             </div>
             <div class="service-body">
               <h3>Residential Dock &amp; Lift Inspections</h3>
@@ -1019,10 +1073,11 @@
               </div>
             </div>
           </article>
+
           <!-- Seawall & HOA -->
           <article class="service-card">
             <div class="service-media">
-              <img src="https://images.unsplash.com/photo-1636041249441-38eeae4c8b7d?q=80&w=1800&auto=format&fit=crop" alt="Concrete seawall and shoreline being inspected" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1543352634-728e825e213f?q=80&w=1800&auto=format&fit=crop" alt="Concrete seawall and shoreline being inspected" loading="lazy"/>
             </div>
             <div class="service-body">
               <h3>Seawall, Shoreline &amp; HOA Safety</h3>
@@ -1041,10 +1096,11 @@
               </div>
             </div>
           </article>
+
           <!-- Commercial -->
           <article class="service-card">
             <div class="service-media">
-              <img src="https://images.unsplash.com/photo-1520694478166-daaaaec95b69?q=80&w=1800&auto=format&fit=crop" alt="Marina docks and slips along a lakeshore" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1525069332551-3bd03f1fa409?q=80&w=1800&auto=format&fit=crop" alt="Marina docks and slips along a lakeshore" loading="lazy"/>
             </div>
             <div class="service-body">
               <h3>Marina, Contractor &amp; Insurance Work</h3>
@@ -1067,18 +1123,18 @@
       </div>
     </section>
 
-    <!-- PACKAGES & EMERGING CAPABILITIES -->
+    <!-- PACKAGES & CAPABILITIES -->
     <section id="packages" class="animate" aria-labelledby="packages-title">
       <div class="container">
         <h2 class="section-title" id="packages-title">Packages &amp; Seasonal Plans</h2>
         <p class="section-subtitle">
-          From one‑time inspections to seasonal residential plans and contracted marina / HOA programmes, BlueWater ROV Services is designed to be your long‑term underwater risk‑reduction partner.
+          From one‑time inspections to seasonal residential plans and contracted marina/HOA programmes, BlueWater ROV Services is designed to be your long‑term underwater risk‑reduction partner.
         </p>
         <div class="packages-grid">
           <!-- Buyer Package -->
           <article class="package-card featured">
             <div class="package-media">
-              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=80" alt="Waterfront property during dusk">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1800&q=80" alt="Waterfront property at dusk">
             </div>
             <span class="package-badge">Waterfront Due Diligence</span>
             <h3>Buyer’s Waterfront Condition Package</h3>
@@ -1103,7 +1159,7 @@
             <h3>Residential Seasonal Plans</h3>
             <div class="package-price">$300–$1,200</div>
             <p class="package-note">
-              Tiered annual plans for homeowners who want recurring inspections and complete documentation.
+              Tiered annual plans for homeowners who want recurring inspections and comprehensive documentation.
             </p>
             <ul>
               <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Bronze – $300:</strong> Spring &amp; Fall inspections with photo set and summary report.</li>
@@ -1117,7 +1173,7 @@
           <!-- Marina / HOA / Insurance programmes -->
           <article class="package-card">
             <div class="package-media">
-              <img src="https://images.unsplash.com/photo-1600597353382-8e1628946c43?auto=format&fit=crop&w=1800&q=80" alt="Marina and docks aerial view">
+              <img src="https://images.unsplash.com/photo-1600597353382-8e1628946c43?auto=format&fit=crop&w=1800&q=80" alt="Marina aerial view">
             </div>
             <h3>Marina, HOA &amp; Insurance Programmes</h3>
             <div class="package-price">Custom Contract</div>
@@ -1324,7 +1380,7 @@
             </button>
             <div class="faq-answer" id="faq5-answer" role="region" aria-labelledby="faq5-question">
               All underwater work is affected by water clarity, lighting and current. We use a commercial‑grade ROV with adjustable lighting, but very dark, turbid or sediment‑laden water can limit how far we can see at any given moment.<br><br>
-              If conditions on the day of inspection do not allow us to obtain usable footage, we will advise you on next steps — which may include rescheduling, revising the scope, or recommending alternate approaches. We always aim to provide honest guidance rather than pushing ahead with poor‑quality video.
+              If conditions on the day of inspection do not allow us to obtain usable footage, we will advise you on next steps—which may include rescheduling, revising the scope, or recommending alternate approaches. We always aim to provide honest guidance rather than pushing ahead with poor‑quality video.
             </div>
           </article>
           <article class="faq-item">
@@ -1351,7 +1407,9 @@
         <div class="contact-grid">
           <aside class="contact-card" aria-label="Contact details">
             <h3>Talk directly to the inspector</h3>
-            <p>You’re not calling a generic service line. You’ll speak with the owner‑operator who will be on site with the ROV.</p>
+            <p>
+              You’re not calling a generic service line. You’ll speak with the owner‑operator who will be on site with the ROV.
+            </p>
             <ul class="contact-details">
               <li>
                 <i class="fa-solid fa-phone" aria-hidden="true"></i>
@@ -1374,15 +1432,15 @@
             <form id="contact-form" action="contact.php" method="post" novalidate>
               <div class="form-group">
                 <label for="name">Full Name <span class="required">*</span></label>
-                <input id="name" name="name" type="text" autocomplete="name" aria-required="true" required placeholder="Your full name" />
+                <input id="name" name="name" type="text" autocomplete="name" aria-required="true" required placeholder="Your full name"/>
               </div>
               <div class="form-group">
                 <label for="email">Email <span class="required">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" aria-required="true" required placeholder="you@example.com" />
+                <input id="email" name="email" type="email" autocomplete="email" aria-required="true" required placeholder="you@example.com"/>
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(optional)" />
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(optional)"/>
                 <span class="form-helper">Best number to reach you if we have questions.</span>
               </div>
               <div class="form-group">
@@ -1403,7 +1461,7 @@
               </div>
               <div class="form-group full">
                 <label for="location">Lake / Address <span class="required">*</span></label>
-                <input id="location" name="location" type="text" aria-required="true" required placeholder="e.g. North Shore, Lake Macatawa or street address" />
+                <input id="location" name="location" type="text" aria-required="true" required placeholder="e.g. North Shore, Lake Macatawa or street address"/>
                 <span class="form-helper">Example: “North Shore, Lake Macatawa” or street address.</span>
               </div>
               <div class="form-group full">
@@ -1483,7 +1541,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    // Set copyright year dynamically
+    // Set dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const header = document.getElementById("site-header");
@@ -1498,7 +1556,7 @@
       header.classList.toggle("scrolled", y > 24);
       backToTop.classList.toggle("show", y > 400);
       floatingCTA.classList.toggle("show", y > 600);
-      // Navigation highlight
+      // Highlight current nav link
       let currentSectionId = "";
       document.querySelectorAll("main section[id]").forEach(section => {
         const rect = section.getBoundingClientRect();
@@ -1515,7 +1573,7 @@
       progressBar.style.width = progress + "%";
     });
 
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", e => {
         const href = anchor.getAttribute("href");
@@ -1526,11 +1584,11 @@
         const headerOffset = document.getElementById("site-header").offsetHeight + 10;
         const elementPosition = target.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - headerOffset;
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        window.scrollTo({ top: offsetPosition, behaviour: "smooth" });
       });
     });
 
-    // Mobile nav
+    // Mobile nav toggle
     const navToggle = document.getElementById("nav-toggle");
     const navList = document.getElementById("nav-links");
     navToggle.addEventListener("click", () => {
@@ -1567,7 +1625,7 @@
 
     // Back to top
     backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behaviour: "smooth" });
     });
 
     // Floating CTA scroll to contact
@@ -1577,7 +1635,7 @@
       const headerOffset = document.getElementById("site-header").offsetHeight + 10;
       const elementPosition = target.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      window.scrollTo({ top: offsetPosition, behaviour: "smooth" });
     });
 
     // Section reveal animations
@@ -1590,7 +1648,7 @@
     }, { threshold: 0.15 });
     document.querySelectorAll(".animate").forEach(section => observer.observe(section));
 
-    // Contact form submission
+    // AJAX contact form submission
     const form = document.getElementById("contact-form");
     const statusEl = document.getElementById("form-status");
     form.addEventListener("submit", async (e) => {
@@ -1599,7 +1657,10 @@
       statusEl.className = "form-status";
       const formData = new FormData(form);
       try {
-        const res = await fetch(form.action, { method: "POST", body: formData });
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: formData
+        });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || data.status !== "ok") {
           throw new Error(data.message || "There was a problem sending your request.");
