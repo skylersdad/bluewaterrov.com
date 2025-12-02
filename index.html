@@ -639,6 +639,8 @@
             padding: 2rem 1.6rem;
             box-shadow: var(--shadow-soft);
             border: 1px solid rgba(148, 163, 184, 0.4);
+            position: relative;
+            cursor: pointer;
         }
         .why-card i {
             font-size: 2rem;
@@ -653,6 +655,10 @@
             font-size: 0.93rem;
             color: var(--gray);
         }
+        .why-card .why-text {
+            max-height: none;
+            overflow: visible;
+        }
         .compare-list {
             margin-top: 1rem;
             font-size: 0.9rem;
@@ -661,6 +667,36 @@
         }
         .compare-list li {
             margin-bottom: 0.35rem;
+        }
+
+        /* Expandable WHY cards – mobile-friendly */
+        @media (max-width: 900px) {
+            .why-card .why-text {
+                max-height: 180px;        /* initial preview height */
+                overflow: hidden;
+                transition: max-height 0.25s ease;
+            }
+
+            .why-card::after {
+                content: "Tap to expand";
+                position: absolute;
+                bottom: 0.9rem;
+                right: 1.2rem;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: var(--secondary);
+                background: linear-gradient(90deg, rgba(249,251,255,0.3), #f9fbff);
+                padding: 0.15rem 0.6rem;
+                border-radius: 999px;
+            }
+
+            .why-card.open .why-text {
+                max-height: 1200px;       /* large enough for full text */
+            }
+
+            .why-card.open::after {
+                content: "Tap to collapse";
+            }
         }
 
         /* Gallery section */
@@ -946,27 +982,6 @@
             font-size: 0.8rem;
             color: var(--gray);
             max-width: 320px;
-        }
-
-        /* Contact status messages */
-        .contact-status {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            min-height: 1.2em;
-        }
-        .contact-status--success {
-            color: #065f46;
-            background: #d1fae5;
-            border-radius: 8px;
-            padding: 0.75rem 0.9rem;
-            border: 1px solid #6ee7b7;
-        }
-        .contact-status--error {
-            color: #991b1b;
-            background: #fee2e2;
-            border-radius: 8px;
-            padding: 0.75rem 0.9rem;
-            border: 1px solid #fecaca;
         }
 
         /* Footer */
@@ -1320,106 +1335,84 @@
                 <p class="why-intro">
                     Our mission is to deliver clear, actionable underwater information that helps you prevent damage, reduce liability and protect your investment. We operate under a simple philosophy: safety first, clarity &amp; transparency, reliability, professionalism and innovation.
                 </p>
+
                 <div class="why-grid">
                     <article class="why-card">
                         <i class="fa-solid fa-robot" aria-hidden="true"></i>
                         <h3>Commercial-Grade ROV Platform</h3>
-                        <p>
-We operate a commercial/industrial-grade Remotely Operated Vehicle (ROV) engineered specifically for professional underwater inspection and documentation. Our system features a true 4K ultra-high-definition camera with real-time image optimization, high-intensity adjustable LED lighting, and an extended tether management system that maintains stable operation in low-visibility or debris-laden water.
-
-This platform delivers precise positioning, controlled maneuvering, and steady footage even in dynamic conditions, enabling detailed evaluations of docks, boat lifts, seawalls, marinas, moorings, pilings, and designated swim areas—all without requiring a diver in the water, significantly reducing risk and increasing inspection opportunities throughout the year.
-
-Additional ROV capabilities include:
-
-Multi-axis thruster control for smooth, highly accurate navigation around underwater structures.
-
-Depth-rated construction suitable for lakes, marinas, channels, and deep-water moorings.
-
-Stabilized 4K video and high-resolution still capture for clear reporting and contractor-ready documentation.
-
-Integrated sonar compatibility (when required) to assist with low-visibility navigation and object location.
-
-Real-time monitoring that allows clients or contractors to observe findings during the inspection.
-
-Under-ice operation protocols, enabling safe winter and freeze-season inspections when structures experience the highest stress.
-
-Rapid deployment from docks, shoreline, or vessels with minimal setup time.
-
-This professional-grade platform allows us to deliver consistent, reliable, and high-clarity underwater data while minimizing risk, lowering cost, and expanding the inspection season far beyond what diver-based services can offer.                        </p>
+                        <div class="why-text">
+                            <p>
+                                We operate a commercial/industrial-grade Remotely Operated Vehicle (ROV) engineered specifically for
+                                professional underwater inspection and documentation. Our system features a true 4K ultra-high-definition
+                                camera with real-time image optimisation, high-intensity adjustable LED lighting and an extended tether
+                                management system that maintains stable operation in low-visibility or debris-laden water.
+                            </p>
+                            <p>
+                                This platform delivers precise positioning, controlled manoeuvring and steady footage even in dynamic
+                                conditions, enabling detailed evaluations of docks, boat lifts, seawalls, marinas, moorings, pilings and
+                                designated swim areas—without putting anyone in the water.
+                            </p>
+                        </div>
                     </article>
 
                     <article class="why-card">
                         <i class="fa-solid fa-snowflake" aria-hidden="true"></i>
                         <h3>Year-Round &amp; Under-Ice Capability</h3>
-                        <p>
- Unlike traditional diver-based services, our ROV platform allows us to operate safely and effectively throughout all seasons—including the periods when underwater structures are most vulnerable. We conduct inspections after major storms, during freeze–thaw cycles, and even beneath solid ice, following specialized winter and under-ice Standard Operating Procedures (SOPs) designed for safe, controlled launches, navigation, and retrievals.
-
-Our year-round operational capability includes:
-
-Under-ice ROV deployment, utilizing controlled access holes, protective matting, and vertical tether management to ensure reliable positioning and safe equipment recovery.
-
-Winter-specific lighting and camera optimization, compensating for low natural light and turbid water common in cold-season conditions.
-
-Post-storm and high-water inspections, allowing early identification of structural damage, scouring, debris hazards, and shifting components.
-
-Freeze-thaw cycle monitoring, ideal for docks, lifts, seawalls, and retaining structures that experience seasonal movement or stress.
-
-Cold-weather electronics and thruster systems designed to maintain stability and responsiveness in near-freezing water.
-
-Enhanced safety protocols that eliminate diver exposure to dangerous environments such as cold shock, low visibility, entrapment risks, and unstable ice.
-
-By maintaining full operational capability throughout the year—including winter months when divers cannot safely operate—we provide reliable, actionable underwater insight precisely when property owners, HOAs, marinas, and insurers need it most.                       </p>
+                        <div class="why-text">
+                            <p>
+                                Unlike traditional diver-based services, our ROV platform allows us to operate safely and effectively year-round,
+                                including during the periods when underwater structures are most vulnerable. We perform inspections after major
+                                storms, during freeze–thaw cycles and even beneath solid ice, following specialised winter and under-ice
+                                Standard Operating Procedures (SOPs) designed to ensure safe, controlled launches, navigation and retrievals.
+                            </p>
+                            <p>
+                                Our winter capability enables proactive monitoring of docks, lifts, seawalls and shorelines exactly when ice,
+                                shifting water levels and severe weather place the greatest stress on your assets.
+                            </p>
+                        </div>
                     </article>
 
                     <article class="why-card">
                         <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
                         <h3>4K Documentation &amp; Clear Reports</h3>
-                        <p>
-  Every inspection includes high-quality deliverables designed to give you clear, actionable insight into the condition of your underwater structures. You receive a secure download link containing your full 4K video footage, high-resolution annotated photos, and a structured written findings report aligned with industry standards and your preferred documentation format.
-
-Our reporting package provides:
-
-True 4K underwater video, optimized for color accuracy and visibility based on local water conditions.
-
-Annotated still photos highlighting key observations, concerns, and areas requiring monitoring or contractor review.
-
-A structured findings summary, clearly outlining conditions with a practical “Monitor / Plan Repair / Consider Contractor Review” framework.
-
-Time-stamped media organization, allowing easy navigation to specific structural components or issues.
-
-Contractor-ready documentation, making it simple to share findings with repair teams, HOA boards, buyers, real estate agents, or insurance carriers.
-
-Secure, cloud-hosted download links that work on any device—no software or special viewer required.
-
-Optional comparison sets for seasonal or post-event inspections, enabling year-over-year or pre-/post-incident evaluation.
-
-The result is a professional, easy-to-use documentation package that ensures you fully understand what’s happening underwater and can make informed decisions with confidence.                      </p>
+                        <div class="why-text">
+                            <p>
+                                Every inspection includes high-quality deliverables designed to give you clear, actionable insight into the
+                                condition of your underwater structures. You receive a secure download link containing your full 4K video
+                                footage, high-resolution annotated photos and a structured written findings report aligned with industry
+                                standards and your preferred documentation format.
+                            </p>
+                            <p>
+                                The result is a professional, easy-to-share documentation package that supports informed decisions by
+                                homeowners, HOAs, marinas, contractors, buyers and insurance carriers.
+                            </p>
+                        </div>
                     </article>
 
                     <article class="why-card">
-    <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
-    <h3>ROV vs. Diver Advantage</h3>
-    <p>
-        ROV-based inspections offer a safer, more efficient and better-documented alternative to traditional diver assessments 
-        for the majority of underwater evaluation needs. While divers remain essential for tasks that require physical 
-        manipulation or hands-on repair, ROV platforms outperform diver-based operations in approximately 90% of inspection 
-        scenarios—particularly where visibility, safety and clear documentation are critical.
-    </p>
-
-    <ul class="compare-list">
-        <li><strong>Significantly enhanced safety:</strong> ROVs eliminate human exposure to hazardous underwater environments such as cold shock, entanglement, low visibility, strong currents, deep water and unstable or shifting ice.</li>
-
-        <li><strong>Predictable, cost-effective pricing:</strong> ROV inspections use flat-rate or project-based pricing, avoiding the $250–$450+ per hour billing common with commercial divers.</li>
-
-        <li><strong>Superior visual documentation:</strong> Stabilized 4K video and high-resolution still imagery ensure clear, reviewable records—whereas diver inspections often produce limited or no usable documentation.</li>
-
-        <li><strong>Under-ice operational capability:</strong> ROVs can safely operate beneath solid ice using controlled access points and managed tether systems—conditions where divers cannot safely or legally operate.</li>
-
-        <li><strong>Improved maneuverability & repeatability:</strong> Multi-axis thruster control allows precise navigation around structures, enabling consistent results and accurate seasonal or post-event comparisons.</li>
-
-        <li><strong>Minimal disruption & rapid deployment:</strong> ROVs launch quickly from docks, shoreline or small vessels without the safety briefings, thermal gear or decompression requirements associated with dive operations.</li>
-    </ul>
-</article>
+                        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                        <h3>ROV vs. Diver Advantage</h3>
+                        <div class="why-text">
+                            <p>
+                                ROV-based inspections offer a safer, more efficient and better-documented alternative to traditional diver
+                                assessments for the majority of underwater evaluation needs. While divers remain essential for tasks that
+                                require physical manipulation or hands-on repair, ROV platforms outperform diver-based operations in most
+                                inspection scenarios—particularly where visibility, safety and documentation are critical.
+                            </p>
+                            <ul class="compare-list">
+                                <li><strong>Significantly enhanced safety:</strong> ROVs eliminate human exposure to hazardous underwater
+                                    environments such as cold shock, entanglement, low visibility, strong currents, deep water and unstable or
+                                    shifting ice.</li>
+                                <li><strong>Predictable, cost-effective pricing:</strong> ROV inspections use flat-rate or project-based
+                                    pricing, avoiding the $250–$450+ per-hour billing common with commercial divers.</li>
+                                <li><strong>Superior visual documentation:</strong> Stabilised 4K video and high-resolution still imagery
+                                    provide clear, reviewable records, whereas diver inspections often produce limited or no usable
+                                    documentation.</li>
+                                <li><strong>Under-ice operational capability:</strong> ROVs can safely operate beneath solid ice using
+                                    controlled access points and managed tether systems—conditions where divers typically cannot work.</li>
+                            </ul>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1611,7 +1604,7 @@ The result is a professional, easy-to-use documentation package that ensures you
             </div>
         </section>
 
-        <!-- Contact section (UPDATED & WIRED TO contact.php) -->
+        <!-- Contact section -->
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <div class="container">
                 <h2 class="section-title" id="contact-title">Schedule Your Inspection</h2>
@@ -1652,13 +1645,7 @@ The result is a professional, easy-to-use documentation package that ensures you
 
                     <!-- Contact Form -->
                     <section class="contact-card" aria-label="Inspection request form">
-                        <!-- STATUS MESSAGE AREA -->
-                        <div id="contact-status"
-                             class="contact-status"
-                             role="status"
-                             aria-live="polite"></div>
-
-                        <form id="contact-form" action="contact.php" method="post" novalidate>
+                        <form action="contact.php" method="post" novalidate>
                             <div class="form-group">
                                 <label for="name">Full Name*</label>
                                 <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your full name">
@@ -1706,7 +1693,7 @@ The result is a professional, easy-to-use documentation package that ensures you
                             </div>
 
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-primary" id="contact-submit">
+                                <button type="submit" class="btn btn-primary">
                                     <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                                     Send Inspection Request
                                 </button>
@@ -1878,63 +1865,39 @@ The result is a professional, easy-to-use documentation package that ensures you
             });
         });
 
+        // Expand / collapse "Why BlueWater ROV?" cards on mobile
+        document.querySelectorAll('.why-card').forEach(card => {
+            // Make the whole card act like a button on mobile
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-expanded', 'false');
+
+            const toggleCard = () => {
+                const isOpen = card.classList.toggle('open');
+                card.setAttribute('aria-expanded', String(isOpen));
+            };
+
+            card.addEventListener('click', event => {
+                // Don’t toggle if a link inside the card was clicked
+                if (event.target.closest('a')) return;
+                if (window.innerWidth <= 900) {
+                    toggleCard();
+                }
+            });
+
+            card.addEventListener('keydown', event => {
+                if (window.innerWidth > 900) return;
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleCard();
+                }
+            });
+        });
+
         // Back to top click
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // === CONTACT FORM: AJAX SUBMIT ===
-        (function () {
-            const form       = document.getElementById('contact-form');
-            const statusEl   = document.getElementById('contact-status');
-            const submitBtn  = document.getElementById('contact-submit');
-
-            if (!form || !statusEl || !submitBtn) return;
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                // Clear previous status
-                statusEl.textContent = '';
-                statusEl.classList.remove('contact-status--success', 'contact-status--error');
-
-                // Build form data
-                const formData = new FormData(form);
-
-                // Disable button while sending
-                submitBtn.disabled = true;
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending...';
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    const data = await response.json().catch(() => ({}));
-
-                    if (response.ok && data.status === 'ok') {
-                        statusEl.textContent = data.message || 'Thank you. Your request has been sent.';
-                        statusEl.classList.add('contact-status--success');
-                        form.reset();
-                    } else {
-                        statusEl.textContent = data.message || 'There was a problem sending your message. Please try again.';
-                        statusEl.classList.add('contact-status--error');
-                    }
-                } catch (err) {
-                    statusEl.textContent = 'Network error. Please check your connection or try again later.';
-                    statusEl.classList.add('contact-status--error');
-                } finally {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalText;
-                }
-            });
-        })();
     </script>
 </body>
 </html>
