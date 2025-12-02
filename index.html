@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
     <!--
-        Enhanced version of BlueWater ROV Services website
-        The design has been modernized with a lighter colour palette,
-        increased contrast, refined typography and additional
-        accessibility improvements. A back-to-top button has been
-        added for easier navigation, and the contact form features
-        helpful placeholders. This document is fully responsive and
-        ready to copy-paste for immediate use.
+        Enhanced BlueWater ROV Services website
+        - Modernised visual design, typography and spacing
+        - Tabbed "Why BlueWater ROV?" section for better readability
+        - Updated imagery for stronger underwater / inspection context
+        - Contact form wired for AJAX POST to contact.php with inline status messaging
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,12 +40,15 @@
             --gray-light: #7f8ea3;
             --gray-soft: #e2e8f0;
             --success: #1ec561;
+
             /* Radii */
             --radius-lg: 22px;
             --radius-pill: 999px;
+
             /* Shadows */
             --shadow-soft: 0 8px 22px rgba(5, 25, 56, 0.15);
             --shadow-strong: 0 20px 50px rgba(5, 25, 56, 0.25);
+
             /* Layout */
             --header-height: 80px;
         }
@@ -152,13 +153,12 @@
             height: 100%;
         }
 
-        /* Logo */
+        /* Logo (uses your own logo file) */
         .logo {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
             color: var(--white);
-            text-decoration: none;
         }
         .logo-img {
             height: 34px;
@@ -554,7 +554,7 @@
             border-color: rgba(0, 196, 255, 0.7);
         }
         .service-media {
-            height: 200px;
+            height: 210px;
             overflow: hidden;
         }
         .service-media img {
@@ -614,7 +614,7 @@
             color: var(--gray);
         }
 
-        /* Why choose us section */
+        /* Why choose us – NEW tab layout */
         .why-section {
             background: linear-gradient(180deg, var(--bg-alt), #f9fbff);
         }
@@ -625,69 +625,94 @@
             color: var(--gray);
             text-align: center;
         }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        #why .why-layout {
+            display: flex;
             gap: 2rem;
-            margin-top: 2rem;
+            align-items: flex-start;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
         }
-        .why-card {
-            background:
-                radial-gradient(circle at 0 0, rgba(0, 196, 255, 0.1), transparent 60%),
-                var(--white);
+        #why .why-nav {
+            flex: 0 0 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        #why .why-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 0.9rem;
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: #f3f7ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1f2937;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+        }
+        #why .why-nav-item i {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        #why .why-nav-item.is-active {
+            background: linear-gradient(135deg, var(--accent-soft), #ffffff);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-soft);
+            color: var(--primary);
+        }
+        #why .why-panels {
+            flex: 1 1 0;
+        }
+        #why .why-panel {
+            display: none;
+            background: var(--white);
             border-radius: var(--radius-lg);
-            padding: 2rem 1.6rem 2.4rem;
+            padding: 1.9rem 1.7rem 2rem;
             box-shadow: var(--shadow-soft);
             border: 1px solid rgba(148, 163, 184, 0.4);
-            position: relative;
-            cursor: pointer;
-        }
-        .why-card i {
-            font-size: 2rem;
-            color: var(--secondary);
-            margin-bottom: 0.8rem;
-        }
-        .why-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.4rem;
-        }
-        .why-card p {
             font-size: 0.93rem;
             color: var(--gray);
         }
-        .compare-list {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--gray);
-            padding-left: 1rem;
+        #why .why-panel.is-active {
+            display: block;
         }
-        .compare-list li {
-            margin-bottom: 0.35rem;
+        #why .why-panel h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.7rem;
+            color: var(--primary);
+        }
+        #why .compare-list {
+            margin-top: 0.8rem;
+            padding-left: 1.1rem;
+            font-size: 0.9rem;
+        }
+        #why .compare-list li {
+            margin-bottom: 0.45rem;
         }
 
-        /* Expandable WHY cards (all screen sizes) */
-        .why-card .why-text {
-            max-height: 210px;           /* collapsed height preview */
-            overflow: hidden;
-            transition: max-height 0.25s ease;
+        @media (max-width: 900px) {
+            #why .why-layout {
+                flex-direction: column;
+            }
+            #why .why-nav {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 0.3rem;
+            }
+            #why .why-nav-item {
+                flex: 0 0 auto;
+                white-space: nowrap;
+                font-size: 0.85rem;
+                padding-inline: 0.8rem;
+            }
         }
-        .why-card::after {
-            content: "Click to expand";
-            position: absolute;
-            bottom: 0.9rem;
-            right: 1.2rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--secondary);
-            background: linear-gradient(90deg, rgba(249,251,255,0.3), #f9fbff);
-            padding: 0.15rem 0.6rem;
-            border-radius: 999px;
-        }
-        .why-card.open .why-text {
-            max-height: 1200px;          /* large enough for full text */
-        }
-        .why-card.open::after {
-            content: "Click to collapse";
+        @media (max-width: 640px) {
+            #why .why-panel {
+                padding: 1.4rem 1.2rem 1.6rem;
+            }
         }
 
         /* Gallery section */
@@ -974,6 +999,16 @@
             color: var(--gray);
             max-width: 320px;
         }
+        .form-status {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+        }
+        .form-status--success {
+            color: #15803d;
+        }
+        .form-status--error {
+            color: #b91c1c;
+        }
 
         /* Footer */
         footer {
@@ -1074,6 +1109,7 @@
     <header id="site-header">
         <div class="container header-inner">
             <a href="#top" class="logo">
+                <!-- Your logo file -->
                 <img src="bluewater-rov-logo.png" alt="BlueWater ROV logo" class="logo-img">
                 <span class="logo-text">BlueWater <span>ROV</span></span>
             </a>
@@ -1150,20 +1186,21 @@
                             </div>
                             <div class="hero-card-main">
                                 <div class="hero-video-placeholder">
-                                    <img src="https://images.unsplash.com/photo-1629586803670-0e6e2e4b1234?q=80&amp;w=1600" alt="Underwater ROV footage of a dock structure">
+                                    <!-- Upgraded underwater inspection imagery -->
+                                    <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=1600" alt="ROV inspecting underwater structure with diver support">
                                 </div>
                                 <ul class="hero-meta-list">
                                     <li>
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        Visual-only inspection with real-time manoeuvring around dock &amp; lift.
+                                        Visual-only inspection with real-time manoeuvring around dock &amp; lift structures.
                                     </li>
                                     <li>
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        Lighting and camera tuned for West Michigan water conditions.
+                                        Lighting and camera tuned for West Michigan water conditions and visibility.
                                     </li>
                                     <li>
                                         <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                        Clips and stills saved for your report and contractors.
+                                        Clips and stills saved for your report, contractors and insurance carriers.
                                     </li>
                                 </ul>
                             </div>
@@ -1213,7 +1250,7 @@
                     <!-- Residential: Dock, Lift, Storm/Ice, Lost Items -->
                     <article class="service-card">
                         <div class="service-media">
-                            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&amp;w=1800" alt="ROV inspecting a lakeside dock and boat lift">
+                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&amp;w=1800" alt="Boat lift and dock system on a calm lake at sunset">
                         </div>
                         <div class="service-body">
                             <h3>Residential Dock &amp; Lift Inspections</h3>
@@ -1247,7 +1284,7 @@
                     <!-- Seawall & Shoreline / HOA -->
                     <article class="service-card">
                         <div class="service-media">
-                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&amp;w=1800" alt="Underwater view of a concrete seawall and shoreline">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&amp;w=1800" alt="Concrete seawall and shoreline with visible wave action">
                         </div>
                         <div class="service-body">
                             <h3>Seawall, Shoreline &amp; HOA Safety</h3>
@@ -1281,7 +1318,7 @@
                     <!-- Marina, Contractor & Insurance -->
                     <article class="service-card">
                         <div class="service-media">
-                            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&amp;w=1800" alt="Marina slips and docks seen from above">
+                            <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&w=1800" alt="Marina slips and service docks viewed from above">
                         </div>
                         <div class="service-body">
                             <h3>Marina, Contractor &amp; Insurance Work</h3>
@@ -1315,7 +1352,7 @@
             </div>
         </section>
 
-        <!-- Why choose us section -->
+        <!-- Why choose us – tab layout -->
         <section id="why" class="why-section" aria-labelledby="why-title">
             <div class="container">
                 <h2 class="section-title" id="why-title">Why BlueWater ROV?</h2>
@@ -1323,87 +1360,118 @@
                     A professional, ROV-first inspection company — not a dive shop and not a hobby drone.
                 </p>
                 <p class="why-intro">
-                    Our mission is to deliver clear, actionable underwater information that helps you prevent damage, reduce liability and protect your investment. We operate under a simple philosophy: safety first, clarity &amp; transparency, reliability, professionalism and innovation.
+                    Our mission is to deliver clear, actionable underwater information that helps you prevent damage,
+                    reduce liability and protect your investment. We operate under a simple philosophy: safety first,
+                    clarity &amp; transparency, reliability, professionalism and innovation.
                 </p>
 
-                <div class="why-grid">
-                    <article class="why-card">
-                        <i class="fa-solid fa-robot" aria-hidden="true"></i>
-                        <h3>Commercial-Grade ROV Platform</h3>
-                        <div class="why-text">
-                            <p>
-                                We operate a commercial/industrial-grade Remotely Operated Vehicle (ROV) engineered specifically for
-                                professional underwater inspection and documentation. Our system features a true 4K ultra-high-definition
-                                camera with real-time image optimisation, high-intensity adjustable LED lighting and an extended tether
-                                management system that maintains stable operation in low-visibility or debris-laden water.
-                            </p>
-                            <p>
-                                This platform delivers precise positioning, controlled manoeuvring and steady footage even in dynamic
-                                conditions, enabling detailed evaluations of docks, boat lifts, seawalls, marinas, moorings, pilings and
-                                designated swim areas—without putting anyone in the water.
-                            </p>
-                        </div>
-                    </article>
+                <div class="why-layout">
+                    <!-- Left: tab buttons -->
+                    <nav class="why-nav" aria-label="Reasons to choose BlueWater ROV">
+                        <button class="why-nav-item is-active" type="button" data-target="why-rov-platform">
+                            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                            <span>Commercial-Grade ROV Platform</span>
+                        </button>
+                        <button class="why-nav-item" type="button" data-target="why-year-round">
+                            <i class="fa-solid fa-snowflake" aria-hidden="true"></i>
+                            <span>Year-Round &amp; Under-Ice Capability</span>
+                        </button>
+                        <button class="why-nav-item" type="button" data-target="why-documentation">
+                            <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
+                            <span>4K Documentation &amp; Clear Reports</span>
+                        </button>
+                        <button class="why-nav-item" type="button" data-target="why-rov-vs-diver">
+                            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                            <span>ROV vs. Diver Advantage</span>
+                        </button>
+                    </nav>
 
-                    <article class="why-card">
-                        <i class="fa-solid fa-snowflake" aria-hidden="true"></i>
-                        <h3>Year-Round &amp; Under-Ice Capability</h3>
-                        <div class="why-text">
+                    <!-- Right: tab panels -->
+                    <div class="why-panels">
+                        <!-- Panel 1 -->
+                        <article id="why-rov-platform" class="why-panel is-active">
+                            <h3>Commercial-Grade ROV Platform</h3>
                             <p>
-                                Unlike traditional diver-based services, our ROV platform allows us to operate safely and effectively
-                                year-round, including during the periods when underwater structures are most vulnerable. We perform
-                                inspections after major storms, during freeze–thaw cycles and even beneath solid ice, following
-                                specialised winter and under-ice Standard Operating Procedures (SOPs) designed to ensure safe,
-                                controlled launches, navigation and retrievals.
+                                We operate a commercial/industrial-grade Remotely Operated Vehicle (ROV) engineered specifically
+                                for professional underwater inspection and documentation. Our system features a true 4K
+                                ultra-high-definition camera with real-time image optimisation, high-intensity adjustable LED
+                                lighting and an extended tether management system that maintains stable operation in
+                                low-visibility or debris-laden water.
                             </p>
                             <p>
-                                Our winter capability enables proactive monitoring of docks, lifts, seawalls and shorelines exactly
-                                when ice, shifting water levels and severe weather place the greatest stress on your assets.
+                                This platform delivers precise positioning, controlled manoeuvring and steady footage even in
+                                dynamic conditions, enabling detailed evaluations of docks, boat lifts, seawalls, marinas,
+                                moorings, pilings and designated swim areas—without putting anyone in the water.
                             </p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="why-card">
-                        <i class="fa-solid fa-file-circle-check" aria-hidden="true"></i>
-                        <h3>4K Documentation &amp; Clear Reports</h3>
-                        <div class="why-text">
+                        <!-- Panel 2 -->
+                        <article id="why-year-round" class="why-panel">
+                            <h3>Year-Round &amp; Under-Ice Capability</h3>
                             <p>
-                                Every inspection includes high-quality deliverables designed to give you clear, actionable insight into the
-                                condition of your underwater structures. You receive a secure download link containing your full 4K video
-                                footage, high-resolution annotated photos and a structured written findings report aligned with industry
-                                standards and your preferred documentation format.
+                                Unlike traditional diver-based services, our ROV platform allows us to operate safely and
+                                effectively throughout all seasons—including the periods when underwater structures are most
+                                vulnerable. We conduct inspections after major storms, during freeze–thaw cycles and even beneath
+                                solid ice, following specialised winter and under-ice Standard Operating Procedures (SOPs)
+                                designed for safe, controlled launches, navigation and retrievals.
                             </p>
                             <p>
-                                The result is a professional, easy-to-share documentation package that supports informed decisions by
-                                homeowners, HOAs, marinas, contractors, buyers and insurance carriers.
+                                Year-round operational capability means your docks, lifts, seawalls and shorelines can be
+                                assessed exactly when ice, wave action and fluctuating water levels place the greatest stress on
+                                your assets—providing early insight before minor issues become costly failures.
                             </p>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="why-card">
-                        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
-                        <h3>ROV vs. Diver Advantage</h3>
-                        <div class="why-text">
+                        <!-- Panel 3 -->
+                        <article id="why-documentation" class="why-panel">
+                            <h3>4K Documentation &amp; Clear Reports</h3>
                             <p>
-                                ROV-based inspections offer a safer, more efficient and better-documented alternative to traditional diver
-                                assessments for the majority of underwater evaluation needs. While divers remain essential for tasks that
-                                require physical manipulation or hands-on repair, ROV platforms outperform diver-based operations in most
-                                inspection scenarios—particularly where visibility, safety and documentation are critical.
+                                Every inspection includes high-quality deliverables designed to give you clear, actionable
+                                insight into the condition of your underwater structures. You receive a secure download link
+                                containing your full 4K video footage, high-resolution annotated photos and a structured written
+                                findings report aligned with industry standards and your preferred documentation format.
+                            </p>
+                            <p>
+                                Our reporting packages provide a permanent, easy-to-share record for homeowners, HOAs, marinas,
+                                contractors, buyers and insurance carriers—supporting inspection contingencies, maintenance
+                                planning, capital budgeting and claim documentation.
+                            </p>
+                        </article>
+
+                        <!-- Panel 4 -->
+                        <article id="why-rov-vs-diver" class="why-panel">
+                            <h3>ROV vs. Diver Advantage</h3>
+                            <p>
+                                ROV-based inspections offer a safer, more efficient and better-documented alternative to
+                                traditional diver assessments for the majority of underwater evaluation needs. While divers
+                                remain essential for tasks that require physical manipulation or hands-on repair, ROV platforms
+                                outperform diver-based operations in approximately 90% of inspection scenarios—particularly
+                                where visibility, safety and clear documentation are critical.
                             </p>
                             <ul class="compare-list">
-                                <li><strong>Significantly enhanced safety:</strong> ROVs eliminate human exposure to hazardous underwater
-                                    environments such as cold shock, entanglement, low visibility, strong currents, deep water and unstable or
-                                    shifting ice.</li>
-                                <li><strong>Predictable, cost-effective pricing:</strong> ROV inspections use flat-rate or project-based
-                                    pricing, avoiding the $250–$450+ per-hour billing common with commercial divers.</li>
-                                <li><strong>Superior visual documentation:</strong> Stabilised 4K video and high-resolution still imagery
-                                    provide clear, reviewable records, whereas diver inspections often produce limited or no usable
-                                    documentation.</li>
-                                <li><strong>Under-ice operational capability:</strong> ROVs can safely operate beneath solid ice using
-                                    controlled access points and managed tether systems—conditions where divers typically cannot work.</li>
+                                <li>
+                                    <strong>Significantly enhanced safety:</strong>
+                                    ROVs eliminate human exposure to hazardous underwater environments such as cold shock,
+                                    entanglement, low visibility, strong currents, deep water and unstable or shifting ice.
+                                </li>
+                                <li>
+                                    <strong>Predictable, cost-effective pricing:</strong>
+                                    ROV inspections use flat-rate or project-based pricing, avoiding the $250–$450+ per-hour
+                                    billing common with commercial divers.
+                                </li>
+                                <li>
+                                    <strong>Superior visual documentation:</strong>
+                                    Stabilised 4K video and high-resolution still imagery provide clear, reviewable records,
+                                    whereas diver inspections often produce limited or no usable documentation.
+                                </li>
+                                <li>
+                                    <strong>Under-ice operational capability:</strong>
+                                    ROVs can safely operate beneath solid ice using controlled access points and managed tether
+                                    systems—conditions where divers typically cannot work.
+                                </li>
                             </ul>
-                        </div>
-                    </article>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1428,7 +1496,7 @@
                     </figure>
 
                     <figure class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&amp;w=1800" alt="Marina docks and slips">
+                        <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&amp;w=1800" alt="Marina docks and slips">
                         <figcaption class="gallery-caption">Marina slip infrastructure &amp; debris</figcaption>
                     </figure>
 
@@ -1635,7 +1703,7 @@
 
                     <!-- Contact Form -->
                     <section class="contact-card" aria-label="Inspection request form">
-                        <form action="contact.php" method="post" novalidate>
+                        <form id="contact-form" action="contact.php" method="post" novalidate>
                             <div class="form-group">
                                 <label for="name">Full Name*</label>
                                 <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your full name">
@@ -1683,10 +1751,13 @@
                             </div>
 
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                                    Send Inspection Request
-                                </button>
+                                <div>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                                        Send Inspection Request
+                                    </button>
+                                    <p id="form-status" class="form-status" aria-live="polite"></p>
+                                </div>
                                 <p class="form-note">
                                     We typically respond within one business day. Your information is used only to respond to
                                     your request and schedule services.
@@ -1698,7 +1769,6 @@
             </div>
         </section>
     </main>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1855,35 +1925,75 @@
             });
         });
 
-        // Expand / collapse "Why BlueWater ROV?" cards (all screen sizes)
-        document.querySelectorAll('.why-card').forEach(card => {
-            card.setAttribute('role', 'button');
-            card.setAttribute('tabindex', '0');
-            card.setAttribute('aria-expanded', 'false');
-
-            const toggleCard = () => {
-                const isOpen = card.classList.toggle('open');
-                card.setAttribute('aria-expanded', String(isOpen));
-            };
-
-            card.addEventListener('click', event => {
-                // Don’t toggle if a link inside the card was clicked
-                if (event.target.closest('a')) return;
-                toggleCard();
-            });
-
-            card.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    toggleCard();
-                }
-            });
-        });
-
         // Back to top click
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // WHY TABS (Why BlueWater ROV section)
+        (function () {
+            const navItems = document.querySelectorAll('#why .why-nav-item');
+            const panels = document.querySelectorAll('#why .why-panel');
+
+            if (!navItems.length || !panels.length) return;
+
+            navItems.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+                    if (!targetId) return;
+
+                    navItems.forEach(b => b.classList.remove('is-active'));
+                    panels.forEach(panel => {
+                        panel.classList.toggle('is-active', panel.id === targetId);
+                    });
+
+                    button.classList.add('is-active');
+                });
+            });
+        })();
+
+        // CONTACT FORM AJAX -> contact.php
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
+
+            const statusEl = document.getElementById('form-status');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                if (!statusEl) return;
+
+                statusEl.textContent = 'Sending your request...';
+                statusEl.className = 'form-status';
+
+                try {
+                    const formData = new FormData(form);
+                    const response = await fetch(form.action || 'contact.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    let data = {};
+                    try {
+                        data = await response.json();
+                    } catch {
+                        // ignore JSON parse errors; handle as generic failure
+                    }
+
+                    if (!response.ok || data.status !== 'ok') {
+                        const msg = data.message || 'Could not send your message. Please try again or contact us directly.';
+                        throw new Error(msg);
+                    }
+
+                    statusEl.textContent = 'Thank you — your inspection request has been sent. We will follow up shortly.';
+                    statusEl.classList.add('form-status--success');
+                    form.reset();
+                } catch (err) {
+                    statusEl.textContent = err.message || 'Sorry, there was a problem sending your message. Please try again or call us directly.';
+                    statusEl.classList.add('form-status--error');
+                }
+            });
+        })();
     </script>
 </body>
 </html>
